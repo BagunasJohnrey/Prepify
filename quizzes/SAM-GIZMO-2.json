@@ -1,0 +1,753 @@
+{
+  "title": "Comprehensive Computer Hardware and Networking Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the typical configuration of a hard drive?",
+      "options": [
+        "Configured as the C: drive",
+        "Configured as the D: drive",
+        "Configured as the F: drive",
+        "Configured as the E: drive"
+      ],
+      "answer": "Configured as the C: drive"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity range of hard drives?",
+      "options": [
+        "From megabytes to gigabytes",
+        "From gigabytes (GB) to terabytes (TB)",
+        "From kilobytes to megabytes",
+        "From terabytes to petabytes"
+      ],
+      "answer": "From gigabytes (GB) to terabytes (TB)"
+    },
+    {
+      "type": "multiple",
+      "question": "How is the speed of a hard drive measured?",
+      "options": [
+        "In revolutions per minute (RPM)",
+        "In bytes per second",
+        "In gigahertz (GHz)",
+        "In milliseconds"
+      ],
+      "answer": "In revolutions per minute (RPM)"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a faster spindle speed indicate in a hard drive?",
+      "options": [
+        "Faster data retrieval",
+        "Lower temperature",
+        "Increased power usage",
+        "Higher storage capacity"
+      ],
+      "answer": "Faster data retrieval"
+    },
+    {
+      "type": "multiple",
+      "question": "What technology do optical drives use to read data?",
+      "options": [
+        "Lasers",
+        "Magnets",
+        "Infrared beams",
+        "Ultrasound"
+      ],
+      "answer": "Lasers"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following are types of optical drives?",
+      "options": [
+        "CD, DVD, Blu-ray Disc",
+        "HDD, SSD, USB",
+        "ROM, RAM, Cache",
+        "VGA, HDMI, USB"
+      ],
+      "answer": "CD, DVD, Blu-ray Disc"
+    },
+    {
+      "type": "multiple",
+      "question": "What are the media types for optical drives?",
+      "options": [
+        "Pre-recorded, recordable, rerecordable",
+        "Writable only",
+        "Flash-based and magnetic",
+        "Optical and solid-state"
+      ],
+      "answer": "Pre-recorded, recordable, rerecordable"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a CD?",
+      "options": [
+        "≈ 700 MB",
+        "1.4 GB",
+        "4.7 GB",
+        "25 GB"
+      ],
+      "answer": "≈ 700 MB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a single-layer DVD?",
+      "options": [
+        "4.7 GB",
+        "8.5 GB",
+        "25 GB",
+        "700 MB"
+      ],
+      "answer": "4.7 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a dual-layer DVD?",
+      "options": [
+        "8.5 GB",
+        "25 GB",
+        "50 GB",
+        "4.7 GB"
+      ],
+      "answer": "8.5 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a single-layer Blu-ray Disc?",
+      "options": [
+        "25 GB",
+        "50 GB",
+        "4.7 GB",
+        "8.5 GB"
+      ],
+      "answer": "25 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a dual-layer Blu-ray Disc?",
+      "options": [
+        "50 GB",
+        "25 GB",
+        "8.5 GB",
+        "700 MB"
+      ],
+      "answer": "50 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical media type is pre-recorded and read-only?",
+      "options": [
+        "CD-ROM",
+        "CD-R",
+        "CD-RW",
+        "DVD-R"
+      ],
+      "answer": "CD-ROM"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical disc can be recorded only once?",
+      "options": [
+        "CD-R",
+        "CD-ROM",
+        "CD-RW",
+        "BD-RE"
+      ],
+      "answer": "CD-R"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical disc is rewritable?",
+      "options": [
+        "CD-RW",
+        "CD-R",
+        "CD-ROM",
+        "DVD-ROM"
+      ],
+      "answer": "CD-RW"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of a modem?",
+      "options": [
+        "Connects computer to network via telephone lines",
+        "Converts AC to DC power",
+        "Displays video output",
+        "Stores digital data"
+      ],
+      "answer": "Connects computer to network via telephone lines"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a sound card do?",
+      "options": [
+        "Produces sound for speakers or headphones",
+        "Captures video",
+        "Processes images",
+        "Handles internet connection"
+      ],
+      "answer": "Produces sound for speakers or headphones"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of a video capture card?",
+      "options": [
+        "Captures and converts video signals",
+        "Outputs audio data",
+        "Improves 3D graphics",
+        "Monitors network traffic"
+      ],
+      "answer": "Captures and converts video signals"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another name for a video card?",
+      "options": [
+        "Display adapter",
+        "Graphic driver",
+        "Display link",
+        "Monitor controller"
+      ],
+      "answer": "Display adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a video card handle?",
+      "options": [
+        "Image and video processing",
+        "Audio output",
+        "Network routing",
+        "Power regulation"
+      ],
+      "answer": "Image and video processing"
+    },
+    {
+      "type": "multiple",
+      "question": "Which are common video card ports?",
+      "options": [
+        "HDMI, DVI, S-Video, VGA",
+        "USB, RJ-45, PS/2, Serial",
+        "SATA, IDE, FireWire, eSATA",
+        "MIDI, RJ-11, Optical, RCA"
+      ],
+      "answer": "HDMI, DVI, S-Video, VGA"
+    },
+    {
+      "type": "multiple",
+      "question": "What is required to install a Windows operating system?",
+      "options": [
+        "Bootable Windows 10 ISO file",
+        "Linux kernel",
+        "UEFI password",
+        "System recovery disc"
+      ],
+      "answer": "Bootable Windows 10 ISO file"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a bootable Windows 10 ISO file used for?",
+      "options": [
+        "To create a bootable USB for installation",
+        "To store user data",
+        "To back up documents",
+        "To uninstall software"
+      ],
+      "answer": "To create a bootable USB for installation"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of removable media is required for creating a bootable USB?",
+      "options": [
+        "USB 4GB or more",
+        "CD-ROM",
+        "DVD-RW",
+        "Floppy disk"
+      ],
+      "answer": "USB 4GB or more"
+    },
+    {
+      "type": "multiple",
+      "question": "What software is used to create bootable USB drives?",
+      "options": [
+        "Rufus",
+        "WinZip",
+        "Photoshop",
+        "MS Word"
+      ],
+      "answer": "Rufus"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of an operating system?",
+      "options": [
+        "Enables communication between hardware and software",
+        "Provides power to the computer",
+        "Cleans the registry automatically",
+        "Displays hardware configuration"
+      ],
+      "answer": "Enables communication between hardware and software"
+    },
+    {
+      "type": "multiple",
+      "question": "What is bootable media?",
+      "options": [
+        "Removable disk used to load and boot the computer",
+        "Internal hard drive",
+        "System cache memory",
+        "Processor register"
+      ],
+      "answer": "Removable disk used to load and boot the computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What does Rufus do?",
+      "options": [
+        "Formats and creates bootable USB drives",
+        "Monitors internet speed",
+        "Compresses video files",
+        "Restores lost partitions"
+      ],
+      "answer": "Formats and creates bootable USB drives"
+    },
+    {
+      "type": "multiple",
+      "question": "After creating a bootable USB, what should you do?",
+      "options": [
+        "Plug it into the system unit",
+        "Format it again",
+        "Delete all files",
+        "Disconnect from the internet"
+      ],
+      "answer": "Plug it into the system unit"
+    },
+    {
+      "type": "multiple",
+      "question": "How do you change the BIOS boot sequence?",
+      "options": [
+        "Access BIOS setup and set USB as first boot device",
+        "Press Windows key + R",
+        "Open Task Manager",
+        "Change user profile settings"
+      ],
+      "answer": "Access BIOS setup and set USB as first boot device"
+    },
+    {
+      "type": "multiple",
+      "question": "What are the common setup keys to access BIOS?",
+      "options": [
+        "Esc, Del, F2, or F10",
+        "Ctrl+Alt+Del",
+        "Alt+Tab",
+        "Shift+Esc"
+      ],
+      "answer": "Esc, Del, F2, or F10"
+    },
+    {
+      "type": "multiple",
+      "question": "What happens after you click 'Install Now' during Windows installation?",
+      "options": [
+        "You enter the Windows 10 product key",
+        "The PC restarts automatically",
+        "The partitions are deleted",
+        "The BIOS updates"
+      ],
+      "answer": "You enter the Windows 10 product key"
+    },
+    {
+      "type": "multiple",
+      "question": "What should you do with partitions during Windows installation?",
+      "options": [
+        "Select and remove all partitions from the disk",
+        "Format only the system drive",
+        "Leave all partitions as is",
+        "Merge all drives"
+      ],
+      "answer": "Select and remove all partitions from the disk"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of the 'Custom: Install Windows only (Advanced)' option?",
+      "options": [
+        "To perform a clean installation of Windows",
+        "To upgrade without losing files",
+        "To back up system data",
+        "To repair startup issues"
+      ],
+      "answer": "To perform a clean installation of Windows"
+    },
+    {
+      "type": "multiple",
+      "question": "What should you do after Windows installation is complete?",
+      "options": [
+        "Remove the USB from the computer",
+        "Reboot and reinstall",
+        "Reformat the USB",
+        "Delete setup files"
+      ],
+      "answer": "Remove the USB from the computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the difference between LAN and WAN?",
+      "options": [
+        "LAN connects computers in a small area; WAN connects multiple LANs over large areas",
+        "LAN is wireless, WAN is wired",
+        "LAN connects to the Internet directly",
+        "WAN is slower than LAN"
+      ],
+      "answer": "LAN connects computers in a small area; WAN connects multiple LANs over large areas"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a router do in a network?",
+      "options": [
+        "Allows LAN computers to communicate outside",
+        "Converts analog to digital signals",
+        "Connects devices using Bluetooth",
+        "Stores web content"
+      ],
+      "answer": "Allows LAN computers to communicate outside"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a VPN?",
+      "options": [
+        "A security measure for safe LAN access",
+        "A virtual desktop manager",
+        "A hardware firewall",
+        "A power saving feature"
+      ],
+      "answer": "A security measure for safe LAN access"
+    },
+    {
+      "type": "multiple",
+      "question": "What is Network Address Translation (NAT)?",
+      "options": [
+        "Converts LAN IPs to valid WAN IPs",
+        "Encrypts Wi-Fi passwords",
+        "Transfers files between devices",
+        "Maps domain names to IPs"
+      ],
+      "answer": "Converts LAN IPs to valid WAN IPs"
+    },
+    {
+      "type": "multiple",
+      "question": "What port is used for HTTP traffic?",
+      "options": [
+        "Port 80",
+        "Port 21",
+        "Port 25",
+        "Port 443"
+      ],
+      "answer": "Port 80"
+    },
+    {
+      "type": "multiple",
+      "question": "What does DNS do?",
+      "options": [
+        "Finds IP addresses of website names",
+        "Assigns MAC addresses",
+        "Routes data packets",
+        "Encrypts data"
+      ],
+      "answer": "Finds IP addresses of website names"
+    },
+    {
+      "type": "multiple",
+      "question": "How can you find your IP address using Command Prompt?",
+      "options": [
+        "Type ipconfig and press Enter",
+        "Type ping localhost",
+        "Type dir /ip",
+        "Type netconfig"
+      ],
+      "answer": "Type ipconfig and press Enter"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the ping command do?",
+      "options": [
+        "Checks network connectivity to an IP",
+        "Displays IP address",
+        "Transfers data files",
+        "Tests hardware drivers"
+      ],
+      "answer": "Checks network connectivity to an IP"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the tracert command do?",
+      "options": [
+        "Traces the path to an IP or website",
+        "Measures internet speed",
+        "Finds DNS servers",
+        "Changes network adapter settings"
+      ],
+      "answer": "Traces the path to an IP or website"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of a bridge in networking?",
+      "options": [
+        "Connects two LANs using the same protocol",
+        "Extends wireless signals",
+        "Translates IP addresses",
+        "Stores backup configurations"
+      ],
+      "answer": "Connects two LANs using the same protocol"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a gateway?",
+      "options": [
+        "Serves as an entrance to another network",
+        "A type of network adapter",
+        "A wireless repeater",
+        "A data encryption device"
+      ],
+      "answer": "Serves as an entrance to another network"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the format of an IP address?",
+      "options": [
+        "32-bit numeric",
+        "16-bit binary",
+        "64-bit alphanumeric",
+        "8-bit decimal"
+      ],
+      "answer": "32-bit numeric"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the role of switches in a network?",
+      "options": [
+        "Filter and forward data packets",
+        "Connect computers to the Internet",
+        "Convert analog signals",
+        "Monitor data usage"
+      ],
+      "answer": "Filter and forward data packets"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the largest WAN?",
+      "options": [
+        "The Internet",
+        "A company intranet",
+        "A metropolitan network",
+        "A home Wi-Fi"
+      ],
+      "answer": "The Internet"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a chipset?",
+      "options": [
+        "A set of integrated circuits that control communication between CPU and other components",
+        "A type of microprocessor",
+        "An external hard drive",
+        "A sound processing unit"
+      ],
+      "answer": "A set of integrated circuits that control communication between CPU and other components"
+    },
+    {
+      "type": "multiple",
+      "question": "What is an expansion card?",
+      "options": [
+        "A device that gives a computer additional capabilities",
+        "A power supply connector",
+        "A type of USB drive",
+        "A display cable"
+      ],
+      "answer": "A device that gives a computer additional capabilities"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a MIDI card used for?",
+      "options": [
+        "Digitally representing and transmitting sounds",
+        "Video capture",
+        "Network connection",
+        "File compression"
+      ],
+      "answer": "Digitally representing and transmitting sounds"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a Network Card used for?",
+      "options": [
+        "Connects to a network using an Ethernet cable with RJ-45 connector",
+        "Captures sound signals",
+        "Manages video playback",
+        "Stores configuration files"
+      ],
+      "answer": "Connects to a network using an Ethernet cable with RJ-45 connector"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of a Tuner Card?",
+      "options": [
+        "Connects cable TV to a computer",
+        "Improves video rendering",
+        "Enhances Wi-Fi signals",
+        "Compresses audio data"
+      ],
+      "answer": "Connects cable TV to a computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of a Hub?",
+      "options": [
+        "Acts as a common connection point for devices in a network",
+        "Amplifies sound signals",
+        "Cools down CPUs",
+        "Encrypts network traffic"
+      ],
+      "answer": "Acts as a common connection point for devices in a network"
+    },
+    {
+      "type": "multiple",
+      "question": "What is an IP address?",
+      "options": [
+        "A numerical identifier for a computer/device on a network",
+        "A physical serial number of a CPU",
+        "A URL of a website",
+        "A type of domain name"
+      ],
+      "answer": "A numerical identifier for a computer/device on a network"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a Port in networking?",
+      "options": [
+        "An endpoint in a logical connection",
+        "A USB connector",
+        "A power input slot",
+        "An audio interface"
+      ],
+      "answer": "An endpoint in a logical connection"
+    },
+    {
+      "type": "multiple",
+      "question": "What are Routers responsible for?",
+      "options": [
+        "Forwarding data packets between networks",
+        "Amplifying audio signals",
+        "Cooling the motherboard",
+        "Translating binary code"
+      ],
+      "answer": "Forwarding data packets between networks"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a Subnet?",
+      "options": [
+        "A portion of a network with a common address prefix",
+        "A type of LAN cable",
+        "A web domain",
+        "An external storage device"
+      ],
+      "answer": "A portion of a network with a common address prefix"
+    },
+    {
+      "type": "multiple",
+      "question": "Which part of the motherboard connects video cards?",
+      "options": [
+        "AGP Slot",
+        "DRAM Slot",
+        "IDE Connector",
+        "CMOS Battery"
+      ],
+      "answer": "AGP Slot"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of the Southbridge?",
+      "options": [
+        "Controls hard drives, USB, and I/O devices",
+        "Manages CPU clock speed",
+        "Processes graphics data",
+        "Regulates system power"
+      ],
+      "answer": "Controls hard drives, USB, and I/O devices"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard slot is used for memory modules?",
+      "options": [
+        "DRAM Memory Slot",
+        "PCI Slot",
+        "IDE Connector",
+        "CPU Socket"
+      ],
+      "answer": "DRAM Memory Slot"
+    },
+    {
+      "type": "multiple",
+      "question": "What component keeps BIOS settings saved?",
+      "options": [
+        "CMOS Backup Battery",
+        "CPU Fan",
+        "Northbridge",
+        "IDE Connector"
+      ],
+      "answer": "CMOS Backup Battery"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector provides main power to the motherboard?",
+      "options": [
+        "24-pin P1 connector",
+        "4-pin Molex connector",
+        "SATA connector",
+        "6-pin PCIe connector"
+      ],
+      "answer": "24-pin P1 connector"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector powers a SATA drive?",
+      "options": [
+        "SATA power connector",
+        "4-pin Molex",
+        "8-pin PCIe",
+        "6-pin PCIe"
+      ],
+      "answer": "SATA power connector"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the 4-pin Molex connector used for?",
+      "options": [
+        "Powering older hard drives and optical drives",
+        "Connecting the CPU fan",
+        "Networking devices",
+        "Audio input"
+      ],
+      "answer": "Powering older hard drives and optical drives"
+    },
+    {
+      "type": "multiple",
+      "question": "Which power connector is used for graphics cards?",
+      "options": [
+        "6-pin PCIe or 8-pin PCIe",
+        "4-pin Molex",
+        "24-pin P1",
+        "20-pin ATX"
+      ],
+      "answer": "6-pin PCIe or 8-pin PCIe"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of the CPU fan and heatsink?",
+      "options": [
+        "Cool the processor to prevent overheating",
+        "Store system data",
+        "Control voltage flow",
+        "Enhance network connection"
+      ],
+      "answer": "Cool the processor to prevent overheating"
+    }
+  ]
+}
