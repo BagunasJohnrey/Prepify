@@ -29,27 +29,20 @@
     </div>
   </div>
 
-  <!-- Upload Section with Password -->
+  <!-- Upload Section -->
   <div class="mb-6 bg-white p-4 sm:p-5 rounded-2xl shadow-md w-full max-w-md">
     <h2 class="text-base sm:text-lg font-semibold mb-3 text-gray-800">📤 Import New Quiz</h2>
     <p class="text-sm sm:text-base opacity-90 my-1">PM niyo ako sa ig if may ipapadagdag na exam!</p>
     <p class="text-sm sm:text-base opacity-90 mb-3">IG: jarey.xz</p>
-    <form id="uploadForm" class="flex flex-col gap-3">
+    <form id="uploadForm" class="flex flex-col sm:flex-row gap-3">
       <input 
         type="file" 
         id="quizFile" 
         accept=".json" 
-        class="border border-gray-300 p-2 text-sm rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none" 
+        class="border border-gray-300 p-2 text-sm rounded-lg flex-1 focus:ring-2 focus:ring-indigo-400 focus:outline-none" 
       />
-      <input
-        type="password"
-        id="uploadPassword"
-        placeholder="Enter upload password"
-        class="border border-gray-300 p-2 text-sm rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-      />
-      <button 
-        type="submit"
-        class="bg-green-500 text-white px-4 sm:px-5 py-2 rounded-lg hover:bg-green-600 transition-all duration-200 shadow text-sm sm:text-base">
+      <button disabled 
+        class="bg-green-500 text-white px-4 sm:px-5 py-2 rounded-lg cursor-not-allowed hover:bg-green-600 transition-all duration-200 shadow text-sm sm:text-base">
         Upload
       </button>
     </form>
@@ -82,40 +75,6 @@
     © 2025 Jareyxz. All rights reserved.
   </footer>
 
-  <script>
-    // Handle upload password
-    const uploadForm = document.getElementById('uploadForm');
-    const uploadMsg = document.getElementById('uploadMsg');
-    const quizFile = document.getElementById('quizFile');
-    const uploadPassword = document.getElementById('uploadPassword');
-
-    uploadForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const correctPassword = "midterm2025"; // <-- change this as needed
-
-      if (uploadPassword.value !== correctPassword) {
-        uploadMsg.textContent = "❌ Incorrect password. Upload denied.";
-        uploadMsg.classList.remove("text-gray-600");
-        uploadMsg.classList.add("text-red-500");
-        return;
-      }
-
-      if (!quizFile.files.length) {
-        uploadMsg.textContent = "⚠️ Please select a quiz file to upload.";
-        uploadMsg.classList.remove("text-red-500");
-        uploadMsg.classList.add("text-yellow-600");
-        return;
-      }
-
-      // Success
-      uploadMsg.textContent = "✅ File uploaded successfully!";
-      uploadMsg.classList.remove("text-red-500", "text-yellow-600");
-      uploadMsg.classList.add("text-green-600");
-
-      // TODO: handle your file upload logic here (like reading JSON, etc.)
-      console.log("File accepted:", quizFile.files[0]);
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
