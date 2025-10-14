@@ -1,0 +1,300 @@
+{
+  "title": "Computer System Components Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the main purpose of the computer case?",
+      "options": [
+        "To process data",
+        "To protect and house internal components",
+        "To store files permanently",
+        "To cool the CPU only"
+      ],
+      "answer": "To protect and house internal components"
+    },
+    {
+      "type": "multiple",
+      "question": "What converts AC power from the wall into DC power for computer components?",
+      "options": [
+        "Motherboard",
+        "CPU",
+        "Power Supply Unit (PSU)",
+        "Hard Drive"
+      ],
+      "answer": "Power Supply Unit (PSU)"
+    },
+    {
+      "type": "multiple",
+      "question": "The CPU is considered the ______ of the computer.",
+      "options": [
+        "Heart",
+        "Brain",
+        "Memory",
+        "Skeleton"
+      ],
+      "answer": "Brain"
+    },
+    {
+      "type": "multiple",
+      "question": "Which CPU architecture uses a small set of simple instructions that run very fast?",
+      "options": [
+        "CISC",
+        "RISC",
+        "BIOS",
+        "VGA"
+      ],
+      "answer": "RISC"
+    },
+    {
+      "type": "multiple",
+      "question": "Overclocking a CPU means:",
+      "options": [
+        "Running the CPU faster than rated speed",
+        "Slowing down CPU speed",
+        "Cooling the CPU",
+        "Replacing the CPU"
+      ],
+      "answer": "Running the CPU faster than rated speed"
+    },
+    {
+      "type": "multiple",
+      "question": "The motherboard is also known as the:",
+      "options": [
+        "Power board",
+        "System board",
+        "Input/output board",
+        "Graphics board"
+      ],
+      "answer": "System board"
+    },
+    {
+      "type": "multiple",
+      "question": "The Northbridge chip controls communication between:",
+      "options": [
+        "CPU, RAM, and video card",
+        "Hard drives and USBs",
+        "Mouse and keyboard",
+        "Printers and network"
+      ],
+      "answer": "CPU, RAM, and video card"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of memory is permanent and used to store startup instructions?",
+      "options": [
+        "RAM",
+        "ROM",
+        "Cache",
+        "SSD"
+      ],
+      "answer": "ROM"
+    },
+    {
+      "type": "multiple",
+      "question": "RAM is considered 'volatile' because:",
+      "options": [
+        "It loses data when power is off",
+        "It stores data permanently",
+        "It cannot be erased",
+        "It is built into the CPU"
+      ],
+      "answer": "It loses data when power is off"
+    },
+    {
+      "type": "multiple",
+      "question": "Which device uses spinning magnetic disks to store data?",
+      "options": [
+        "SSD",
+        "HDD",
+        "ROM",
+        "RAM"
+      ],
+      "answer": "HDD"
+    },
+    {
+      "type": "multiple",
+      "question": "HDD speed is measured in:",
+      "options": [
+        "GHz",
+        "MHz",
+        "RPM",
+        "Mbps"
+      ],
+      "answer": "RPM"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical disc has the highest storage capacity?",
+      "options": [
+        "CD",
+        "DVD",
+        "Blu-ray",
+        "LaserDisc"
+      ],
+      "answer": "Blu-ray"
+    },
+    {
+      "type": "multiple",
+      "question": "Optical drives use ______ to read and write data.",
+      "options": [
+        "Electricity",
+        "Magnets",
+        "Laser light",
+        "Sound waves"
+      ],
+      "answer": "Laser light"
+    },
+    {
+      "type": "multiple",
+      "question": "A video card is also known as a:",
+      "options": [
+        "Display adapter",
+        "Sound board",
+        "Network adapter",
+        "Interface card"
+      ],
+      "answer": "Display adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port provides both video and audio signals in one cable?",
+      "options": [
+        "VGA",
+        "HDMI",
+        "DVI",
+        "DisplayPort"
+      ],
+      "answer": "HDMI"
+    },
+    {
+      "type": "multiple",
+      "question": "Which card allows a computer to connect to a wired network?",
+      "options": [
+        "Video card",
+        "Network card",
+        "Sound card",
+        "Modem card"
+      ],
+      "answer": "Network card"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port is blue with 15 pins and carries analog video signals?",
+      "options": [
+        "VGA",
+        "HDMI",
+        "DVI",
+        "DisplayPort"
+      ],
+      "answer": "VGA"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port looks like a large phone jack and connects to the internet?",
+      "options": [
+        "RJ-45",
+        "RJ-11",
+        "PS/2",
+        "Serial"
+      ],
+      "answer": "RJ-45"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port connects most peripherals like keyboards, flash drives, and printers?",
+      "options": [
+        "FireWire",
+        "USB",
+        "S/PDIF",
+        "Parallel"
+      ],
+      "answer": "USB"
+    },
+    {
+      "type": "multiple",
+      "question": "The pink audio port is usually used for:",
+      "options": [
+        "Headphones",
+        "Speakers",
+        "Microphone",
+        "Line-In"
+      ],
+      "answer": "Microphone"
+    },
+    {
+      "type": "multiple",
+      "question": "Which round port was used for old keyboards and mice?",
+      "options": [
+        "RJ-11",
+        "Serial",
+        "PS/2",
+        "FireWire"
+      ],
+      "answer": "PS/2"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector powers the motherboard?",
+      "options": [
+        "24-pin P1 connector",
+        "Molex",
+        "SATA connector",
+        "PCIe connector"
+      ],
+      "answer": "24-pin P1 connector"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector provides extra power to the CPU?",
+      "options": [
+        "4-pin Auxiliary",
+        "8-pin PCIe",
+        "SATA",
+        "20-pin P1"
+      ],
+      "answer": "4-pin Auxiliary"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector is used for SATA hard drives and SSDs?",
+      "options": [
+        "4-pin Molex",
+        "15-pin SATA",
+        "4-pin Berg",
+        "6-pin PCIe"
+      ],
+      "answer": "15-pin SATA"
+    },
+    {
+      "type": "multiple",
+      "question": "The 6+2 pin PCIe connector is used for:",
+      "options": [
+        "Flexible GPU power",
+        "Motherboard connection",
+        "CPU fan power",
+        "Drive power"
+      ],
+      "answer": "Flexible GPU power"
+    },
+    {
+      "type": "truefalse",
+      "question": "SSDs have moving parts.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "RAM retains its data even after power is turned off.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "A Blu-ray disc can store more data than a DVD.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "DisplayPort and HDMI can both carry audio and video signals.",
+      "answer": "True"
+    }
+  ]
+}
