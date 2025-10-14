@@ -1,0 +1,490 @@
+{
+  "title": "Comprehensive Ethics and Moral Philosophy Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the branch of philosophy that deals with determining what human beings must do or how they should act?",
+      "options": [
+        "Ethics",
+        "Sociology",
+        "Aesthetics",
+        "Logic"
+      ],
+      "answer": "Ethics"
+    },
+    {
+      "type": "multiple",
+      "question": "Which type of ethics seeks to answer how humans ought to act and what moral standards should govern behavior?",
+      "options": [
+        "Meta-ethics",
+        "Normative ethics",
+        "Applied ethics",
+        "Descriptive ethics"
+      ],
+      "answer": "Normative ethics"
+    },
+    {
+      "type": "multiple",
+      "question": "Meta-ethics focuses on what aspect of morality?",
+      "options": [
+        "Meaning and origin of moral concepts",
+        "Application of moral rules",
+        "Formulation of laws",
+        "Development of character virtues"
+      ],
+      "answer": "Meaning and origin of moral concepts"
+    },
+    {
+      "type": "multiple",
+      "question": "The term 'ethos' from which ethics is derived means:",
+      "options": [
+        "Law and punishment",
+        "Tradition, habit, or character",
+        "Belief and religion",
+        "Knowledge and truth"
+      ],
+      "answer": "Tradition, habit, or character"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following best describes moral standards?",
+      "options": [
+        "Guidelines determining morally permissible acts",
+        "Social customs without ethical basis",
+        "Government-enforced laws",
+        "Religious rituals and practices"
+      ],
+      "answer": "Guidelines determining morally permissible acts"
+    },
+    {
+      "type": "multiple",
+      "question": "Moral standards are characterized by their:",
+      "options": [
+        "Serious harm or benefit implications",
+        "Dependence on authority figures",
+        "Temporary social approval",
+        "Political neutrality"
+      ],
+      "answer": "Serious harm or benefit implications"
+    },
+    {
+      "type": "multiple",
+      "question": "According to Kant, what is the only thing that is good without qualification?",
+      "options": [
+        "Good will",
+        "Happiness",
+        "Justice",
+        "Intelligence"
+      ],
+      "answer": "Good will"
+    },
+    {
+      "type": "multiple",
+      "question": "Kant’s philosophy emphasizes that morality is guided by:",
+      "options": [
+        "Desire and emotion",
+        "Reason and duty",
+        "Tradition and culture",
+        "Fear of punishment"
+      ],
+      "answer": "Reason and duty"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the moral principle commanding unconditionally, regardless of desires?",
+      "options": [
+        "Hypothetical imperative",
+        "Categorical imperative",
+        "Moral relativism",
+        "Golden rule"
+      ],
+      "answer": "Categorical imperative"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is a perfect duty according to Kant?",
+      "options": [
+        "Telling the truth",
+        "Helping others",
+        "Donating to charity",
+        "Developing talents"
+      ],
+      "answer": "Telling the truth"
+    },
+    {
+      "type": "multiple",
+      "question": "The principle of universalizability states that:",
+      "options": [
+        "Moral actions should be acceptable for everyone to follow",
+        "Morality is subjective to one’s feelings",
+        "Ethics depends on authority",
+        "Moral rules differ by nation"
+      ],
+      "answer": "Moral actions should be acceptable for everyone to follow"
+    },
+    {
+      "type": "multiple",
+      "question": "According to Kant, humans must always be treated as:",
+      "options": [
+        "Means to an end",
+        "Ends in themselves",
+        "Members of society",
+        "Rational agents without emotions"
+      ],
+      "answer": "Ends in themselves"
+    },
+    {
+      "type": "multiple",
+      "question": "Which best defines cultural relativism?",
+      "options": [
+        "The belief that moral rules are universal",
+        "Judging another culture based on one’s own standards",
+        "Understanding a culture’s values within its own context",
+        "Rejecting all moral standards"
+      ],
+      "answer": "Understanding a culture’s values within its own context"
+    },
+    {
+      "type": "multiple",
+      "question": "A major disadvantage of cultural relativism is that it:",
+      "options": [
+        "Encourages cultural tolerance",
+        "Prevents moral reform",
+        "Promotes moral universalism",
+        "Supports global justice"
+      ],
+      "answer": "Prevents moral reform"
+    },
+    {
+      "type": "multiple",
+      "question": "Schwartz’s universal value of 'benevolence' emphasizes:",
+      "options": [
+        "Success and achievement",
+        "Helpfulness, honesty, and loyalty",
+        "Pleasure and excitement",
+        "Tradition and obedience"
+      ],
+      "answer": "Helpfulness, honesty, and loyalty"
+    },
+    {
+      "type": "multiple",
+      "question": "In Filipino ethics, 'Pakikisama' refers to:",
+      "options": [
+        "Debt of gratitude",
+        "Sense of togetherness and harmony",
+        "Respect for elders",
+        "Avoidance of shame"
+      ],
+      "answer": "Sense of togetherness and harmony"
+    },
+    {
+      "type": "multiple",
+      "question": "'Utang na Loob' can become negative when it:",
+      "options": [
+        "Encourages gratitude",
+        "Forces unethical reciprocation",
+        "Promotes teamwork",
+        "Prevents social obligation"
+      ],
+      "answer": "Forces unethical reciprocation"
+    },
+    {
+      "type": "multiple",
+      "question": "What Filipino value emphasizes modesty and restraint?",
+      "options": [
+        "Amor Propio",
+        "Hiya",
+        "Hospitality",
+        "Pakikipagkapwa-tao"
+      ],
+      "answer": "Hiya"
+    },
+    {
+      "type": "multiple",
+      "question": "Kant’s idea of autonomy means:",
+      "options": [
+        "Following external authority",
+        "Self-legislation through reason",
+        "Acting according to impulse",
+        "Avoiding all moral judgment"
+      ],
+      "answer": "Self-legislation through reason"
+    },
+    {
+      "type": "multiple",
+      "question": "The difference between moral and non-moral standards is that moral standards:",
+      "options": [
+        "Promote the common good",
+        "Are based on law only",
+        "Change frequently",
+        "Depend on etiquette"
+      ],
+      "answer": "Promote the common good"
+    },
+    {
+      "type": "multiple",
+      "question": "In a moral dilemma, an individual must:",
+      "options": [
+        "Choose between equally moral options",
+        "Decide between conflicting moral principles",
+        "Avoid all decision-making",
+        "Follow legal rules only"
+      ],
+      "answer": "Decide between conflicting moral principles"
+    },
+    {
+      "type": "multiple",
+      "question": "According to Kvalnes, a self-inflicted dilemma arises from:",
+      "options": [
+        "A social conflict",
+        "A prior personal mistake",
+        "Cultural misunderstanding",
+        "Peer influence"
+      ],
+      "answer": "A prior personal mistake"
+    },
+    {
+      "type": "multiple",
+      "question": "Kofi Annan emphasized which universal value as essential for world peace?",
+      "options": [
+        "Pleasure",
+        "Freedom",
+        "Wealth",
+        "Innovation"
+      ],
+      "answer": "Freedom"
+    },
+    {
+      "type": "multiple",
+      "question": "Filipino moral character centers on maintaining:",
+      "options": [
+        "Individual success",
+        "Smooth interpersonal relationships",
+        "Material wealth",
+        "Strict authority obedience"
+      ],
+      "answer": "Smooth interpersonal relationships"
+    },
+    {
+      "type": "multiple",
+      "question": "A student finds a lost wallet with a large amount of money. No one is around to see it. What is the most ethical action?",
+      "options": [
+        "Keep it secretly",
+        "Return it to the owner or authorities",
+        "Take part of the money and leave the rest",
+        "Ignore it completely"
+      ],
+      "answer": "Return it to the owner or authorities"
+    },
+    {
+      "type": "multiple",
+      "question": "A company offers a promotion in exchange for personal favors. Acting from Kantian ethics, what should you do?",
+      "options": [
+        "Accept if it helps your career",
+        "Reject it because it violates duty and respect",
+        "Negotiate a better offer",
+        "Stay silent and comply"
+      ],
+      "answer": "Reject it because it violates duty and respect"
+    },
+    {
+      "type": "multiple",
+      "question": "A friend cheats on an exam and asks you not to report it. What is the ethical response under deontological ethics?",
+      "options": [
+        "Report it, since honesty is a duty",
+        "Ignore it to maintain friendship",
+        "Help them cheat better next time",
+        "Advise them quietly but stay silent"
+      ],
+      "answer": "Report it, since honesty is a duty"
+    },
+    {
+      "type": "multiple",
+      "question": "You are asked to lie to protect a coworker from being fired. According to Kant, lying is:",
+      "options": [
+        "Acceptable if it helps someone",
+        "Always wrong regardless of outcome",
+        "Right if the intent is pure",
+        "Justified when the boss is unfair"
+      ],
+      "answer": "Always wrong regardless of outcome"
+    },
+    {
+      "type": "multiple",
+      "question": "You donate to charity mainly because it feels good. Kant would say your act is:",
+      "options": [
+        "Morally good because it helps others",
+        "Not morally worthy because it lacks duty",
+        "Immoral because it’s self-centered",
+        "Neutral since emotions guide it"
+      ],
+      "answer": "Not morally worthy because it lacks duty"
+    },
+    {
+      "type": "multiple",
+      "question": "An employee notices unfair treatment of coworkers based on gender. Which universal value should guide their response?",
+      "options": [
+        "Equality",
+        "Power",
+        "Tradition",
+        "Loyalty"
+      ],
+      "answer": "Equality"
+    },
+    {
+      "type": "multiple",
+      "question": "A Filipino manager prioritizes family members for job openings. This reflects which cultural weakness?",
+      "options": [
+        "Pakikisama",
+        "Extreme family centeredness",
+        "Hiya",
+        "Utang na Loob"
+      ],
+      "answer": "Extreme family centeredness"
+    },
+    {
+      "type": "multiple",
+      "question": "A student posts rude comments about a teacher online. Ethically, this violates which Filipino trait?",
+      "options": [
+        "Respect for elders",
+        "Hospitality",
+        "Pakikisama",
+        "Utang na Loob"
+      ],
+      "answer": "Respect for elders"
+    },
+    {
+      "type": "multiple",
+      "question": "A company faces pressure to falsify environmental compliance reports. Which universal value is being compromised?",
+      "options": [
+        "Nature",
+        "Peace",
+        "Tradition",
+        "Hedonism"
+      ],
+      "answer": "Nature"
+    },
+    {
+      "type": "multiple",
+      "question": "An employee stays silent about workplace discrimination to avoid conflict. Which Filipino trait explains this?",
+      "options": [
+        "Hiya",
+        "Amor Propio",
+        "Kanya-kanya Syndrome",
+        "Pakikipagkapwa-tao"
+      ],
+      "answer": "Hiya"
+    },
+    {
+      "type": "multiple",
+      "question": "A student justifies copying a project by saying everyone does it. This reasoning violates which ethical concept?",
+      "options": [
+        "Autonomy",
+        "Cultural relativism",
+        "Categorical imperative",
+        "Conformity"
+      ],
+      "answer": "Categorical imperative"
+    },
+    {
+      "type": "multiple",
+      "question": "You must choose between loyalty to a friend or honesty to the school. What ethical conflict is this?",
+      "options": [
+        "Moral dilemma",
+        "Meta-ethical paradox",
+        "Social norm conflict",
+        "Cultural bias"
+      ],
+      "answer": "Moral dilemma"
+    },
+    {
+      "type": "multiple",
+      "question": "A public official diverts funds for personal gain but donates some to charity. Which principle is violated?",
+      "options": [
+        "Justice and fairness",
+        "Hedonism",
+        "Benevolence",
+        "Cultural relativism"
+      ],
+      "answer": "Justice and fairness"
+    },
+    {
+      "type": "multiple",
+      "question": "You must fire an employee to save the company. Which ethical theory focuses on outcome rather than duty?",
+      "options": [
+        "Utilitarianism",
+        "Deontology",
+        "Cultural relativism",
+        "Virtue ethics"
+      ],
+      "answer": "Utilitarianism"
+    },
+    {
+      "type": "multiple",
+      "question": "A student shares class notes freely to help struggling peers. Which universal value does this represent?",
+      "options": [
+        "Benevolence",
+        "Tradition",
+        "Power",
+        "Security"
+      ],
+      "answer": "Benevolence"
+    },
+    {
+      "type": "multiple",
+      "question": "A leader shows favoritism among employees. This violates which aspect of justice according to Kant?",
+      "options": [
+        "Impartial fairness in interpersonal relations",
+        "Freedom to choose personal will",
+        "Obedience to authority",
+        "Happiness as the moral goal"
+      ],
+      "answer": "Impartial fairness in interpersonal relations"
+    },
+    {
+      "type": "multiple",
+      "question": "A foreigner criticizes Filipino time as unproductive. How does cultural relativism suggest we respond?",
+      "options": [
+        "Judge it as lazy behavior",
+        "Understand it within Filipino context",
+        "Demand punctuality as universal",
+        "Ignore cultural differences"
+      ],
+      "answer": "Understand it within Filipino context"
+    },
+    {
+      "type": "multiple",
+      "question": "You feel pressure to agree with unethical behavior due to 'pakikisama'. What should guide your action ethically?",
+      "options": [
+        "Moral autonomy and reason",
+        "Group conformity",
+        "Social expectations",
+        "Personal comfort"
+      ],
+      "answer": "Moral autonomy and reason"
+    },
+    {
+      "type": "multiple",
+      "question": "A teacher gives extra points to relatives in class. This violates which universal value?",
+      "options": [
+        "Justice",
+        "Peace",
+        "Tradition",
+        "Security"
+      ],
+      "answer": "Justice"
+    },
+    {
+      "type": "multiple",
+      "question": "A Filipino overseas worker remains honest and hardworking abroad. This reflects which moral trait?",
+      "options": [
+        "Pakikipagkapwa-tao",
+        "Hiya",
+        "Utang na Loob",
+        "Amor Propio"
+      ],
+      "answer": "Pakikipagkapwa-tao"
+    }
+  ]
+}
+

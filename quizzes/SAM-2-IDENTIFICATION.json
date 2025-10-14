@@ -1,0 +1,365 @@
+{
+  "title": "Computer System Components - Part 2 Detailed Identification Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is a hard disk drive primarily used for?",
+      "options": ["Processing data", "Storing data", "Transmitting data", "Cooling components"],
+      "answer": "Storing data"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the usual drive letter assigned to the main hard drive in Windows?",
+      "options": ["A:", "B:", "C:", "D:"],
+      "answer": "C:"
+    },
+    {
+      "type": "multiple",
+      "question": "What does HDD stand for?",
+      "options": ["Hardware Disk Device", "Hard Disk Drive", "Hybrid Drive Disk", "High Density Disk"],
+      "answer": "Hard Disk Drive"
+    },
+    {
+      "type": "multiple",
+      "question": "What unit measures the speed of a hard drive?",
+      "options": ["GB/s", "MB/s", "RPM", "GHz"],
+      "answer": "RPM"
+    },
+    {
+      "type": "multiple",
+      "question": "What does RPM in hard drives stand for?",
+      "options": ["Revolutions Per Minute", "Rotations Per Memory", "Read/Write Per Millisecond", "Rotary Performance Metric"],
+      "answer": "Revolutions Per Minute"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the spindle speed of a high-end server hard drive?",
+      "options": ["5400 RPM", "7200 RPM", "10000 RPM", "15000 RPM"],
+      "answer": "15000 RPM"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the main difference between a hard drive and an SSD?",
+      "options": [
+        "SSD has no moving parts",
+        "SSD uses magnetic storage",
+        "HDDs are faster",
+        "HDDs use flash memory"
+      ],
+      "answer": "SSD has no moving parts"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of memory do SSDs use?",
+      "options": ["Volatile memory", "Nonvolatile flash memory", "Optical storage", "Magnetic disk"],
+      "answer": "Nonvolatile flash memory"
+    },
+    {
+      "type": "multiple",
+      "question": "What interface is commonly used by SSDs and HDDs?",
+      "options": ["USB", "SATA", "HDMI", "VGA"],
+      "answer": "SATA"
+    },
+    {
+      "type": "multiple",
+      "question": "What are the three main types of optical drives?",
+      "options": ["CD, DVD, BD", "SSD, HDD, NVMe", "ROM, RAM, Flash", "IDE, SATA, SCSI"],
+      "answer": "CD, DVD, BD"
+    },
+    {
+      "type": "multiple",
+      "question": "What does BD stand for in optical storage?",
+      "options": ["Binary Disc", "Blu-ray Disc", "Backup Drive", "Basic Data"],
+      "answer": "Blu-ray Disc"
+    },
+    {
+      "type": "multiple",
+      "question": "How much data can a single-layer DVD hold?",
+      "options": ["700 MB", "4.7 GB", "8.5 GB", "25 GB"],
+      "answer": "4.7 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a dual-layer Blu-ray disc?",
+      "options": ["4.7 GB", "8.5 GB", "25 GB", "50 GB"],
+      "answer": "50 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What does CD-RW stand for?",
+      "options": [
+        "Compact Disc - Rewritable",
+        "Compact Data Recordable",
+        "Compressed Disk Rewriter",
+        "Computer Drive - Rewrite"
+      ],
+      "answer": "Compact Disc - Rewritable"
+    },
+    {
+      "type": "multiple",
+      "question": "What is BD-RE used for?",
+      "options": [
+        "Blu-ray rewritable for HD recording and data storage",
+        "Blu-ray recordable one time",
+        "CD-ROM replacement",
+        "Audio file compression"
+      ],
+      "answer": "Blu-ray rewritable for HD recording and data storage"
+    },
+    {
+      "type": "multiple",
+      "question": "What does DVD-RAM stand for?",
+      "options": ["DVD Random Access Memory", "Digital Visual Disk", "Direct Video Memory", "Dynamic Volume Access"],
+      "answer": "DVD Random Access Memory"
+    },
+    {
+      "type": "multiple",
+      "question": "What device connects to a motherboard and outputs images to a monitor?",
+      "options": ["Video card", "Sound card", "Modem", "Network card"],
+      "answer": "Video card"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another term for a video card?",
+      "options": ["Display adapter", "Network adapter", "Memory controller", "Expansion bus"],
+      "answer": "Display adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "What are common video output ports on video cards?",
+      "options": ["HDMI, DVI, S-Video, VGA", "RJ-45, USB, FireWire", "PCIe, SATA, IDE", "PS/2, RCA, SCART"],
+      "answer": "HDMI, DVI, S-Video, VGA"
+    },
+    {
+      "type": "multiple",
+      "question": "Which slot is most commonly used for modern video cards?",
+      "options": ["PCIe", "AGP", "ISA", "PCI"],
+      "answer": "PCIe"
+    },
+    {
+      "type": "multiple",
+      "question": "What does PCIe stand for?",
+      "options": [
+        "Peripheral Component Interconnect Express",
+        "Peripheral Connection Interface Ethernet",
+        "Primary Card Interface Extension",
+        "Parallel Circuit Integration Expansion"
+      ],
+      "answer": "Peripheral Component Interconnect Express"
+    },
+    {
+      "type": "multiple",
+      "question": "What is an expansion card?",
+      "options": [
+        "A PCB that adds new capabilities to a computer",
+        "An external hard drive",
+        "A CPU cooling system",
+        "A power regulator board"
+      ],
+      "answer": "A PCB that adds new capabilities to a computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What does MIDI stand for?",
+      "options": [
+        "Musical Instrument Digital Interface",
+        "Multimedia Input Data Interlink",
+        "Modular Integrated Device Interface",
+        "Multiple Interactive Digital Input"
+      ],
+      "answer": "Musical Instrument Digital Interface"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of a modem?",
+      "options": [
+        "To modulate and demodulate digital data over telephone lines",
+        "To amplify video signals",
+        "To process graphics data",
+        "To store network logs"
+      ],
+      "answer": "To modulate and demodulate digital data over telephone lines"
+    },
+    {
+      "type": "multiple",
+      "question": "What does 'modem' stand for?",
+      "options": [
+        "Modulator/Demodulator",
+        "Modern Device Module",
+        "Module of Data Exchange Machine",
+        "Monitor Device Manager"
+      ],
+      "answer": "Modulator/Demodulator"
+    },
+    {
+      "type": "multiple",
+      "question": "What does MPEG stand for?",
+      "options": [
+        "Moving Picture Experts Group",
+        "Media Processing Encoding Guide",
+        "Motion Pixel Encoding Generator",
+        "Modular Picture Execution Grid"
+      ],
+      "answer": "Moving Picture Experts Group"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of an MPEG decoder?",
+      "options": [
+        "To decode and play compressed video formats",
+        "To manage audio frequency filters",
+        "To encode binary code",
+        "To optimize hard drive speed"
+      ],
+      "answer": "To decode and play compressed video formats"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of a network card?",
+      "options": [
+        "To connect a computer to a wired or wireless network",
+        "To increase storage capacity",
+        "To manage file compression",
+        "To boost sound quality"
+      ],
+      "answer": "To connect a computer to a wired or wireless network"
+    },
+    {
+      "type": "multiple",
+      "question": "What connector is commonly found on Ethernet network cards?",
+      "options": ["RJ-45", "HDMI", "VGA", "SATA"],
+      "answer": "RJ-45"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another term for a network card?",
+      "options": ["Ethernet adapter", "Sound module", "I/O bridge", "Memory controller"],
+      "answer": "Ethernet adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the primary function of a sound card?",
+      "options": [
+        "To produce and process audio signals",
+        "To control network speed",
+        "To manage BIOS instructions",
+        "To cool down the processor"
+      ],
+      "answer": "To produce and process audio signals"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another name for a sound card?",
+      "options": ["Audio board", "Sound drive", "Tone generator", "Music processor"],
+      "answer": "Audio board"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a tuner card used for?",
+      "options": [
+        "To watch and record live TV on a computer",
+        "To decode MP3 files",
+        "To display system status LEDs",
+        "To manage network traffic"
+      ],
+      "answer": "To watch and record live TV on a computer"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connection type might a tuner card include for video input?",
+      "options": ["Coaxial or RCA", "VGA or DVI", "USB or RJ-11", "SATA or IDE"],
+      "answer": "Coaxial or RCA"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a video capture card used for?",
+      "options": [
+        "To convert video signals into stored digital files",
+        "To enhance speaker sound quality",
+        "To control network packets",
+        "To manage system cooling"
+      ],
+      "answer": "To convert video signals into stored digital files"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another name for a video card?",
+      "options": ["Display adapter", "Sound interface", "Network transceiver", "I/O expander"],
+      "answer": "Display adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "What expansion slot standard is now obsolete and replaced by PCIe?",
+      "options": ["AGP", "ISA", "PCI", "EISA"],
+      "answer": "AGP"
+    },
+    {
+      "type": "multiple",
+      "question": "What does AGP stand for?",
+      "options": [
+        "Accelerated Graphics Port",
+        "Advanced GPU Path",
+        "Automatic Graphics Processor",
+        "Analog Graphics Pipeline"
+      ],
+      "answer": "Accelerated Graphics Port"
+    },
+    {
+      "type": "multiple",
+      "question": "Which expansion card enables musical instrument connectivity?",
+      "options": ["MIDI card", "Network card", "Modem", "Sound card"],
+      "answer": "MIDI card"
+    },
+    {
+      "type": "multiple",
+      "question": "What determines the quality of MIDI sound playback?",
+      "options": [
+        "Hardware capability",
+        "CPU clock speed",
+        "RAM capacity",
+        "Network speed"
+      ],
+      "answer": "Hardware capability"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of adding expansion cards to a computer?",
+      "options": [
+        "To provide additional features or functions",
+        "To replace the motherboard",
+        "To store more data",
+        "To reduce power use"
+      ],
+      "answer": "To provide additional features or functions"
+    },
+    {
+      "type": "multiple",
+      "question": "Which interface is used to connect an external tuner card?",
+      "options": ["USB", "HDMI", "RJ-11", "SATA"],
+      "answer": "USB"
+    },
+    {
+      "type": "multiple",
+      "question": "Which Blu-ray format is pre-recorded with movies or software?",
+      "options": ["BD-ROM", "BD-R", "BD-RE", "BD-XL"],
+      "answer": "BD-ROM"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical drive type is designed for one-time recording?",
+      "options": ["CD-R", "CD-RW", "DVD-RW", "BD-RE"],
+      "answer": "CD-R"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the advantage of SSDs over HDDs?",
+      "options": [
+        "Faster data access and higher reliability",
+        "Larger storage capacity",
+        "Lower cost",
+        "Easier to repair"
+      ],
+      "answer": "Faster data access and higher reliability"
+    }
+  ]
+}

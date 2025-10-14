@@ -1,0 +1,205 @@
+{
+  "title": "Basic Network Configuration Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What device connects computers within a local area network (LAN)?",
+      "options": ["Router", "Switch", "Modem", "Gateway"],
+      "answer": "Switch"
+    },
+    {
+      "type": "multiple",
+      "question": "What does LAN stand for?",
+      "options": ["Local Area Network", "Large Access Node", "Limited Area Network", "Linked Access Network"],
+      "answer": "Local Area Network"
+    },
+    {
+      "type": "multiple",
+      "question": "What does WAN stand for?",
+      "options": ["Wide Area Node", "Wireless Access Network", "Wide Area Network", "Wired Access Node"],
+      "answer": "Wide Area Network"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the largest WAN in existence?",
+      "options": ["The Internet", "The Intranet", "A Local Network", "The Cloud"],
+      "answer": "The Internet"
+    },
+    {
+      "type": "multiple",
+      "question": "Which device allows communication between LAN and WAN?",
+      "options": ["Router", "Hub", "Bridge", "Switch"],
+      "answer": "Router"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a VPN provide for a LAN?",
+      "options": ["Speed optimization", "Security and remote access", "Data compression", "Wireless access"],
+      "answer": "Security and remote access"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following describes a LAN device example?",
+      "options": ["Network printer", "Satellite dish", "External hard drive", "Wireless antenna"],
+      "answer": "Network printer"
+    },
+    {
+      "type": "multiple",
+      "question": "How many bits are in an IPv4 address?",
+      "options": ["16 bits", "32 bits", "64 bits", "128 bits"],
+      "answer": "32 bits"
+    },
+    {
+      "type": "multiple",
+      "question": "Which command is used to check your IP configuration in Windows?",
+      "options": ["ping", "ipconfig", "tracert", "nslookup"],
+      "answer": "ipconfig"
+    },
+    {
+      "type": "multiple",
+      "question": "Which command is used to test network connectivity?",
+      "options": ["ipconfig", "ping", "trace", "ftp"],
+      "answer": "ping"
+    },
+    {
+      "type": "multiple",
+      "question": "What does NAT stand for?",
+      "options": ["Network Address Translation", "Network Access Type", "Node Access Translator", "Network Allocation Table"],
+      "answer": "Network Address Translation"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of NAT?",
+      "options": ["Converts private IP addresses to public IP addresses", "Blocks Internet access", "Encrypts user data", "Stores network logs"],
+      "answer": "Converts private IP addresses to public IP addresses"
+    },
+    {
+      "type": "multiple",
+      "question": "Port 80 is used for which service?",
+      "options": ["FTP", "HTTP", "SMTP", "DNS"],
+      "answer": "HTTP"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port number is used for FTP data transfer?",
+      "options": ["20", "25", "53", "110"],
+      "answer": "20"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port number is used by the DNS service?",
+      "options": ["35", "53", "80", "110"],
+      "answer": "53"
+    },
+    {
+      "type": "multiple",
+      "question": "Which tool traces the route data takes across a network?",
+      "options": ["ipconfig", "ping", "tracert", "netstat"],
+      "answer": "tracert"
+    },
+    {
+      "type": "multiple",
+      "question": "What message do you see when a ping fails?",
+      "options": ["Connection refused", "Request timed out", "Access denied", "Invalid command"],
+      "answer": "Request timed out"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a gateway?",
+      "options": [
+        "A device that connects networks and routes traffic",
+        "A power supply for routers",
+        "A data storage device",
+        "A type of cable connector"
+      ],
+      "answer": "A device that connects networks and routes traffic"
+    },
+    {
+      "type": "multiple",
+      "question": "Which device connects two LANs or LAN segments?",
+      "options": ["Bridge", "Hub", "Switch", "Router"],
+      "answer": "Bridge"
+    },
+    {
+      "type": "multiple",
+      "question": "What does DNS stand for?",
+      "options": ["Domain Numbering System", "Domain Name Server", "Digital Network Service", "Data Node System"],
+      "answer": "Domain Name Server"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of a DNS server?",
+      "options": [
+        "Translate domain names into IP addresses",
+        "Encrypt network data",
+        "Monitor network traffic",
+        "Manage user passwords"
+      ],
+      "answer": "Translate domain names into IP addresses"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a hub?",
+      "options": [
+        "A device that connects multiple network devices in one location",
+        "A device that blocks external traffic",
+        "A data encryption device",
+        "A router configuration tool"
+      ],
+      "answer": "A device that connects multiple network devices in one location"
+    },
+    {
+      "type": "multiple",
+      "question": "Which type of hub reads destination addresses and forwards packets?",
+      "options": ["Passive hub", "Intelligent hub", "Switching hub", "Repeater hub"],
+      "answer": "Switching hub"
+    },
+    {
+      "type": "multiple",
+      "question": "Which layer does a bridge operate on in the OSI model?",
+      "options": ["Layer 1", "Layer 2", "Layer 3", "Layer 4"],
+      "answer": "Layer 2"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a subnet?",
+      "options": [
+        "A portion of a network sharing a common address prefix",
+        "A private Internet connection",
+        "A type of router",
+        "A VPN configuration"
+      ],
+      "answer": "A portion of a network sharing a common address prefix"
+    },
+    {
+      "type": "multiple",
+      "question": "What benefit does subnetting provide?",
+      "options": ["Security and performance", "Free Internet access", "Faster downloads", "Unlimited connections"],
+      "answer": "Security and performance"
+    },
+    {
+      "type": "multiple",
+      "question": "Which device filters and forwards data packets between networks?",
+      "options": ["Switch", "Hub", "Gateway", "Firewall"],
+      "answer": "Switch"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a common private IP address range for LANs?",
+      "options": ["10.x.x.x", "100.x.x.x", "200.x.x.x", "50.x.x.x"],
+      "answer": "10.x.x.x"
+    },
+    {
+      "type": "multiple",
+      "question": "Which class of IP address supports 16 million hosts?",
+      "options": ["Class A", "Class B", "Class C", "Class D"],
+      "answer": "Class A"
+    },
+    {
+      "type": "multiple",
+      "question": "Which command shows detailed network configuration in Windows?",
+      "options": ["ipconfig /all", "ping -a", "netstat -r", "dnslookup"],
+      "answer": "ipconfig /all"
+    }
+  ]
+}

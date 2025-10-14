@@ -174,17 +174,19 @@ function showResult() {
     <h2 class="text-2xl font-bold mb-4">🎉 Quiz Finished!</h2>
     <p class="text-lg mb-4">You scored ${score} / ${quizData.questions.length}</p>
     <h3 class="text-xl font-semibold mb-2">📋 Review Answers:</h3>
-    <ul class="text-left list-disc ml-6 mb-4 space-y-2">
+    <ul class="text-left list-disc ml-6 mb-4 space-y-3">
       ${userAnswers
-        .map(
-          (ans, i) => `
-        <li>
-          <strong>Q${i + 1}:</strong> ${ans.question}<br>
-          <span class="text-blue-600">Your Answer: ${ans.userAnswer}</span><br>
-          <span class="text-green-600">Correct Answer: ${ans.correctAnswer}</span>
-        </li>
-      `
-        )
+        .map((ans, i) => {
+          const isCorrect = ans.userAnswer === ans.correctAnswer;
+          const userColor = isCorrect ? "text-blue-600" : "text-red-600 font-semibold";
+          return `
+            <li>
+              <strong>Q${i + 1}:</strong> ${ans.question}<br>
+              <span class="${userColor}">Your Answer: ${ans.userAnswer}</span><br>
+              <span class="text-green-600 font-bold">Correct Answer: ${ans.correctAnswer}</span>
+            </li>
+          `;
+        })
         .join("")}
     </ul>
     <button onclick="window.location.reload()" 

@@ -1,0 +1,203 @@
+{
+  "title": "Computer System Components - Part 2 Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What does the speed of a hard drive measure?",
+      "options": [
+        "How much data it can store",
+        "How fast the spindle turns the platters",
+        "The temperature of the device",
+        "How many files it can open at once"
+      ],
+      "answer": "How fast the spindle turns the platters"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the typical storage capacity range of a hard drive?",
+      "options": [
+        "Kilobytes to Megabytes",
+        "Gigabytes to Terabytes",
+        "Terabytes to Petabytes",
+        "Megabytes to Gigabytes"
+      ],
+      "answer": "Gigabytes to Terabytes"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following has no moving parts?",
+      "options": [
+        "Magnetic hard drive",
+        "Solid-state drive (SSD)",
+        "Optical drive",
+        "Floppy disk"
+      ],
+      "answer": "Solid-state drive (SSD)"
+    },
+    {
+      "type": "multiple",
+      "question": "What kind of memory do SSDs use to store data?",
+      "options": [
+        "Magnetic tape",
+        "Nonvolatile flash memory",
+        "Optical laser memory",
+        "RAM chips"
+      ],
+      "answer": "Nonvolatile flash memory"
+    },
+    {
+      "type": "multiple",
+      "question": "What are the three main types of optical drives?",
+      "options": [
+        "CD, DVD, BD",
+        "USB, SATA, SSD",
+        "ROM, RAM, Flash",
+        "VGA, HDMI, DVI"
+      ],
+      "answer": "CD, DVD, BD"
+    },
+    {
+      "type": "multiple",
+      "question": "How much data can a single-layer DVD hold?",
+      "options": [
+        "700 MB",
+        "4.7 GB",
+        "8.5 GB",
+        "25 GB"
+      ],
+      "answer": "4.7 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "Which optical media can be recorded, erased, and re-recorded?",
+      "options": [
+        "CD-ROM",
+        "DVD-R",
+        "CD-RW",
+        "BD-R"
+      ],
+      "answer": "CD-RW"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the storage capacity of a dual-layer Blu-ray disc?",
+      "options": [
+        "4.7 GB",
+        "8.5 GB",
+        "25 GB",
+        "50 GB"
+      ],
+      "answer": "50 GB"
+    },
+    {
+      "type": "multiple",
+      "question": "What is another name for a video card?",
+      "options": [
+        "Display adapter",
+        "Sound adapter",
+        "Network controller",
+        "Interface board"
+      ],
+      "answer": "Display adapter"
+    },
+    {
+      "type": "multiple",
+      "question": "Which port is NOT commonly found on a video card?",
+      "options": [
+        "HDMI",
+        "DVI",
+        "S-Video",
+        "RJ-45"
+      ],
+      "answer": "RJ-45"
+    },
+    {
+      "type": "multiple",
+      "question": "Which slot is most commonly used by modern video cards?",
+      "options": [
+        "PCIe",
+        "ISA",
+        "AGP",
+        "PCI"
+      ],
+      "answer": "PCIe"
+    },
+    {
+      "type": "multiple",
+      "question": "What is an expansion card?",
+      "options": [
+        "A device that stores files",
+        "A PCB that adds new capabilities to a computer",
+        "A display screen",
+        "A cooling component"
+      ],
+      "answer": "A PCB that adds new capabilities to a computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What does MIDI stand for?",
+      "options": [
+        "Media Information Data Interface",
+        "Musical Instrument Digital Interface",
+        "Multiple Input Device Interface",
+        "Modular Internet Data Interface"
+      ],
+      "answer": "Musical Instrument Digital Interface"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of a modem?",
+      "options": [
+        "It displays graphics",
+        "It allows computers to send and receive information over phone lines",
+        "It produces sound",
+        "It increases memory capacity"
+      ],
+      "answer": "It allows computers to send and receive information over phone lines"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the role of a network card?",
+      "options": [
+        "Produces sound",
+        "Connects to a network using an Ethernet cable",
+        "Expands storage capacity",
+        "Controls display resolution"
+      ],
+      "answer": "Connects to a network using an Ethernet cable"
+    },
+    {
+      "type": "multiple",
+      "question": "A sound card is also known as:",
+      "options": [
+        "Audio board",
+        "Network controller",
+        "Graphic adapter",
+        "Interface card"
+      ],
+      "answer": "Audio board"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a tuner card used for?",
+      "options": [
+        "Storing digital audio",
+        "Recording or watching live TV on a computer",
+        "Improving network speed",
+        "Playing video games"
+      ],
+      "answer": "Recording or watching live TV on a computer"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following converts video signals into stored video files?",
+      "options": [
+        "Video capture card",
+        "Sound card",
+        "Modem",
+        "MIDI interface"
+      ],
+      "answer": "Video capture card"
+    }
+  ]
+}

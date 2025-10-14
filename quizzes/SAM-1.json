@@ -1,0 +1,225 @@
+{
+  "title": "Computer System Components - Part 1 Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the main purpose of a computer case?",
+      "options": [
+        "To store files and programs",
+        "To support and protect internal components",
+        "To control power supply voltage",
+        "To improve screen resolution"
+      ],
+      "answer": "To support and protect internal components"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following helps keep computer components from overheating?",
+      "options": [
+        "Case fans",
+        "Graphics card",
+        "Sound card",
+        "USB ports"
+      ],
+      "answer": "Case fans"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the size and layout of a computer case called?",
+      "options": [
+        "Configuration",
+        "Architecture",
+        "Form factor",
+        "Chipset"
+      ],
+      "answer": "Form factor"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is NOT another name for a computer case?",
+      "options": [
+        "Cabinet",
+        "Tower",
+        "Processor",
+        "Chassis"
+      ],
+      "answer": "Processor"
+    },
+    {
+      "type": "multiple",
+      "question": "What does a power supply do?",
+      "options": [
+        "Converts AC power to DC power",
+        "Converts data to binary form",
+        "Stores temporary data",
+        "Cools internal components"
+      ],
+      "answer": "Converts AC power to DC power"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is the most common form factor for power supplies today?",
+      "options": [
+        "AT",
+        "ATX12V",
+        "BTX",
+        "ITX"
+      ],
+      "answer": "ATX12V"
+    },
+    {
+      "type": "multiple",
+      "question": "The CPU is often referred to as the:",
+      "options": [
+        "Memory unit",
+        "Brain of the computer",
+        "Input device",
+        "Storage unit"
+      ],
+      "answer": "Brain of the computer"
+    },
+    {
+      "type": "multiple",
+      "question": "Which CPU architecture has pins on the underside of the processor?",
+      "options": [
+        "LGA",
+        "PGA",
+        "BGA",
+        "ZIF"
+      ],
+      "answer": "PGA"
+    },
+    {
+      "type": "multiple",
+      "question": "What does ZIF stand for?",
+      "options": [
+        "Zero Insertion Force",
+        "Zero Input Function",
+        "Zero Internal Flow",
+        "Zero Interface Frame"
+      ],
+      "answer": "Zero Insertion Force"
+    },
+    {
+      "type": "multiple",
+      "question": "Which type of CPU architecture uses a smaller set of instructions to execute tasks rapidly?",
+      "options": [
+        "CISC",
+        "RISC",
+        "ATX",
+        "PGA"
+      ],
+      "answer": "RISC"
+    },
+    {
+      "type": "multiple",
+      "question": "What is hyperthreading?",
+      "options": [
+        "A CPU cooling method",
+        "A technology allowing multiple threads to run simultaneously",
+        "A type of motherboard slot",
+        "A memory management technique"
+      ],
+      "answer": "A technology allowing multiple threads to run simultaneously"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the opposite of CPU overclocking?",
+      "options": [
+        "Hyperthreading",
+        "CPU throttling",
+        "Multicore processing",
+        "Hypertransport"
+      ],
+      "answer": "CPU throttling"
+    },
+    {
+      "type": "multiple",
+      "question": "Which CPU has six cores inside a single chip?",
+      "options": [
+        "Quad-Core",
+        "Dual-Core",
+        "Hexa-Core",
+        "Octa-Core"
+      ],
+      "answer": "Hexa-Core"
+    },
+    {
+      "type": "multiple",
+      "question": "The motherboard is also known as the:",
+      "options": [
+        "CPU board",
+        "System board",
+        "Power board",
+        "Memory board"
+      ],
+      "answer": "System board"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the chipset on a motherboard do?",
+      "options": [
+        "Stores user data",
+        "Controls communication between CPU and other components",
+        "Provides external power",
+        "Displays graphics"
+      ],
+      "answer": "Controls communication between CPU and other components"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard form factor improved on the AT design?",
+      "options": [
+        "BTX",
+        "ATX",
+        "Micro-ATX",
+        "ITX"
+      ],
+      "answer": "ATX"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard component connects directly to the CPU?",
+      "options": [
+        "Northbridge",
+        "Southbridge",
+        "BIOS chip",
+        "RAM slots"
+      ],
+      "answer": "Northbridge"
+    },
+    {
+      "type": "multiple",
+      "question": "What does ROM store?",
+      "options": [
+        "Temporary data",
+        "Basic instructions for booting the computer",
+        "User-installed programs",
+        "Multimedia files"
+      ],
+      "answer": "Basic instructions for booting the computer"
+    },
+    {
+      "type": "multiple",
+      "question": "What happens to the contents of RAM when the computer is powered off?",
+      "options": [
+        "They are saved automatically",
+        "They are erased",
+        "They are transferred to ROM",
+        "They remain stored permanently"
+      ],
+      "answer": "They are erased"
+    },
+    {
+      "type": "multiple",
+      "question": "What limits the maximum amount of RAM that can be installed?",
+      "options": [
+        "CPU brand",
+        "Motherboard and operating system",
+        "Hard disk space",
+        "Power supply capacity"
+      ],
+      "answer": "Motherboard and operating system"
+    }
+  ]
+}
