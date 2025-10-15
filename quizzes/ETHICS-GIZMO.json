@@ -1,4 +1,6 @@
-[
+{
+  "title": "Ethics Fundamentals Quiz",
+  "questions": [
   {
     "type": "multiple",
     "question": "Ana returned a large amount of money she accidentally received from a cashier. This demonstrates:",
@@ -519,3 +521,4 @@
     "answer": "False"
   }
 ]
+}
