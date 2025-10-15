@@ -1,1187 +1,241 @@
 {
   "title": "Ethics Fundamentals Quiz",
   "questions": [
-    
-[
-  {
-    "type": "multiple",
-    "question": "What is the Greek word from which the term 'ethics' is derived?",
-    "options": ["Ethos", "Pathos", "Logos", "Mythos"],
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kofi Annan, the core principles of the UN Charter include peace, freedom, equality, and human dignity.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Happiness, according to Aristotle's Nicomachean Ethics, is a complete and sufficient good.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Peace is defined as freedom from disturbance and a state where there is no war.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Freedom is the power or right of doing, thinking, and speaking according to choice.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Intelligence is the capacity for learning, reasoning, and understanding.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Respect involves deference to rights, privileges, and proper acceptance of others.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Equality is the state of correspondence in quantity, degree, value, rank, or ability.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Justice is the quality of being just, involving righteousness and moral rightness.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "The 1987 Philippine Constitution Article 2 Section 11 guarantees full respect for human rights.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Dignity is the state of being worthy of honor or respect.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Every person, regardless of economic and social status, deserves to be respected.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipino cultural morality centers on having smooth interpersonal relationships.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikisama means maintaining good relations and harmony with others.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Utang na loob involves recognizing and repaying help received during difficult times.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A trait is a distinguishing feature or character of a person or group.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Values include customs and traditions that people regard as necessary in their dealings.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos are known for being very religious and respectful.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos value traditions, culture, and have the longest Christmas celebration.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos are hospitable people who warmly welcome guests.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Lack of discipline in Filipino culture includes bad time management and the 'Filipino time' attitude.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "The 'Bahala na System' reflects planning and strategic thinking.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Crab mentality is part of the Kanya-kanya syndrome where people pull others down instead of celebrating success.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos sometimes lack self-evaluation and reflection of situations.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Ethics helps people come up with rational decisions when facing ethical dilemmas.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Ethics makes a person responsible in the family, school, and society.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Through ethics, people become sensitive to the needs of others more than themselves.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Ethics reminds a person to use their conscience in decision-making.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards entail serious harm or benefit.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards are correlated with different feelings and vocabulary.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A Professional Code of Ethics helps practitioners differentiate between right and wrong.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Morals are shaped by the beliefs of an individual.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Toxic workplace culture is a common ethical issue in organizations.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Discrimination and harassment are organizational ethical issues.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "In structural moral dilemmas, when people's duties are over-defined, they comply in a bureaucratic manner.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "When units and responsibilities are too closely connected, people waste time on excessive coordination.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant, the state can legally enforce a specific definition of happiness on its people.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kant's definition of freedom is the right to control one's actions based on reason, not desire.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Good will remains morally valuable even when it fails to achieve its goals.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Acting from duty reflects a person's voluntary commitment to moral law guided by reason.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kant viewed morality as subjective and dependent on human circumstances.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Since humans are not purely rational, they must align their subjective wills with objective moral laws.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "No rational person could consent to being used merely as a means.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Justice is concerned primarily with the nature of interpersonal relationships, not their substance.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "An interpersonal relationship in terms of justice must be voluntary.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "The Tax Reform for Acceleration and Inclusion is Republic Act No. 10963.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Taxes levied at the national level are collected by the Bureau of Internal Revenue (BIR).",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Cole (2019), culture consists of ideals, beliefs, language systems, and communication.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture encompasses material objects which are special to a community or society.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture is distinct from social structure but related to economic aspects of society.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Lederach (1995), culture is collective knowledge and schemes generated by people.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture develops restrictions and sets boundaries as people live and relate with one another.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture defines the normative principles and behaviors of society.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture helps in generating the character and identity of people, including moral character.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture identifies the authorities or governing individuals or groups.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos take pride in their families and are very resilient.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos help one another and love art and architecture.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Extreme personalism means Filipinos always try to give personal interpretations of actions.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Extreme family centeredness means Filipinos have very high family protection in all circumstances.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos are impatient and unable to postpone incentives or rewards.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Passivity includes being demanding of others' accomplishments without showing the same effort.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos are strong at the beginning but lack consistency and clear direction.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Colonial mentality includes appreciating foreign products more than native ones.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kanya-kanya syndrome generates feelings of envy and competitiveness toward others.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Personal ambition with insensitivity to the common good is part of Kanya-kanya syndrome.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos being superficial and dreamy reflects lack of self-analysis and reflection.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism creates learning opportunities that could make humanity stronger.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism eliminates the concept of separate but equal.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism creates a system of niche expertise where people concentrate on their strengths.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism creates personal bias by moving accountability to an individualistic perspective.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A disadvantage of cultural relativism is that it eliminates the idea of reform or change.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Understanding pros and cons of cultural relativism helps balance and respect different cultures.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Schwartz described values as conceptions of what is important that affect how people choose actions.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Universal values can be understood as something everyone finds important or has reason to believe has value.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kofi Annan, nations must uphold values like freedom, equality, solidarity, and tolerance.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kofi Annan urged nations to set aside self-interest and work toward a cooperative world.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Aristotle, happiness or flourishing is a complete and sufficient good.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Safety is the state of being safe and free from risk of injury, danger, or loss.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Nature is the material world existing independently of human activities.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Health refers to the general condition of body or mind with reference to soundness and vigor.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "The 1987 Philippine Constitution recognizes the dignity of every human person.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Any person, regardless of economic status, deserves to be respected by anyone.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Dignity refers to bearing, conduct, or speech indicative of self-respect.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipino cultural morality centers on having smooth interpersonal relationships with others.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikisama is shown through helping others without expecting anything in return.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikisama can lead to avoiding confrontation or hiding true feelings.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Utang na loob is seen as a moral obligation to return favors.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Utang na loob can become negative if it forces someone to act against their ethics.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Hiya is a feeling of modesty or restraint that guides behavior.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Families avoid public shame by keeping problems private to maintain reputation.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Amor propio refers to sensitivity to criticism and concern for personal dignity.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Public criticism or humiliation is deeply hurtful due to amor propio.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Hospitality can sometimes lead to abuse or exploitation by others.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "In Filipino families, fathers act as providers and mothers manage the household.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Excessive respect for elders may lead to overdependence or blind obedience.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikipagkapwa-tao is considered a core Filipino cultural trait defining moral and social behavior.",
-    "answer": "True"
-  }
-]Ethos"
-  },
-  {
-    "type": "multiple",
-    "question": "What does the Greek word 'ethos' mean?",
-    "options": ["Character or habit", "Logic", "Emotion", "Story"],
-    "answer": "Character or habit"
-  },
-  {
-    "type": "multiple",
-    "question": "Which branch of ethics studies moral obligations and how humans should act?",
-    "options": ["Normative ethics", "Meta-ethics", "Applied ethics", "Descriptive ethics"],
-    "answer": "Normative ethics"
-  },
-  {
-    "type": "multiple",
-    "question": "Which field of ethics examines the meaning and nature of moral concepts?",
-    "options": ["Meta-ethics", "Normative ethics", "Applied ethics", "Virtue ethics"],
-    "answer": "Meta-ethics"
-  },
-  {
-    "type": "multiple",
-    "question": "Which branch of ethics discusses strong and basic moral issues linked to abortion and euthanasia?",
-    "options": ["Applied ethics", "Meta-ethics", "Normative ethics", "Descriptive ethics"],
-    "answer": "Applied ethics"
-  },
-  {
-    "type": "multiple",
-    "question": "A student reports cheating during an exam even though it might cost friendships. Which characteristic of moral standards does this demonstrate?",
-    "options": ["Moral standards should be adopted over self-interest", "Moral standards are determined by authority", "Moral standards are based on personal preference", "Moral standards are flexible"],
-    "answer": "Moral standards should be adopted over self-interest"
-  },
-  {
-    "type": "multiple",
-    "question": "Which of the following is an example of a NON-MORAL standard?",
-    "options": ["Etiquette and table manners", "Honesty in business", "Helping the poor", "Respecting human rights"],
-    "answer": "Etiquette and table manners"
-  },
-  {
-    "type": "multiple",
-    "question": "According to the material, what is the relationship between legality and morality?",
-    "options": ["Not all that is lawful is moral", "What is legal is always moral", "What is moral is always legal", "Legality and morality are the same"],
-    "answer": "Not all that is lawful is moral"
-  },
-  {
-    "type": "multiple",
-    "question": "A manager must choose between firing a lazy friend or keeping him and risking company failure. According to Kvalnes (2019), what type of moral dilemma is this?",
-    "options": ["Individual moral dilemma", "Organizational moral dilemma", "Structural moral dilemma", "Self-inflicted dilemma"],
-    "answer": "Individual moral dilemma"
-  },
-  {
-    "type": "multiple",
-    "question": "A company faces pressure to reduce environmental standards to increase profits. What type of moral dilemma is this?",
-    "options": ["Organizational ethical dilemma", "Individual moral dilemma", "Structural moral dilemma", "Personal ethical dilemma"],
-    "answer": "Organizational ethical dilemma"
-  },
-  {
-    "type": "multiple",
-    "question": "When critical jobs are not explicitly defined and slip through gaps in an organization, this represents which structural moral dilemma concept?",
-    "options": ["Gap vs Overlap", "Differentiation vs Integration", "Lack of Clarity vs Lack of Creativity", "Excessive Autonomy vs Excessive Interdependence"],
-    "answer": "Gap vs Overlap"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Kant, what is the only thing that is good without qualification?",
-    "options": ["Good will", "Happiness", "Intelligence", "Courage"],
-    "answer": "Good will"
-  },
-  {
-    "type": "multiple",
-    "question": "What does Kant mean by 'autonomy'?",
-    "options": ["Self-legislation or self-governance", "Freedom from rules", "Following orders", "Acting on desires"],
-    "answer": "Self-legislation or self-governance"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Kant, an action has true moral worth only when it is done:",
-    "options": ["From a sense of duty", "To gain happiness", "To please others", "To avoid punishment"],
-    "answer": "From a sense of duty"
-  },
-  {
-    "type": "multiple",
-    "question": "A person refuses to lie even to save a friendship. According to Kant, this exemplifies:",
-    "options": ["Perfect duty", "Imperfect duty", "Hypothetical imperative", "Conditional duty"],
-    "answer": "Perfect duty"
-  },
-  {
-    "type": "multiple",
-    "question": "Which type of duty allows flexibility in when or how it is fulfilled, such as the duty of beneficence?",
-    "options": ["Imperfect duty", "Perfect duty", "Categorical duty", "Absolute duty"],
-    "answer": "Imperfect duty"
-  },
-  {
-    "type": "multiple",
-    "question": "What is Kant's categorical imperative?",
-    "options": ["A command that binds everyone unconditionally to moral duties", "A suggestion based on personal desires", "A rule that applies only in certain situations", "A guideline for achieving happiness"],
-    "answer": "A command that binds everyone unconditionally to moral duties"
-  },
-  {
-    "type": "multiple",
-    "question": "A business owner pays fair wages because they believe everyone should treat workers justly. This maxim can be universalized, demonstrating:",
-    "options": ["Universalizability principle", "Hypothetical imperative", "Categorical duty", "Perfect obligation"],
-    "answer": "Universalizability principle"
-  },
-  {
-    "type": "multiple",
-    "question": "Kant's principle 'treat humanity always as an end and never simply as a means' emphasizes:",
-    "options": ["Humanity as an end in itself", "Using people for good purposes", "Achieving personal goals", "Following social norms"],
-    "answer": "Humanity as an end in itself"
-  },
-  {
-    "type": "multiple",
-    "question": "A company uses employees solely to maximize profit without regard for their well-being. This violates Kant's principle of:",
-    "options": ["Humanity as an end in itself", "Categorical imperative", "Perfect duty", "Autonomy"],
-    "answer": "Humanity as an end in itself"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Kant's philosophy on justice, which of the following is TRUE?",
-    "options": ["Justice does not affect the desires, wishes, or needs of others", "Justice is based on personal relationships", "Justice depends on social status", "Justice requires influencing powerful people"],
-    "answer": "Justice does not affect the desires, wishes, or needs of others"
-  },
-  {
-    "type": "multiple",
-    "question": "What is the primary law governing taxation in the Philippines?",
-    "options": ["Republic Act No. 8424 (Tax Reform Act of 1997)", "Republic Act No. 7160", "Republic Act No. 10963", "Article VI of the Constitution"],
-    "answer": "Republic Act No. 8424 (Tax Reform Act of 1997)"
-  },
-  {
-    "type": "multiple",
-    "question": "According to the Constitution, Article VI, Section 28, the rules of taxation shall be:",
-    "options": ["Uniform and equal", "Progressive and fair", "Flexible and adaptive", "Strict and absolute"],
-    "answer": "Uniform and equal"
-  },
-  {
-    "type": "multiple",
-    "question": "What is the Latin word from which 'culture' is derived?",
-    "options": ["Cultus", "Cultura", "Culturus", "Culturis"],
-    "answer": "Cultus"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Kohak (1984), what does 'cultus' mean?",
-    "options": ["Giving respect to the sacredness of all", "Artistic expression", "Social customs", "Human civilization"],
-    "answer": "Giving respect to the sacredness of all"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Cole (2019), culture consists of all EXCEPT:",
-    "options": ["Genetic traits", "Beliefs", "Language systems", "Communication"],
-    "answer": "Genetic traits"
-  },
-  {
-    "type": "multiple",
-    "question": "A Filipino family goes into debt to host an extravagant wedding to avoid community shame. This primarily demonstrates:",
-    "options": ["Hiya (Sense of Shame)", "Pakikisama", "Utang na loob", "Amor propio"],
-    "answer": "Hiya (Sense of Shame)"
-  },
-  {
-    "type": "multiple",
-    "question": "When a Filipino says 'Bahala na' when faced with problems, this reflects:",
-    "options": ["Passivity and Lack of Initiative", "Colonial Mentality", "Kanya-kanya Syndrome", "Extreme Personalism"],
-    "answer": "Passivity and Lack of Initiative"
-  },
-  {
-    "type": "multiple",
-    "question": "A Filipino prefers to buy imported products over local ones, believing foreign goods are superior. This demonstrates:",
-    "options": ["Colonial Mentality", "Kanya-kanya Syndrome", "Lack of Self Analysis", "Extreme Family Centeredness"],
-    "answer": "Colonial Mentality"
-  },
-  {
-    "type": "multiple",
-    "question": "An employee feels envious when a coworker gets promoted and tries to undermine their success. This reflects:",
-    "options": ["Kanya-kanya Syndrome", "Amor propio", "Hiya", "Pakikisama"],
-    "answer": "Kanya-kanya Syndrome"
-  },
-  {
-    "type": "multiple",
-    "question": "A parent sacrifices career opportunities abroad to stay with their children. This shows:",
-    "options": ["Extreme Family Centeredness", "Passivity", "Colonial Mentality", "Lack of Initiative"],
-    "answer": "Extreme Family Centeredness"
-  },
-  {
-    "type": "multiple",
-    "question": "A Filipino worker agrees to an unethical task to avoid conflict with colleagues. This negative aspect relates to:",
-    "options": ["Pakikisama", "Amor propio", "Utang na loob", "Hiya"],
-    "answer": "Pakikisama"
-  },
-  {
-    "type": "multiple",
-    "question": "Someone refuses help from others because accepting would hurt their pride. This demonstrates:",
-    "options": ["Amor Propio", "Hiya", "Utang na loob", "Pakikisama"],
-    "answer": "Amor Propio"
-  },
-  {
-    "type": "multiple",
-    "question": "A person feels obligated to vote for a candidate who once helped their family, even if they disagree with the candidate's platform. This shows:",
-    "options": ["Utang na Loob", "Pakikisama", "Hiya", "Amor propio"],
-    "answer": "Utang na Loob"
-  },
-  {
-    "type": "multiple",
-    "question": "What does cultural relativism emphasize?",
-    "options": ["Understanding a culture based on its own context", "Universal moral truths", "Western values as superior", "Religious standards for all"],
-    "answer": "Understanding a culture based on its own context"
-  },
-  {
-    "type": "multiple",
-    "question": "A tribal practice allows practices that violate human rights. A human rights worker argues this is wrong. This situation highlights:",
-    "options": ["Limits of cultural relativism", "Benefits of cultural relativism", "Universal acceptance", "Cultural adaptation"],
-    "answer": "Limits of cultural relativism"
-  },
-  {
-    "type": "multiple",
-    "question": "An exchange student participates in local customs even though they differ from their home culture. This demonstrates:",
-    "options": ["Cultural adaptation through relativism", "Colonial mentality", "Cultural superiority", "Moral relativism"],
-    "answer": "Cultural adaptation through relativism"
-  },
-  {
-    "type": "multiple",
-    "question": "Which is an ADVANTAGE of cultural relativism?",
-    "options": ["It encourages respect and tolerance", "It justifies harmful practices", "It eliminates the need for change", "It creates personal bias"],
-    "answer": "It encourages respect and tolerance"
-  },
-  {
-    "type": "multiple",
-    "question": "Which is a DISADVANTAGE of cultural relativism?",
-    "options": ["It can justify harmful acts within a culture", "It promotes learning opportunities", "It eliminates prejudice", "It creates niche expertise"],
-    "answer": "It can justify harmful acts within a culture"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Schwartz, which universal value emphasizes broadmindedness, social justice, and protecting the environment?",
-    "options": ["Universalism", "Benevolence", "Self-direction", "Achievement"],
-    "answer": "Universalism"
-  },
-  {
-    "type": "multiple",
-    "question": "A CEO makes all major decisions and expects full obedience from employees. This reflects which Schwartz value?",
-    "options": ["Power", "Achievement", "Security", "Conformity"],
-    "answer": "Power"
-  },
-  {
-    "type": "multiple",
-    "question": "An employee works extra hours to win 'Employee of the Month' because success defines their self-worth. This reflects:",
-    "options": ["Achievement", "Power", "Hedonism", "Stimulation"],
-    "answer": "Achievement"
-  },
-  {
-    "type": "multiple",
-    "question": "Someone spends weekends traveling and dining at fancy restaurants for pleasure. This reflects:",
-    "options": ["Hedonism", "Stimulation", "Achievement", "Self-direction"],
-    "answer": "Hedonism"
-  },
-  {
-    "type": "multiple",
-    "question": "A person joins extreme sports clubs and seeks thrilling adventures. This reflects:",
-    "options": ["Stimulation", "Hedonism", "Achievement", "Security"],
-    "answer": "Stimulation"
-  },
-  {
-    "type": "multiple",
-    "question": "An artist rejects the family business to pursue creative passions independently. This reflects:",
-    "options": ["Self-direction", "Hedonism", "Power", "Tradition"],
-    "answer": "Self-direction"
-  },
-  {
-    "type": "multiple",
-    "question": "A volunteer dedicates time to environmental protection, believing all living things deserve respect. This reflects:",
-    "options": ["Universalism", "Benevolence", "Security", "Tradition"],
-    "answer": "Universalism"
-  },
-  {
-    "type": "multiple",
-    "question": "Someone regularly helps sick neighbors and believes helping others brings happiness. This reflects:",
-    "options": ["Benevolence", "Universalism", "Conformity", "Tradition"],
-    "answer": "Benevolence"
-  },
-  {
-    "type": "multiple",
-    "question": "A person attends church weekly and observes customs passed down by grandparents. This reflects:",
-    "options": ["Tradition", "Conformity", "Security", "Benevolence"],
-    "answer": "Tradition"
-  },
-  {
-    "type": "multiple",
-    "question": "A student strictly follows school rules and never questions teachers, believing obedience shows respect. This reflects:",
-    "options": ["Conformity", "Tradition", "Security", "Power"],
-    "answer": "Conformity"
-  },
-  {
-    "type": "multiple",
-    "question": "Someone saves money regularly and avoids risky situations, believing stability brings peace. This reflects:",
-    "options": ["Security", "Conformity", "Tradition", "Achievement"],
-    "answer": "Security"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Kofi Annan's lecture on universal values, which of the following is NOT mentioned as a core UN Charter value?",
-    "options": ["Wealth", "Freedom", "Equality", "Peace"],
-    "answer": "Wealth"
-  },
-  {
-    "type": "multiple",
-    "question": "According to the 1987 Philippine Constitution Article 2 Section 11, what does the state recognize?",
-    "options": ["The dignity of every human person", "Economic prosperity", "Cultural superiority", "Religious authority"],
-    "answer": "The dignity of every human person"
-  },
-  {
-    "type": "multiple",
-    "question": "Which Filipino trait involves warmly welcoming guests with best utensils and special food?",
-    "options": ["Hospitality", "Close Family Ties", "Pakikisama", "Respect for Elders"],
-    "answer": "Hospitality"
-  },
-  {
-    "type": "multiple",
-    "question": "The Filipino gesture of 'mano po' demonstrates:",
-    "options": ["Respect for Elders", "Hospitality", "Pakikisama", "Utang na loob"],
-    "answer": "Respect for Elders"
-  },
-  {
-    "type": "multiple",
-    "question": "Which Filipino value promotes harmony, cooperation, and empathy in families and communities?",
-    "options": ["Pakikipagkapwa-tao (Smooth Interpersonal Relationships)", "Amor propio", "Hiya", "Utang na loob"],
-    "answer": "Pakikipagkapwa-tao (Smooth Interpersonal Relationships)"
-  },
-  {
-    "type": "multiple",
-    "question": "A family includes multiple generations living together, with fathers as providers and mothers managing the household. This demonstrates:",
-    "options": ["Close Family Ties", "Hospitality", "Pakikisama", "Respect for Elders"],
-    "answer": "Close Family Ties"
-  },
-  {
-    "type": "multiple",
-    "question": "Adult children remain financially dependent on aging parents, causing strain. This shows the negative side of:",
-    "options": ["Close Family Ties", "Hospitality", "Respect for Elders", "Pakikisama"],
-    "answer": "Close Family Ties"
-  },
-  {
-    "type": "multiple",
-    "question": "According to Bazerman and Ann Trebrunsel (2011), blind spots in ethics are:",
-    "options": ["The differences between who you want to be and who you are", "The inability to see ethical issues", "Mistakes made unknowingly", "Cultural differences"],
-    "answer": "The differences between who you want to be and who you are"
-  },
-  {
-    "type": "truefalse",
-    "question": "Ethics is also known as moral philosophy that deals with what humans should do.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Applied ethics studies moral issues such as abortion and euthanasia.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Meta-ethics examines the meaning and nature of moral concepts.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Normative ethics is concerned with how humans respond to moral questions.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards are determined by authority figures like government or teachers.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards promote the common good and focus on objective considerations.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards should be adopted over self-interest.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Moral standards are perceived to be universal.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Non-moral standards are related to laws and etiquette.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "All that is legal is also moral.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Etiquette and decorum are examples of moral standards.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Values are universal convictions as to what is acceptable, desirable, and beneficial.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kvalnes (2019), a self-inflicted dilemma arises from a prior personal mistake.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "An organizational ethical dilemma affects staff, shareholders, society, and customers.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Individual moral dilemmas are influenced by factors like peer pressure and financial position.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "In structural moral dilemmas, excessive autonomy can lead to isolation.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant, the only thing that is good without qualification is good will.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kant believed that freedom is the ability to act based on desire and emotion.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant, an act has moral worth only when done from a sense of duty.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kant's definition of autonomy means self-legislation or self-governance.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Perfect duties are moral obligations that can sometimes be ignored.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Imperfect duties allow flexibility in when or how they are fulfilled.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "When duties conflict, Kant held that perfect duties take priority over imperfect ones.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A categorical imperative commands unconditionally and binds everyone to moral duties.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A hypothetical imperative is conditional and applies only if one wishes to achieve a certain goal.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant's universalizability principle, an act is morally acceptable only if its maxim can be applied as a law for everyone.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kant believed morality is subjective and varies based on personal circumstances.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "'Humanity as an end' means treating people as tools for personal gain.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant, all rational beings must be treated as ends in themselves.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kant's philosophy on justice, justice affects the desires and wishes of others.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Being just and fair means having influence with people in higher positions.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "The 1987 Philippine Constitution requires taxation rules to be uniform and equal.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Local taxes in the Philippines are collected by the Bureau of Internal Revenue (BIR).",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Republic Act No. 7160 is the Local Government Code of 1991.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture is defined as the shared beliefs, behaviors, and values of a society.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Kohak (1984), culture is contrary to nature.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture helps in generating the character and identity of its people, including their moral character.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Culture is always social and communal.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipino culture is characterized by resilience and strong family values.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipinos have the longest Christmas celebration in the world.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Extreme personalism helps Filipinos make fair and objective judgments.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "'Bahala na' reflects resilience but can also show lack of planning.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Colonial mentality strengthens Filipino nationalism.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Kanya-kanya syndrome promotes teamwork and cooperation.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikisama helps maintain unity but may lead to avoiding honesty.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "'Utang na loob' always results in positive moral outcomes.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "'Hiya' can prevent individuals from standing up for what's right.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Amor propio protects dignity but may hinder accepting criticism.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Filipino hospitality can sometimes lead to financial strain or exploitation.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Close family ties can sometimes cause dependence and financial strain.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Excessive respect for elders may lead to overdependence or blind obedience.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Pakikipagkapwa-tao promotes harmony, cooperation, and empathy.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism believes there are absolute moral truths that apply to everyone.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism encourages respect for other traditions.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "One advantage of cultural relativism is promoting tolerance among diverse cultures.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "A disadvantage of cultural relativism is that it can justify harmful acts within a culture.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism creates learning opportunities by allowing people to compare cultures.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism eliminates the need for reform or change.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Cultural relativism is based on the concept that people and societies are perfect.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "According to Schwartz, 'spirituality' is recognized as a universal value in all cultures.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Universal values can be understood as something everyone finds important.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Power as a universal value encourages humility and submission to authority.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Achievement values focus on success and capability.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Hedonism values pleasure, but it does not mean being irresponsible.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Stimulation emphasizes daring activities, variety, and excitement.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Self-direction limits a person's independence because it requires obedience to rules.",
-    "answer": "False"
-  },
-  {
-    "type": "truefalse",
-    "question": "Universalism includes broadmindedness, social justice, and protecting the environment.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Benevolence includes helpfulness, honesty, forgiveness, and loyalty.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Tradition values accepting one's portion in life and respecting customs.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Conformity emphasizes self-discipline and obedience.",
-    "answer": "True"
-  },
-  {
-    "type": "truefalse",
-    "question": "Security focuses only on personal safety and ignores social order.",
-    "answer": "False"
-  }
-    ]
+    {
+      "type": "multiple",
+      "question": "What is the Greek word from which the term 'ethics' is derived?",
+      "options": ["Ethos", "Pathos", "Logos", "Mythos"],
+      "answer": "Ethos"
+    },
+    {
+      "type": "truefalse",
+      "question": "According to Kofi Annan, the core principles of the UN Charter include peace, freedom, equality, and human dignity.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Happiness, according to Aristotle's Nicomachean Ethics, is a complete and sufficient good.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Peace is defined as freedom from disturbance and a state where there is no war.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Freedom is the power or right of doing, thinking, and speaking according to choice.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Intelligence is the capacity for learning, reasoning, and understanding.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Respect involves deference to rights, privileges, and proper acceptance of others.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Equality is the state of correspondence in quantity, degree, value, rank, or ability.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Justice is the quality of being just, involving righteousness and moral rightness.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "The 1987 Philippine Constitution Article 2 Section 11 guarantees full respect for human rights.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Dignity is the state of being worthy of honor or respect.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Every person, regardless of economic and social status, deserves to be respected.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Filipino cultural morality centers on having smooth interpersonal relationships.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Pakikisama means maintaining good relations and harmony with others.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Utang na loob involves recognizing and repaying help received during difficult times.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "A trait is a distinguishing feature or character of a person or group.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Values include customs and traditions that people regard as necessary in their dealings.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Filipinos are known for being very religious and respectful.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Filipinos value traditions, culture, and have the longest Christmas celebration.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Filipinos are hospitable people who warmly welcome guests.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Lack of discipline in Filipino culture includes bad time management and the 'Filipino time' attitude.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "The 'Bahala na System' reflects planning and strategic thinking.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "Crab mentality is part of the Kanya-kanya syndrome where people pull others down instead of celebrating success.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Filipinos sometimes lack self-evaluation and reflection of situations.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Ethics helps people come up with rational decisions when facing ethical dilemmas.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Ethics makes a person responsible in the family, school, and society.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Through ethics, people become sensitive to the needs of others more than themselves.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Ethics reminds a person to use their conscience in decision-making.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Moral standards entail serious harm or benefit.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Moral standards are correlated with different feelings and vocabulary.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "A Professional Code of Ethics helps practitioners differentiate between right and wrong.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Morals are shaped by the beliefs of an individual.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Toxic workplace culture is a common ethical issue in organizations.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Discrimination and harassment are organizational ethical issues.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "In structural moral dilemmas, when people's duties are over-defined, they comply in a bureaucratic manner.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "When units and responsibilities are too closely connected, people waste time on excessive coordination.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "According to Kant, the state can legally enforce a specific definition of happiness on its people.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "Kant's definition of freedom is the right to control one's actions based on reason, not desire.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Good will remains morally valuable even when it fails to achieve its goals.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Acting from duty reflects a person's voluntary commitment to moral law guided by reason.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Kant viewed morality as subjective and dependent on human circumstances.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "Since humans are not purely rational, they must align their subjective wills with objective moral laws.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "No rational person could consent to being used merely as a means.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Justice is concerned primarily with the nature of interpersonal relationships, not their substance.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "An interpersonal relationship in terms of justice must be voluntary.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "The Tax Reform for Acceleration and Inclusion is Republic Act No. 10963.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Taxes levied at the national level are collected by the Bureau of Internal Revenue (BIR).",
+      "answer": "True"
+    }
+  ]
 }
