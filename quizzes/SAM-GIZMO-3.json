@@ -1,0 +1,327 @@
+{
+  "title": "Computer Hardware and Subnetting Comprehensive Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What slot is used for adding additional expansion cards such as network or sound cards?",
+      "options": ["PCI Slot", "AGP Slot", "SATA Port", "IDE Connector"],
+      "answer": "PCI Slot"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard component connects the CPU to high-speed devices like RAM and video cards?",
+      "options": ["Northbridge", "Southbridge", "CMOS Battery", "IDE Connector"],
+      "answer": "Northbridge"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard component manages connections to slower peripherals such as USB ports and hard drives?",
+      "options": ["Southbridge", "Northbridge", "CPU Socket", "Power Connector"],
+      "answer": "Southbridge"
+    },
+    {
+      "type": "multiple",
+      "question": "Which slot is designed specifically for video or graphics cards?",
+      "options": ["AGP Slot", "PCI Slot", "SATA Connector", "USB Header"],
+      "answer": "AGP Slot"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of the IDE Connector?",
+      "options": [
+        "Connects storage devices like HDDs and optical drives",
+        "Connects the power supply",
+        "Connects to USB devices",
+        "Links the CPU to the Northbridge"
+      ],
+      "answer": "Connects storage devices like HDDs and optical drives"
+    },
+    {
+      "type": "multiple",
+      "question": "Which slot holds the computer's main memory modules?",
+      "options": ["DRAM Memory Slot", "PCI Slot", "AGP Slot", "IDE Connector"],
+      "answer": "DRAM Memory Slot"
+    },
+    {
+      "type": "multiple",
+      "question": "Which motherboard connector provides power from the power supply?",
+      "options": ["20-pin ATX Power Connector", "IDE Connector", "SATA Cable", "PCIe Slot"],
+      "answer": "20-pin ATX Power Connector"
+    },
+    {
+      "type": "multiple",
+      "question": "What are CPU Fan & Heatsink Mounting Points used for?",
+      "options": [
+        "To attach cooling components to the CPU area",
+        "To secure RAM modules",
+        "To connect storage devices",
+        "To attach PCI cards"
+      ],
+      "answer": "To attach cooling components to the CPU area"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the function of the CPU Socket?",
+      "options": [
+        "To hold and connect the processor to the motherboard",
+        "To connect the power supply",
+        "To install system memory",
+        "To secure a graphics card"
+      ],
+      "answer": "To hold and connect the processor to the motherboard"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the CMOS Backup Battery responsible for?",
+      "options": [
+        "Storing BIOS settings and system time",
+        "Powering the CPU",
+        "Running the cooling fans",
+        "Backing up user data"
+      ],
+      "answer": "Storing BIOS settings and system time"
+    },
+    {
+      "type": "multiple",
+      "question": "Which component connects USB ports, audio jacks, and Ethernet ports?",
+      "options": [
+        "Connectors for Integrated Peripherals",
+        "PCI Slot",
+        "Southbridge",
+        "ATX Connector"
+      ],
+      "answer": "Connectors for Integrated Peripherals"
+    },
+    {
+      "type": "multiple",
+      "question": "Which power connector is used for older floppy drives?",
+      "options": ["Floppy Drive Connector", "4-pin Molex", "SATA", "24-pin P1"],
+      "answer": "Floppy Drive Connector"
+    },
+    {
+      "type": "multiple",
+      "question": "What power connector provides +12V for older IDE drives?",
+      "options": ["4-pin Molex", "8-pin PCIe", "SATA", "6-pin PCIe"],
+      "answer": "4-pin Molex"
+    },
+    {
+      "type": "multiple",
+      "question": "What connector provides additional power to the CPU?",
+      "options": ["4-pin Aux", "8-pin PCIe", "SATA", "Floppy Drive"],
+      "answer": "4-pin Aux"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector is typically used for modern motherboards as the main power?",
+      "options": ["24-pin P1", "20-pin ATX", "4-pin Molex", "SATA"],
+      "answer": "24-pin P1"
+    },
+    {
+      "type": "multiple",
+      "question": "Which connector is used to power high-end video cards?",
+      "options": ["6-pin PCIe", "4-pin Molex", "8-pin Aux", "SATA"],
+      "answer": "6-pin PCIe"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the 8-pin PCIe connector used for?",
+      "options": [
+        "High-performance graphics cards requiring more power",
+        "Cooling fans",
+        "BIOS connection",
+        "Optical drives"
+      ],
+      "answer": "High-performance graphics cards requiring more power"
+    },
+    {
+      "type": "multiple",
+      "question": "What connector supplies power to SATA hard drives and SSDs?",
+      "options": ["SATA Power Connector", "4-pin Molex", "6-pin PCIe", "Floppy Drive"],
+      "answer": "SATA Power Connector"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the first step in subnetting?",
+      "options": [
+        "Calculate borrow bits",
+        "Calculate number of hosts",
+        "Calculate subnet mask",
+        "Determine subnet jump"
+      ],
+      "answer": "Calculate borrow bits"
+    },
+    {
+      "type": "multiple",
+      "question": "What formula is used to determine the number of subnets?",
+      "options": ["2^N", "2^H", "2^(32 - subnet mask)", "256 - subnet mask"],
+      "answer": "2^N"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the formula to calculate the subnet mask?",
+      "options": [
+        "Original subnet mask + borrow bits",
+        "2^(32 - subnet mask)",
+        "256 - last octet",
+        "Subnet mask - 2"
+      ],
+      "answer": "Original subnet mask + borrow bits"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the formula for calculating the number of hosts?",
+      "options": [
+        "2^(32 - new subnet mask)",
+        "2^N",
+        "2^(borrow bits)",
+        "256 - last octet"
+      ],
+      "answer": "2^(32 - new subnet mask)"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the formula to calculate the available hosts in a subnet?",
+      "options": [
+        "Number of hosts - 2",
+        "Number of subnets - 2",
+        "2^(borrow bits) - 1",
+        "Subnet mask + 2"
+      ],
+      "answer": "Number of hosts - 2"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the formula for calculating the subnet jump?",
+      "options": [
+        "256 - last octet of the new subnet mask",
+        "2^N",
+        "Number of hosts - 2",
+        "Subnet mask + borrow bits"
+      ],
+      "answer": "256 - last octet of the new subnet mask"
+    },
+    {
+      "type": "multiple",
+      "question": "How do you assign the network ID for each subnet?",
+      "options": [
+        "By using the subnet increment (subnet jump)",
+        "By using the number of hosts",
+        "By using broadcast ID",
+        "By random assignment"
+      ],
+      "answer": "By using the subnet increment (subnet jump)"
+    },
+    {
+      "type": "multiple",
+      "question": "How do you determine the host IP range in a subnet?",
+      "options": [
+        "By finding addresses between the network ID and broadcast ID",
+        "By adding borrow bits to subnet mask",
+        "By subtracting 2 from host count",
+        "By dividing the subnet"
+      ],
+      "answer": "By finding addresses between the network ID and broadcast ID"
+    },
+    {
+      "type": "multiple",
+      "question": "How can you easily find the broadcast ID of a subnet?",
+      "options": [
+        "It is one less than the next subnet’s network ID",
+        "It is the first address of a subnet",
+        "It is calculated using borrow bits",
+        "It is the sum of host bits"
+      ],
+      "answer": "It is one less than the next subnet’s network ID"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the Power LED indicate on the front panel?",
+      "options": [
+        "That the system is powered on",
+        "That the hard drive is active",
+        "That the system is overheating",
+        "That the fan is off"
+      ],
+      "answer": "That the system is powered on"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the Hard Drive Activity LED represent?",
+      "options": [
+        "Data is being read or written to the hard drive",
+        "System is powered on",
+        "CPU is overheating",
+        "Fan speed is high"
+      ],
+      "answer": "Data is being read or written to the hard drive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which front panel connection is responsible for rebooting the system?",
+      "options": ["Reset Switch", "Power Switch", "Power LED", "HDD LED"],
+      "answer": "Reset Switch"
+    },
+    {
+      "type": "multiple",
+      "question": "Which front panel connector turns the computer on and off?",
+      "options": ["Power Switch", "Reset Switch", "Power LED", "HDD LED"],
+      "answer": "Power Switch"
+    },
+    {
+      "type": "multiple",
+      "question": "Which front panel pin provides +5V DC?",
+      "options": ["Pin 9", "Pin 7", "Pin 5", "Pin 3"],
+      "answer": "Pin 9"
+    },
+    {
+      "type": "truefalse",
+      "question": "The Northbridge handles input/output operations such as USB and storage devices.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "The Southbridge connects directly to the CPU.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "The CMOS battery maintains BIOS settings even when the PC is powered off.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "SATA connectors are used for data transfer and not for power.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "Subnetting allows a large network to be divided into smaller logical subnets.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "The broadcast ID is always the first address in a subnet.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "A 4-pin Molex connector can power both IDE hard drives and fans.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "A 6-pin PCIe connector is used for network adapters.",
+      "answer": "False"
+    },
+    {
+      "type": "truefalse",
+      "question": "Pin 9 in the front panel provides +5V DC.",
+      "answer": "True"
+    },
+    {
+      "type": "truefalse",
+      "question": "The Reset Switch in the front panel shuts down the computer completely.",
+      "answer": "False"
+    }
+  ]
+}
