@@ -1,0 +1,521 @@
+[
+  {
+    "type": "multiple",
+    "question": "Ana returned a large amount of money she accidentally received from a cashier. This demonstrates:",
+    "options": ["Benevolence", "Hiya", "Responsibility", "Colonial mentality"],
+    "answer": "Benevolence"
+  },
+  {
+    "type": "multiple",
+    "question": "Luis often says 'Bahala na' when faced with problems. This reflects:",
+    "options": ["Responsibility", "Passivity and lack of initiative", "Benevolence", "Justice"],
+    "answer": "Passivity and lack of initiative"
+  },
+  {
+    "type": "multiple",
+    "question": "A family hides a relative's wrongdoing to avoid shame in the community. This illustrates:",
+    "options": ["Hiya", "Benevolence", "Justice", "Respect"],
+    "answer": "Hiya"
+  },
+  {
+    "type": "multiple",
+    "question": "A citizen pays taxes honestly even when others do not. This shows:",
+    "options": ["Responsibility", "Benevolence", "Hiya", "Passivity"],
+    "answer": "Responsibility"
+  },
+  {
+    "type": "multiple",
+    "question": "When Filipino families care deeply for their relatives abroad, this demonstrates:",
+    "options": ["Extreme family centeredness", "Benevolence", "Hiya", "Colonial mentality"],
+    "answer": "Extreme family centeredness"
+  },
+  {
+    "type": "multiple",
+    "question": "A Filipino buys only imported goods because he believes they're better. This reflects:",
+    "options": ["Colonial mentality", "Benevolence", "Responsibility", "Justice"],
+    "answer": "Colonial mentality"
+  },
+  {
+    "type": "multiple",
+    "question": "A man avoids criticizing his friend in public to save face. This demonstrates:",
+    "options": ["Hiya", "Benevolence", "Responsibility", "Justice"],
+    "answer": "Hiya"
+  },
+  {
+    "type": "multiple",
+    "question": "A friend shares food with classmates even when she has little. This shows:",
+    "options": ["Pakikipagkapwa-tao", "Hiya", "Colonial mentality", "Passivity"],
+    "answer": "Pakikipagkapwa-tao"
+  },
+  {
+    "type": "multiple",
+    "question": "A student refuses to follow school rules because 'it's his right.' This demonstrates:",
+    "options": ["Freedom (misused)", "Responsibility", "Justice", "Benevolence"],
+    "answer": "Freedom (misused)"
+  },
+  {
+    "type": "multiple",
+    "question": "A man believes it's okay to lie if everyone does it. This violates:",
+    "options": ["Universalizability principle", "Colonial mentality", "Hiya", "Benevolence"],
+    "answer": "Universalizability principle"
+  },
+  {
+    "type": "multiple",
+    "question": "A student feels guilty after copying a project online. This demonstrates:",
+    "options": ["Conscience", "Hiya", "Colonial mentality", "Passivity"],
+    "answer": "Conscience"
+  },
+  {
+    "type": "multiple",
+    "question": "A tourist laughs at local customs, thinking his culture is superior. This violates:",
+    "options": ["Cultural relativism", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Cultural relativism"
+  },
+  {
+    "type": "multiple",
+    "question": "A friend avoids sharing ideas in class, believing others are smarter. This shows:",
+    "options": ["Lack of self-analysis", "Benevolence", "Hiya", "Justice"],
+    "answer": "Lack of self-analysis"
+  },
+  {
+    "type": "multiple",
+    "question": "A public official enforces laws fairly among rich and poor alike. This demonstrates:",
+    "options": ["Justice", "Benevolence", "Hiya", "Colonial mentality"],
+    "answer": "Justice"
+  },
+  {
+    "type": "multiple",
+    "question": "A student cheats 'to help a friend pass.' This is:",
+    "options": ["Morally wrong but well-intentioned", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Morally wrong but well-intentioned"
+  },
+  {
+    "type": "multiple",
+    "question": "A barangay holds a fiesta despite poverty to maintain image. This shows:",
+    "options": ["Lack of reflection", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Lack of reflection"
+  },
+  {
+    "type": "multiple",
+    "question": "A student avoids group work to prevent conflict. This reflects:",
+    "options": ["Passivity", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Passivity"
+  },
+  {
+    "type": "multiple",
+    "question": "A Filipino migrant works abroad to support family despite homesickness. This shows:",
+    "options": ["Sacrifice rooted in family-centeredness", "Colonial mentality", "Hiya", "Passivity"],
+    "answer": "Sacrifice rooted in family-centeredness"
+  },
+  {
+    "type": "multiple",
+    "question": "A manager respects an employee's religious belief even if he disagrees. This demonstrates:",
+    "options": ["Respect", "Benevolence", "Justice", "Hiya"],
+    "answer": "Respect"
+  },
+  {
+    "type": "multiple",
+    "question": "A friend always helps others but becomes upset when not recognized. This reflects:",
+    "options": ["Amor propio", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Amor propio"
+  },
+  {
+    "type": "multiple",
+    "question": "A worker reports his boss for harassment despite risks. This shows:",
+    "options": ["Courage and justice", "Benevolence", "Hiya", "Passivity"],
+    "answer": "Courage and justice"
+  },
+  {
+    "type": "multiple",
+    "question": "A student learns good practices from other cultures and applies them. This demonstrates:",
+    "options": ["Cultural relativism", "Colonial mentality", "Hiya", "Passivity"],
+    "answer": "Cultural relativism"
+  },
+  {
+    "type": "multiple",
+    "question": "A student refuses to lend notes, fearing others will surpass him. This reflects:",
+    "options": ["Kanya-kanya syndrome", "Benevolence", "Justice", "Responsibility"],
+    "answer": "Kanya-kanya syndrome"
+  },
+  {
+    "type": "multiple",
+    "question": "What is the Greek word from which the term ethics is derived?",
+    "options": ["Ethos", "Logos", "Pathos", "Mythos"],
+    "answer": "Ethos"
+  },
+  {
+    "type": "multiple",
+    "question": "What does ethos mean?",
+    "options": ["Character or habit", "Emotion", "Logic", "Story"],
+    "answer": "Character or habit"
+  },
+  {
+    "type": "multiple",
+    "question": "What branch of ethics studies moral obligations and how humans should act?",
+    "options": ["Normative ethics", "Meta-ethics", "Applied ethics", "Descriptive ethics"],
+    "answer": "Normative ethics"
+  },
+  {
+    "type": "multiple",
+    "question": "Which field of ethics examines the meaning and nature of moral concepts?",
+    "options": ["Meta-ethics", "Normative ethics", "Applied ethics", "Descriptive ethics"],
+    "answer": "Meta-ethics"
+  },
+  {
+    "type": "multiple",
+    "question": "Which of Schwartz's ten universal values emphasizes broadmindedness and social justice?",
+    "options": ["Universalism", "Benevolence", "Self-direction", "Achievement"],
+    "answer": "Universalism"
+  },
+  {
+    "type": "multiple",
+    "question": "A student finds her classmate's answer sheet during an exam. She wants to return it but fears being accused of cheating. This is an example of:",
+    "options": ["Moral dilemma", "Non-moral standard", "Cultural relativism", "Meta-ethics"],
+    "answer": "Moral dilemma"
+  },
+  {
+    "type": "multiple",
+    "question": "A manager must choose between firing a lazy friend or keeping him and risking company failure. What kind of moral dilemma is this?",
+    "options": ["Individual moral dilemma", "Organizational moral dilemma", "Structural moral dilemma", "Cultural moral dilemma"],
+    "answer": "Individual moral dilemma"
+  },
+  {
+    "type": "multiple",
+    "question": "A CEO faces a choice between following company rules or protecting an employee from unfair treatment. This represents a:",
+    "options": ["Organizational moral dilemma", "Individual moral dilemma", "Cultural dilemma", "Personal dilemma"],
+    "answer": "Organizational moral dilemma"
+  },
+  {
+    "type": "multiple",
+    "question": "In cultural relativism, moral judgments are considered valid only:",
+    "options": ["Within the standards of one's own culture", "When approved by religious authorities", "When they apply universally", "When they promote individual freedom"],
+    "answer": "Within the standards of one's own culture"
+  },
+  {
+    "type": "multiple",
+    "question": "A Filipino student in Japan bows to teachers even if it's not her practice at home. This shows:",
+    "options": ["Cultural adaptation through relativism", "Colonial mentality", "Hiya", "Passivity"],
+    "answer": "Cultural adaptation through relativism"
+  },
+  {
+    "type": "multiple",
+    "question": "A Westerner considers eating insects 'disgusting,' but in some Asian countries, it's normal. According to cultural relativism, the Westerner should:",
+    "options": ["Understand the behavior within that culture's context", "Criticize the practice", "Ignore the cultural difference", "Force their own standards"],
+    "answer": "Understand the behavior within that culture's context"
+  },
+  {
+    "type": "multiple",
+    "question": "A tribal law permits child marriage, but a human rights worker argues it's immoral. This conflict highlights:",
+    "options": ["Limits of cultural relativism", "Benefits of cultural relativism", "Colonial mentality", "Universalizability principle"],
+    "answer": "Limits of cultural relativism"
+  },
+  {
+    "type": "multiple",
+    "question": "What does cultural relativism emphasize?",
+    "options": ["Understanding a culture based on its context", "Universal moral truths", "Religious authority", "Individual freedom"],
+    "answer": "Understanding a culture based on its context"
+  },
+  {
+    "type": "multiple",
+    "question": "A CEO makes all the major decisions and expects full obedience from his employees. He believes his authority keeps the organization stable. This reflects:",
+    "options": ["Power", "Achievement", "Security", "Conformity"],
+    "answer": "Power"
+  },
+  {
+    "type": "multiple",
+    "question": "Camille works extra hours to meet her project deadline and earn an 'Employee of the Month' award. She believes success defines her self-worth. This reflects:",
+    "options": ["Achievement", "Power", "Hedonism", "Self-direction"],
+    "answer": "Achievement"
+  },
+  {
+    "type": "multiple",
+    "question": "On weekends, Paolo travels, eats in fancy restaurants, and spends his savings on experiences that make him feel happy and free. This reflects:",
+    "options": ["Hedonism", "Stimulation", "Achievement", "Security"],
+    "answer": "Hedonism"
+  },
+  {
+    "type": "multiple",
+    "question": "Trina joins a skydiving club and plans to explore caves and mountains next month. She says she feels alive when doing thrilling activities. This reflects:",
+    "options": ["Stimulation", "Hedonism", "Self-direction", "Achievement"],
+    "answer": "Stimulation"
+  },
+  {
+    "type": "multiple",
+    "question": "James refuses to take the family business and instead pursues his passion for art. He values making his own choices in life. This reflects:",
+    "options": ["Self-direction", "Hedonism", "Power", "Achievement"],
+    "answer": "Self-direction"
+  },
+  {
+    "type": "multiple",
+    "question": "Sofia volunteers in an environmental organization to protect the ocean and wildlife. She believes all living things deserve care and respect. This reflects:",
+    "options": ["Universalism", "Benevolence", "Self-direction", "Tradition"],
+    "answer": "Universalism"
+  },
+  {
+    "type": "multiple",
+    "question": "Despite being busy, Karen always checks on her sick neighbor and offers to buy groceries for her. She believes helping others brings happiness. This reflects:",
+    "options": ["Benevolence", "Universalism", "Conformity", "Security"],
+    "answer": "Benevolence"
+  },
+  {
+    "type": "multiple",
+    "question": "Every Sunday, Miguel attends church with his family and observes old customs passed down by his grandparents. This reflects:",
+    "options": ["Tradition", "Conformity", "Security", "Benevolence"],
+    "answer": "Tradition"
+  },
+  {
+    "type": "multiple",
+    "question": "Bea follows school rules strictly and never questions her teachers or parents, believing obedience shows respect. This reflects:",
+    "options": ["Conformity", "Tradition", "Security", "Power"],
+    "answer": "Conformity"
+  },
+  {
+    "type": "multiple",
+    "question": "Anna saves money regularly and avoids risky situations. She believes a stable, safe life brings peace to her and her family. This reflects:",
+    "options": ["Security", "Conformity", "Tradition", "Benevolence"],
+    "answer": "Security"
+  },
+  {
+    "type": "multiple",
+    "question": "A wealthy politician uses his money to influence others but claims he does it for the country's safety. Which two values might be in conflict?",
+    "options": ["Power and Security", "Achievement and Benevolence", "Hedonism and Tradition", "Self-direction and Conformity"],
+    "answer": "Power and Security"
+  },
+  {
+    "type": "multiple",
+    "question": "A famous influencer donates to charity but posts it mainly for attention and praise. Which value dominates her decision?",
+    "options": ["Achievement", "Benevolence", "Power", "Universalism"],
+    "answer": "Achievement"
+  },
+  {
+    "type": "multiple",
+    "question": "A soldier chooses to stay in service despite danger, believing it is his duty to protect the nation. This reflects:",
+    "options": ["Security", "Power", "Achievement", "Tradition"],
+    "answer": "Security"
+  },
+  {
+    "type": "truefalse",
+    "question": "Universal values differ among cultures and depend only on religion.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Respect is a universal value that promotes peace in relationships.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "'Utang na loob' always results in positive moral outcomes.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Filipino hospitality can sometimes lead to financial strain.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Kant's categorical imperative applies only to religious people.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Extreme personalism helps Filipinos make fair judgments.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "'Bahala na' reflects resilience but can also show lack of planning.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Benevolence includes honesty, forgiveness, and loyalty.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Colonial mentality strengthens Filipino nationalism.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Smooth interpersonal relationship promotes harmony and empathy.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Amor propio protects dignity but may hinder accepting criticism.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Freedom allows doing anything without moral limits.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Cultural relativism encourages respect for other traditions.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Close family ties can sometimes cause dependence.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Justice is based on fairness, not on personal connections.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "'Hiya' can prevent individuals from standing up for what's right.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Universal values like peace, justice, and respect are globally recognized.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Kanya-kanya syndrome promotes teamwork.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Pakikisama helps maintain unity but may lead to avoiding honesty.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Ethics helps individuals to determine right from wrong.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Moral standards are primarily concerned with promoting the common good.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Non-moral standards are related to laws and etiquette.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "According to Kant, the only thing that is good without qualification is good will.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Ethics is also known as moral philosophy that deals with what humans should do.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Applied ethics studies moral issues such as abortion and euthanasia.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Moral standards are determined by authority figures like government or teachers.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "All that is legal is also moral.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Kant believed that freedom is the ability to act based on desire and emotion.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "According to Kant, an act has moral worth only when done from a sense of duty.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Perfect duties are moral obligations that can sometimes be ignored.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "'Humanity as an end' means treating people as tools for personal gain.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Culture is defined as the shared beliefs, behaviors, and values of a society.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Cultural relativism believes there are absolute moral truths that apply to everyone.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "One advantage of cultural relativism is promoting tolerance among diverse cultures.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "A disadvantage of cultural relativism is that it can justify harmful acts within a culture.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Self-inflicted dilemmas arise from a person's past mistakes.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Cultural relativism believes there is one universal moral standard for all.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Power as a universal value encourages humility and submission to authority.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Hedonism values pleasure, but it does not mean being irresponsible in pursuit of happiness.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "A person who enjoys danger and seeks new challenges reflects the value of stimulation.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Self-direction limits a person's independence because it requires obedience to rules.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "Security focuses only on personal safety and ignores social order.",
+    "answer": "False"
+  },
+  {
+    "type": "truefalse",
+    "question": "A student who follows school rules out of fear of punishment does not necessarily reflect conformity as a value.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "Hedonism and stimulation both involve seeking pleasure, but stimulation emphasizes excitement and risk.",
+    "answer": "True"
+  },
+  {
+    "type": "truefalse",
+    "question": "A rich man who donates to show off his wealth practices both power and benevolence equally.",
+    "answer": "False"
+  }
+]
