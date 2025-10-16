@@ -1,0 +1,305 @@
+{
+  "title": "Fundamentals of Analytics Modeling Comprehensive Quiz (Full Version)",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the goal of analytical modeling?",
+      "options": ["To anticipate trends and challenges", "To describe only current performance", "To collect raw data", "To visualize data only"],
+      "answer": "To anticipate trends and challenges"
+    },
+    {
+      "type": "multiple",
+      "question": "What helps identify patterns and behaviors that can inform predictions about future scenarios?",
+      "options": ["Historical data", "Random sampling", "Speculative data", "External surveys"],
+      "answer": "Historical data"
+    },
+    {
+      "type": "multiple",
+      "question": "Analytical models rely on which of the following?",
+      "options": ["Mathematical equations and algorithms", "Guesswork", "Manual observations", "Assumptions only"],
+      "answer": "Mathematical equations and algorithms"
+    },
+    {
+      "type": "multiple",
+      "question": "Deterministic models always produce the same output for a given input. True or False?",
+      "options": ["True", "False"],
+      "answer": "True"
+    },
+    {
+      "type": "multiple",
+      "question": "Which model incorporates uncertainty and randomness?",
+      "options": ["Probabilistic model", "Deterministic model", "Static model", "Fixed model"],
+      "answer": "Probabilistic model"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of model updates predictions as new data arrives?",
+      "options": ["Adaptive (Machine Learning) Models", "Static models", "Deterministic models", "Randomized models"],
+      "answer": "Adaptive (Machine Learning) Models"
+    },
+    {
+      "type": "multiple",
+      "question": "What does demand forecasting predict?",
+      "options": ["Future customer demand", "Past sales only", "Marketing costs", "Warehouse layouts"],
+      "answer": "Future customer demand"
+    },
+    {
+      "type": "multiple",
+      "question": "Predictive models evaluate likelihood and impact of future risks to help plan what?",
+      "options": ["Mitigation strategies", "Product launches", "Advertisements", "Recruitment plans"],
+      "answer": "Mitigation strategies"
+    },
+    {
+      "type": "multiple",
+      "question": "Predictive models allow businesses to anticipate and prevent what before they occur?",
+      "options": ["Issues", "Profits", "Competitors", "Expenses"],
+      "answer": "Issues"
+    },
+    {
+      "type": "multiple",
+      "question": "What does simulation modeling create to test decisions safely?",
+      "options": ["Virtual versions of real systems", "Actual experiments", "Historical reports", "Static charts"],
+      "answer": "Virtual versions of real systems"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a simulation tool that tests different variable combinations to see possible outcomes?",
+      "options": ["What-If Analysis", "Regression Analysis", "SWOT Analysis", "Sensitivity Testing"],
+      "answer": "What-If Analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "Simulations allow safe, low-cost testing before what?",
+      "options": ["Real-world implementation", "Data collection", "Data validation", "System updates"],
+      "answer": "Real-world implementation"
+    },
+    {
+      "type": "multiple",
+      "question": "What does optimization improve to meet specific goals?",
+      "options": ["Efficiency and performance", "Data accuracy", "Data quality", "Algorithmic complexity"],
+      "answer": "Efficiency and performance"
+    },
+    {
+      "type": "multiple",
+      "question": "Modeling helps allocate limited resources by quantifying what?",
+      "options": ["Trade-offs", "Uncertainties", "Errors", "Costs"],
+      "answer": "Trade-offs"
+    },
+    {
+      "type": "multiple",
+      "question": "Pricing models balance profitability and demand by analyzing what?",
+      "options": ["Competition and cost", "Only cost", "Employee performance", "Random data"],
+      "answer": "Competition and cost"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of decision making reduces uncertainty by relying on measurable evidence?",
+      "options": ["Data-Driven Decision Making", "Intuitive Decision Making", "Random Decision Making", "Collaborative Decision Making"],
+      "answer": "Data-Driven Decision Making"
+    },
+    {
+      "type": "multiple",
+      "question": "What principle means poor input data leads to unreliable results?",
+      "options": ["Garbage In, Garbage Out", "Risk Minimization", "Model Accuracy", "Data Normalization"],
+      "answer": "Garbage In, Garbage Out"
+    },
+    {
+      "type": "multiple",
+      "question": "Choosing the right model for the right problem ensures what?",
+      "options": ["Accuracy", "Speed", "Complexity", "Simplicity"],
+      "answer": "Accuracy"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is the first step in the analytical process?",
+      "options": ["Identify the problem", "Analyze data", "Interpret results", "Collect data"],
+      "answer": "Identify the problem"
+    },
+    {
+      "type": "multiple",
+      "question": "Why must models be updated periodically?",
+      "options": ["To stay accurate", "To simplify data", "To reduce cost", "To increase noise"],
+      "answer": "To stay accurate"
+    },
+    {
+      "type": "multiple",
+      "question": "Data preprocessing improves data quality and makes raw data usable for what?",
+      "options": ["Analysis", "Storage", "Presentation", "Replication"],
+      "answer": "Analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "Which are key dimensions of data quality?",
+      "options": ["Accuracy, completeness, consistency, timeliness", "Size, speed, scale, style", "Complexity, randomness, volume, latency", "Length, width, depth, density"],
+      "answer": "Accuracy, completeness, consistency, timeliness"
+    },
+    {
+      "type": "multiple",
+      "question": "Believability measures how what the data is?",
+      "options": ["Trustworthy and reliable", "Large and complex", "Fast and automated", "Colorful and visual"],
+      "answer": "Trustworthy and reliable"
+    },
+    {
+      "type": "multiple",
+      "question": "Mean replacement is suitable for missing values when data is what?",
+      "options": ["Normally distributed", "Skewed", "Categorical", "Incomplete"],
+      "answer": "Normally distributed"
+    },
+    {
+      "type": "multiple",
+      "question": "For non-normal distributions, which measure is preferred for replacing missing values?",
+      "options": ["Median", "Mean", "Mode", "Range"],
+      "answer": "Median"
+    },
+    {
+      "type": "multiple",
+      "question": "Regression or decision trees can estimate what for missing data?",
+      "options": ["Most probable value", "Exact true value", "Random guess", "Minimum value"],
+      "answer": "Most probable value"
+    },
+    {
+      "type": "multiple",
+      "question": "Noisy data contains what?",
+      "options": ["Random errors or irrelevant information", "Highly structured values", "Perfectly clean inputs", "Validated entries"],
+      "answer": "Random errors or irrelevant information"
+    },
+    {
+      "type": "multiple",
+      "question": "What method smooths noisy data by grouping values into bins?",
+      "options": ["Binning", "Normalization", "Standardization", "Clustering"],
+      "answer": "Binning"
+    },
+    {
+      "type": "multiple",
+      "question": "In smoothing by bin mean, each value in a bin is replaced with what?",
+      "options": ["The mean of that bin", "The minimum of the bin", "The median of the bin", "A random sample"],
+      "answer": "The mean of that bin"
+    },
+    {
+      "type": "multiple",
+      "question": "Smoothing by bin boundaries replaces values with what?",
+      "options": ["Closest boundary value", "Mean value", "Median value", "Standard deviation"],
+      "answer": "Closest boundary value"
+    },
+    {
+      "type": "multiple",
+      "question": "Regression fits a mathematical function to data to identify what?",
+      "options": ["Trends", "Errors", "Clusters", "Distributions"],
+      "answer": "Trends"
+    },
+    {
+      "type": "multiple",
+      "question": "Clustering groups similar data points and identifies what?",
+      "options": ["Outliers", "Bins", "Boundaries", "Noise"],
+      "answer": "Outliers"
+    },
+    {
+      "type": "multiple",
+      "question": "What problem occurs when the same entity appears with different identifiers in multiple databases?",
+      "options": ["Entity Identification Problem", "Schema Conflict", "Normalization Issue", "Data Loss"],
+      "answer": "Entity Identification Problem"
+    },
+    {
+      "type": "multiple",
+      "question": "Schema integration combines what from different data sources?",
+      "options": ["Metadata and structures", "Values and entries", "Errors and gaps", "Queries and results"],
+      "answer": "Metadata and structures"
+    },
+    {
+      "type": "multiple",
+      "question": "Data transformation involves changing data format, structure, or what?",
+      "options": ["Scale", "Color", "Speed", "Access"],
+      "answer": "Scale"
+    },
+    {
+      "type": "multiple",
+      "question": "Normalization scales data into what kind of range?",
+      "options": ["Smaller, common range", "Larger range", "Random range", "Undefined scale"],
+      "answer": "Smaller, common range"
+    },
+    {
+      "type": "multiple",
+      "question": "Standardization transforms data to what mean and variance?",
+      "options": ["Zero mean and unit variance", "High mean and low variance", "Random mean and variance", "Fixed mean and variance"],
+      "answer": "Zero mean and unit variance"
+    },
+    {
+      "type": "multiple",
+      "question": "Discretization converts continuous variables into what?",
+      "options": ["Discrete categories", "Numerical values", "Large datasets", "Raw text"],
+      "answer": "Discrete categories"
+    },
+    {
+      "type": "multiple",
+      "question": "Data reduction reduces dataset volume while preserving what?",
+      "options": ["Essential information", "All noise", "Random features", "Unrelated attributes"],
+      "answer": "Essential information"
+    },
+    {
+      "type": "multiple",
+      "question": "Dimensionality reduction removes redundant or less relevant what?",
+      "options": ["Attributes", "Entities", "Files", "Cubes"],
+      "answer": "Attributes"
+    },
+    {
+      "type": "multiple",
+      "question": "OLAP allows users to perform what type of analysis on business data?",
+      "options": ["Multi-dimensional analysis", "Single-dimensional analysis", "Univariate analysis", "Exploratory testing"],
+      "answer": "Multi-dimensional analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "The roll-up operation aggregates data to what level of summarization?",
+      "options": ["Higher level", "Lower level", "Random level", "Individual level"],
+      "answer": "Higher level"
+    },
+    {
+      "type": "multiple",
+      "question": "Common classifications of data cubes include what?",
+      "options": ["Multidimensional and relational data cubes", "Simple and complex cubes", "Hierarchical and flat cubes", "Random and fixed cubes"],
+      "answer": "Multidimensional and relational data cubes"
+    },
+    {
+      "type": "multiple",
+      "question": "Slicing in OLAP isolates one dimension to view what?",
+      "options": ["A specific subset", "All dimensions", "Unrelated data", "Raw inputs"],
+      "answer": "A specific subset"
+    },
+    {
+      "type": "multiple",
+      "question": "Pivot (rotate) operation rearranges what to provide new perspectives?",
+      "options": ["Data axes (rows and columns)", "Database tables", "Data types", "Data entries"],
+      "answer": "Data axes (rows and columns)"
+    },
+    {
+      "type": "multiple",
+      "question": "Relational data cubes can handle large volumes but tend to have what compared to multidimensional cubes?",
+      "options": ["Slower performance", "Faster response", "Smaller storage", "Better scalability"],
+      "answer": "Slower performance"
+    },
+    {
+      "type": "multiple",
+      "question": "The drill-down operation moves from summarized data to what?",
+      "options": ["Granular data", "Aggregated data", "Incomplete data", "External data"],
+      "answer": "Granular data"
+    },
+    {
+      "type": "multiple",
+      "question": "A data cube represents data across how many dimensions, for example branch, item type, and year?",
+      "options": ["Three", "Two", "Four", "Five"],
+      "answer": "Three"
+    },
+    {
+      "type": "multiple",
+      "question": "OLAP offers interactivity and fast summarization of what size of datasets?",
+      "options": ["Large datasets", "Small samples", "Text-only files", "Single rows"],
+      "answer": "Large datasets"
+    },
+    {
+      "type": "multiple",
+      "question": "One challenge of OLAP systems is that they can be complex to design, expensive to maintain, and difficult to what?",
+      "options": ["Scale", "Delete", "Automate", "Color"],
+      "answer": "Scale"
+    }
+  ]
+}
