@@ -1,0 +1,269 @@
+{
+  "title": "Analytics Modeling Midterm Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the main goal of analytical modeling?",
+      "options": [
+        "To record historical events",
+        "To predict, explain, or optimize outcomes",
+        "To store large amounts of data",
+        "To visualize company profits"
+      ],
+      "answer": "To predict, explain, or optimize outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "Which type of data is essential for identifying trends and predicting future outcomes?",
+      "options": [
+        "Historical data",
+        "Random data",
+        "Future data",
+        "Incomplete data"
+      ],
+      "answer": "Historical data"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following models always produces the same output for a given input?",
+      "options": [
+        "Probabilistic model",
+        "Deterministic model",
+        "Adaptive model",
+        "Simulation model"
+      ],
+      "answer": "Deterministic model"
+    },
+    {
+      "type": "multiple",
+      "question": "Adaptive or machine learning models are designed to:",
+      "options": [
+        "Ignore new data",
+        "Update predictions as new data arrives",
+        "Stay static once built",
+        "Remove uncertainty"
+      ],
+      "answer": "Update predictions as new data arrives"
+    },
+    {
+      "type": "multiple",
+      "question": "Demand forecasting mainly aims to:",
+      "options": [
+        "Estimate future customer demand",
+        "Record sales transactions",
+        "Eliminate competition",
+        "Set employee schedules"
+      ],
+      "answer": "Estimate future customer demand"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the purpose of risk assessment in predictive modeling?",
+      "options": [
+        "To increase uncertainty",
+        "To evaluate the likelihood and impact of future risks",
+        "To remove all randomness",
+        "To create visual dashboards"
+      ],
+      "answer": "To evaluate the likelihood and impact of future risks"
+    },
+    {
+      "type": "multiple",
+      "question": "Simulation modeling helps by:",
+      "options": [
+        "Testing decisions in real systems only",
+        "Creating virtual versions of systems to test decisions safely",
+        "Replacing mathematical equations",
+        "Eliminating data collection"
+      ],
+      "answer": "Creating virtual versions of systems to test decisions safely"
+    },
+    {
+      "type": "multiple",
+      "question": "In a 'what-if analysis', what is being tested?",
+      "options": [
+        "Different combinations of variables to see possible outcomes",
+        "Only historical data",
+        "Fixed constants only",
+        "Unrelated scenarios"
+      ],
+      "answer": "Different combinations of variables to see possible outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "The phrase 'Garbage In, Garbage Out' means that:",
+      "options": [
+        "Good models can fix bad data",
+        "Poor-quality input data leads to unreliable results",
+        "Data cleaning is unnecessary",
+        "All data is equally valid"
+      ],
+      "answer": "Poor-quality input data leads to unreliable results"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the first step in the analytical process?",
+      "options": [
+        "Interpret and deploy results",
+        "Identify the problem",
+        "Collect data",
+        "Analyze results"
+      ],
+      "answer": "Identify the problem"
+    },
+    {
+      "type": "multiple",
+      "question": "Model recalibration is important because:",
+      "options": [
+        "It ensures models stay accurate with new data or conditions",
+        "It removes variables permanently",
+        "It reduces computation time only",
+        "It eliminates the need for feedback"
+      ],
+      "answer": "It ensures models stay accurate with new data or conditions"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the main purpose of data preprocessing?",
+      "options": [
+        "To make raw data usable by cleaning and transforming it",
+        "To delete old data permanently",
+        "To visualize datasets only",
+        "To store unstructured data"
+      ],
+      "answer": "To make raw data usable by cleaning and transforming it"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is NOT a key dimension of data quality?",
+      "options": [
+        "Accuracy",
+        "Consistency",
+        "Timeliness",
+        "Complexity"
+      ],
+      "answer": "Complexity"
+    },
+    {
+      "type": "multiple",
+      "question": "Mean replacement is best used when the data is:",
+      "options": [
+        "Skewed",
+        "Normally distributed",
+        "Incomplete",
+        "Categorical"
+      ],
+      "answer": "Normally distributed"
+    },
+    {
+      "type": "multiple",
+      "question": "When should you use median replacement for missing data?",
+      "options": [
+        "When data follows a perfect curve",
+        "When data is skewed or has outliers",
+        "When there are no missing values",
+        "When using time-series data only"
+      ],
+      "answer": "When data is skewed or has outliers"
+    },
+    {
+      "type": "multiple",
+      "question": "Noisy data is best described as:",
+      "options": [
+        "Accurate and complete data",
+        "Random errors or irrelevant information that hide true patterns",
+        "Data without any missing values",
+        "Perfectly formatted data"
+      ],
+      "answer": "Random errors or irrelevant information that hide true patterns"
+    },
+    {
+      "type": "multiple",
+      "question": "The binning method is used to:",
+      "options": [
+        "Group data to smooth noise",
+        "Delete all data",
+        "Add random variation",
+        "Duplicate values for balance"
+      ],
+      "answer": "Group data to smooth noise"
+    },
+    {
+      "type": "multiple",
+      "question": "Normalization scales data values into:",
+      "options": [
+        "A smaller, common range such as 0 to 1",
+        "Random categories",
+        "Unrelated scales",
+        "Text labels"
+      ],
+      "answer": "A smaller, common range such as 0 to 1"
+    },
+    {
+      "type": "multiple",
+      "question": "Standardization differs from normalization because it:",
+      "options": [
+        "Transforms data to zero mean and unit variance",
+        "Changes data into categories",
+        "Deletes outliers automatically",
+        "Expands the range of values"
+      ],
+      "answer": "Transforms data to zero mean and unit variance"
+    },
+    {
+      "type": "multiple",
+      "question": "What does OLAP stand for?",
+      "options": [
+        "Online Analytical Processing",
+        "Open Linear Analysis Process",
+        "Operational Learning and Prediction",
+        "Optimized Layered Application Protocol"
+      ],
+      "answer": "Online Analytical Processing"
+    },
+    {
+      "type": "multiple",
+      "question": "The roll-up operation in OLAP is used to:",
+      "options": [
+        "Aggregate data to a higher level of summarization",
+        "Drill down into more detailed data",
+        "Add random variables",
+        "Normalize values to a range"
+      ],
+      "answer": "Aggregate data to a higher level of summarization"
+    },
+    {
+      "type": "multiple",
+      "question": "Slicing in a data cube allows users to:",
+      "options": [
+        "View a specific subset by fixing one dimension",
+        "Combine all dimensions into one",
+        "Delete unwanted data",
+        "Rotate data cube axes"
+      ],
+      "answer": "View a specific subset by fixing one dimension"
+    },
+    {
+      "type": "multiple",
+      "question": "Drill-down operation in OLAP means:",
+      "options": [
+        "Moving from summarized data to more detailed data",
+        "Summarizing detailed data",
+        "Changing the data format",
+        "Adding new dimensions"
+      ],
+      "answer": "Moving from summarized data to more detailed data"
+    },
+    {
+      "type": "multiple",
+      "question": "One disadvantage of OLAP systems is that they can be:",
+      "options": [
+        "Expensive and complex to maintain",
+        "Too simple for analysis",
+        "Unable to summarize data",
+        "Completely manual"
+      ],
+      "answer": "Expensive and complex to maintain"
+    }
+  ]
+}
