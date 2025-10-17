@@ -1,0 +1,434 @@
+{
+  "title": "Business Analytics Comprehensive Reviewer Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What does **Business Analytics (BA)** primarily focus on?",
+      "options": [
+        "Using data and algorithms to improve decision-making",
+        "Designing company logos and visuals",
+        "Guessing future trends without data",
+        "Recording daily sales without analysis"
+      ],
+      "answer": "Using data and algorithms to improve decision-making"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is **NOT** a standard type of analytics?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "Reductive"
+      ],
+      "answer": "Reductive"
+    },
+    {
+      "type": "multiple",
+      "question": "**Descriptive Analytics** answers which main question?",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What is likely to happen?",
+        "What should we do?"
+      ],
+      "answer": "What happened?"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type focuses on identifying **why** an event occurred?",
+      "options": [
+        "Descriptive Analytics",
+        "Diagnostic Analytics",
+        "Predictive Analytics",
+        "Prescriptive Analytics"
+      ],
+      "answer": "Diagnostic Analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "**Predictive Analytics** answers what question?",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What is likely to happen?",
+        "What should we do?"
+      ],
+      "answer": "What is likely to happen?"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type recommends **actions or decisions** to achieve goals?",
+      "options": [
+        "Descriptive Analytics",
+        "Diagnostic Analytics",
+        "Predictive Analytics",
+        "Prescriptive Analytics"
+      ],
+      "answer": "Prescriptive Analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the focus of **Analytics in Human Resources (HR)**?",
+      "options": [
+        "Predicting or explaining employee behavior and performance",
+        "Designing training modules",
+        "Recording attendance logs",
+        "Planning team-building events"
+      ],
+      "answer": "Predicting or explaining employee behavior and performance"
+    },
+    {
+      "type": "multiple",
+      "question": "In **Marketing Analytics**, what is the primary goal?",
+      "options": [
+        "Measuring campaign effectiveness and identifying target audiences",
+        "Designing packaging for new products",
+        "Collecting social media likes",
+        "Estimating company expenses"
+      ],
+      "answer": "Measuring campaign effectiveness and identifying target audiences"
+    },
+    {
+      "type": "multiple",
+      "question": "What distinguishes **Business Intelligence (BI)** from **Business Analytics (BA)**?",
+      "options": [
+        "BI focuses on reporting past data; BA focuses on deeper analysis and future actions",
+        "BI uses machine learning; BA does not",
+        "BI predicts trends; BA only reports",
+        "BI focuses on storytelling; BA focuses on visualization"
+      ],
+      "answer": "BI focuses on reporting past data; BA focuses on deeper analysis and future actions"
+    },
+    {
+      "type": "multiple",
+      "question": "Which field uses analytics to **optimize production efficiency** and **supply-chain management**?",
+      "options": [
+        "Marketing",
+        "Manufacturing",
+        "Human Resources",
+        "Finance"
+      ],
+      "answer": "Manufacturing"
+    },
+    {
+      "type": "multiple",
+      "question": "**Descriptive Analytics** primarily focuses on:",
+      "options": [
+        "Understanding past performance through summaries and visualizations",
+        "Forecasting future outcomes",
+        "Identifying root causes",
+        "Recommending actions"
+      ],
+      "answer": "Understanding past performance through summaries and visualizations"
+    },
+    {
+      "type": "multiple",
+      "question": "Which techniques are commonly used in **Descriptive Analytics**?",
+      "options": [
+        "Data visualization, frequency counts, summary statistics",
+        "Optimization and simulation",
+        "Root-cause inference and hypothesis testing",
+        "Regression and classification"
+      ],
+      "answer": "Data visualization, frequency counts, summary statistics"
+    },
+    {
+      "type": "multiple",
+      "question": "A main **limitation of Descriptive Analytics** is that it:",
+      "options": [
+        "Cannot predict or prescribe future outcomes",
+        "Is too complex to implement",
+        "Ignores historical data",
+        "Requires large AI systems"
+      ],
+      "answer": "Cannot predict or prescribe future outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "The three **measures of central tendency** are:",
+      "options": [
+        "Mean, Median, Mode",
+        "Range, Variance, Standard Deviation",
+        "Min, Max, Average",
+        "Sum, Average, Percentile"
+      ],
+      "answer": "Mean, Median, Mode"
+    },
+    {
+      "type": "multiple",
+      "question": "Which are considered **measures of dispersion**?",
+      "options": [
+        "Range, Variance, Standard Deviation",
+        "Mean, Median, Mode",
+        "Percentile, Quartile, Decile",
+        "Sum, Average, Range"
+      ],
+      "answer": "Range, Variance, Standard Deviation"
+    },
+    {
+      "type": "multiple",
+      "question": "Before analysis, **data cleaning** is important because it:",
+      "options": [
+        "Removes missing, inconsistent, or duplicate data",
+        "Adds decorative visuals to the dashboard",
+        "Collects new survey responses",
+        "Increases the dataset size artificially"
+      ],
+      "answer": "Removes missing, inconsistent, or duplicate data"
+    },
+    {
+      "type": "multiple",
+      "question": "Which tools are most commonly used in **Descriptive Analytics**?",
+      "options": [
+        "Tableau and Microsoft Excel",
+        "AutoCAD and Photoshop",
+        "SQL Server and MongoDB",
+        "SPSS and MATLAB"
+      ],
+      "answer": "Tableau and Microsoft Excel"
+    },
+    {
+      "type": "multiple",
+      "question": "Why is **Descriptive Analytics** considered the **foundation** of analytics?",
+      "options": [
+        "It provides summaries and context before prediction or optimization",
+        "It predicts future events directly",
+        "It eliminates the need for data cleaning",
+        "It visualizes decisions in 3D"
+      ],
+      "answer": "It provides summaries and context before prediction or optimization"
+    },
+    {
+      "type": "multiple",
+      "question": "The goal of **Predictive Analytics** is to:",
+      "options": [
+        "Forecast future outcomes using past data and models",
+        "Describe historical patterns",
+        "Explain why something happened",
+        "Recommend best actions"
+      ],
+      "answer": "Forecast future outcomes using past data and models"
+    },
+    {
+      "type": "multiple",
+      "question": "Which algorithms are commonly used in **Predictive Analytics**?",
+      "options": [
+        "Linear regression, logistic regression, classification models",
+        "Histograms, pie charts, dashboards",
+        "Optimization, simulation, decision analysis",
+        "Sorting, filtering, averaging"
+      ],
+      "answer": "Linear regression, logistic regression, classification models"
+    },
+    {
+      "type": "multiple",
+      "question": "In predictive modeling, the **target variable** refers to:",
+      "options": [
+        "The outcome being predicted",
+        "The variable used for cleaning data",
+        "The constant value in all datasets",
+        "The random factor affecting predictions"
+      ],
+      "answer": "The outcome being predicted"
+    },
+    {
+      "type": "multiple",
+      "question": "Which question does **Prescriptive Analytics** answer?",
+      "options": [
+        "What should we do?",
+        "What happened?",
+        "Why did it happen?",
+        "What is likely to happen?"
+      ],
+      "answer": "What should we do?"
+    },
+    {
+      "type": "multiple",
+      "question": "**Prescriptive Analytics** mainly uses which techniques?",
+      "options": [
+        "Optimization, simulation, decision analysis",
+        "Summary statistics, histograms, dashboards",
+        "Regression, classification, clustering",
+        "Frequency counts and averages"
+      ],
+      "answer": "Optimization, simulation, decision analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "A key advantage of **Prescriptive Analytics** is that it:",
+      "options": [
+        "Reduces human bias and supports data-driven decision-making",
+        "Removes the need for data analysis",
+        "Ignores business rules",
+        "Focuses only on historical trends"
+      ],
+      "answer": "Reduces human bias and supports data-driven decision-making"
+    },
+    {
+      "type": "multiple",
+      "question": "The main goal of **Diagnostic Analytics** is to:",
+      "options": [
+        "Find the reasons behind past outcomes",
+        "Predict future events",
+        "Summarize historical data",
+        "Suggest optimal solutions"
+      ],
+      "answer": "Find the reasons behind past outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "Which techniques are used in **Diagnostic Analytics**?",
+      "options": [
+        "Correlation analysis, root-cause analysis, anomaly detection",
+        "Simulation, optimization, forecasting",
+        "Visualization, summarization, filtering",
+        "Regression, classification, prediction"
+      ],
+      "answer": "Correlation analysis, root-cause analysis, anomaly detection"
+    },
+    {
+      "type": "multiple",
+      "question": "What does **Correlation** indicate?",
+      "options": [
+        "A statistical relationship between two variables",
+        "A direct cause-and-effect relationship",
+        "An unrelated coincidence",
+        "A summary of averages"
+      ],
+      "answer": "A statistical relationship between two variables"
+    },
+    {
+      "type": "multiple",
+      "question": "To prove **causation**, analysts often use:",
+      "options": [
+        "Controlled experiments or causal inference methods",
+        "Random guessing",
+        "Visualizations alone",
+        "Frequency distributions"
+      ],
+      "answer": "Controlled experiments or causal inference methods"
+    },
+    {
+      "type": "multiple",
+      "question": "A **confounding variable** is one that:",
+      "options": [
+        "Distorts or hides the true relationship between two variables",
+        "Is the target variable of prediction",
+        "Represents data averages",
+        "Is removed during data cleaning"
+      ],
+      "answer": "Distorts or hides the true relationship between two variables"
+    },
+    {
+      "type": "multiple",
+      "question": "In diagnostic analytics, the **dependent variable** represents:",
+      "options": [
+        "The outcome being studied",
+        "The factor influencing the result",
+        "The random noise in the dataset",
+        "The fixed input variable"
+      ],
+      "answer": "The outcome being studied"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type is **most common in healthcare and manufacturing**?",
+      "options": [
+        "Diagnostic Analytics",
+        "Descriptive Analytics",
+        "Predictive Analytics",
+        "Prescriptive Analytics"
+      ],
+      "answer": "Diagnostic Analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "The purpose of **Data Visualization** is to:",
+      "options": [
+        "Turn data into visual insights for faster understanding",
+        "Replace all numerical data with images",
+        "Decorate reports with graphics",
+        "Eliminate data analysis entirely"
+      ],
+      "answer": "Turn data into visual insights for faster understanding"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a **best practice** in data visualization?",
+      "options": [
+        "Use clarity, consistency, and context",
+        "Add as many colors and effects as possible",
+        "Avoid labels and legends",
+        "Include multiple 3D pie charts per slide"
+      ],
+      "answer": "Use clarity, consistency, and context"
+    },
+    {
+      "type": "multiple",
+      "question": "A **heat map** represents what type of data?",
+      "options": [
+        "Intensity, frequency, or density using color gradients",
+        "Only numerical averages",
+        "Textual descriptions",
+        "Timeline-based events"
+      ],
+      "answer": "Intensity, frequency, or density using color gradients"
+    },
+    {
+      "type": "multiple",
+      "question": "Which chart type is best for **comparing categories**?",
+      "options": [
+        "Bar chart",
+        "Line chart",
+        "Pie chart",
+        "Scatter plot"
+      ],
+      "answer": "Bar chart"
+    },
+    {
+      "type": "multiple",
+      "question": "When too many visuals or details are added to a dashboard, it causes:",
+      "options": [
+        "Information overload",
+        "Better clarity",
+        "Improved engagement",
+        "Faster processing"
+      ],
+      "answer": "Information overload"
+    },
+    {
+      "type": "multiple",
+      "question": "**Scatter plots** are mainly used to:",
+      "options": [
+        "Show relationships between two numerical variables",
+        "Compare proportions of a whole",
+        "Display frequency of words",
+        "Summarize categorical data"
+      ],
+      "answer": "Show relationships between two numerical variables"
+    },
+    {
+      "type": "multiple",
+      "question": "Why does **data visualization** save time?",
+      "options": [
+        "It helps viewers grasp trends instantly without reading long tables",
+        "It replaces the need for analysis",
+        "It hides irrelevant data",
+        "It compresses files automatically"
+      ],
+      "answer": "It helps viewers grasp trends instantly without reading long tables"
+    },
+    {
+      "type": "multiple",
+      "question": "Which fields most commonly use **data visualization**?",
+      "options": [
+        "Healthcare, retail, e-commerce, and sports analytics",
+        "Fashion design and literature",
+        "Painting and sculpture",
+        "Music and film production"
+      ],
+      "answer": "Healthcare, retail, e-commerce, and sports analytics"
+    }
+  ]
+}
