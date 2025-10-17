@@ -1,0 +1,643 @@
+{
+  "title": "Business Analytics Terminology Quiz (60 Items)",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What does Business Analytics primarily focus on?",
+      "options": [
+        "Guessing future trends",
+        "Using data to improve decision-making",
+        "Designing advertisements",
+        "Managing employee benefits"
+      ],
+      "answer": "Using data to improve decision-making"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is NOT a type of business analytics?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "Reductive"
+      ],
+      "answer": "Reductive"
+    },
+    {
+      "type": "multiple",
+      "question": "Descriptive analytics answers which question?",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What will happen?",
+        "What should we do?"
+      ],
+      "answer": "What happened?"
+    },
+    {
+      "type": "multiple",
+      "question": "Diagnostic analytics is used to find:",
+      "options": [
+        "Trends over time",
+        "Root causes behind outcomes",
+        "Predictions for next quarter",
+        "The best course of action"
+      ],
+      "answer": "Root causes behind outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "Predictive analytics focuses on:",
+      "options": [
+        "Summarizing past events",
+        "Identifying the cause of an issue",
+        "Forecasting future outcomes",
+        "Visualizing data"
+      ],
+      "answer": "Forecasting future outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "Prescriptive analytics aims to:",
+      "options": [
+        "Report what happened",
+        "Explain why it happened",
+        "Predict what might happen",
+        "Recommend what to do next"
+      ],
+      "answer": "Recommend what to do next"
+    },
+    {
+      "type": "multiple",
+      "question": "Business Intelligence (BI) mainly focuses on:",
+      "options": [
+        "Forecasting future trends",
+        "Reporting and querying data",
+        "Decision optimization",
+        "Machine learning algorithms"
+      ],
+      "answer": "Reporting and querying data"
+    },
+    {
+      "type": "multiple",
+      "question": "Business Analytics differs from Business Intelligence by:",
+      "options": [
+        "Focusing only on visualization",
+        "Exploring why and what to do next",
+        "Ignoring data reports",
+        "Using only dashboards"
+      ],
+      "answer": "Exploring why and what to do next"
+    },
+    {
+      "type": "multiple",
+      "question": "In HR analytics, what behavior is commonly predicted?",
+      "options": [
+        "Employee attrition",
+        "Customer satisfaction",
+        "Supplier pricing",
+        "System uptime"
+      ],
+      "answer": "Employee attrition"
+    },
+    {
+      "type": "multiple",
+      "question": "Marketing analytics is used to:",
+      "options": [
+        "Measure campaign effectiveness",
+        "Create manufacturing schedules",
+        "Plan employee training",
+        "Develop IT systems"
+      ],
+      "answer": "Measure campaign effectiveness"
+    },
+    {
+      "type": "multiple",
+      "question": "What question does descriptive analytics answer?",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What will happen?",
+        "What should we do?"
+      ],
+      "answer": "What happened?"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a common tool for descriptive analytics?",
+      "options": [
+        "Tableau",
+        "TensorFlow",
+        "AutoCAD",
+        "Python Flask"
+      ],
+      "answer": "Tableau"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is a measure of central tendency?",
+      "options": [
+        "Range",
+        "Variance",
+        "Mean",
+        "Standard deviation"
+      ],
+      "answer": "Mean"
+    },
+    {
+      "type": "multiple",
+      "question": "Which measure shows how spread out data is?",
+      "options": [
+        "Mean",
+        "Median",
+        "Variance",
+        "Mode"
+      ],
+      "answer": "Variance"
+    },
+    {
+      "type": "multiple",
+      "question": "Before analysis, data cleaning is done to:",
+      "options": [
+        "Add more data",
+        "Remove errors and duplicates",
+        "Delete all records",
+        "Randomize datasets"
+      ],
+      "answer": "Remove errors and duplicates"
+    },
+    {
+      "type": "multiple",
+      "question": "Descriptive analytics cannot:",
+      "options": [
+        "Summarize trends",
+        "Explain causes",
+        "Show historical data",
+        "Create dashboards"
+      ],
+      "answer": "Explain causes"
+    },
+    {
+      "type": "multiple",
+      "question": "Why is descriptive analytics considered foundational?",
+      "options": [
+        "It predicts future data",
+        "It builds context before deeper analysis",
+        "It replaces predictive models",
+        "It ignores visualization"
+      ],
+      "answer": "It builds context before deeper analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "Predictive analytics uses which types of models?",
+      "options": [
+        "Regression and classification",
+        "Charts and dashboards",
+        "Manual estimations",
+        "Word processing tools"
+      ],
+      "answer": "Regression and classification"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the dependent variable in predictive modeling called?",
+      "options": [
+        "Control variable",
+        "Target variable",
+        "Independent variable",
+        "Sample variable"
+      ],
+      "answer": "Target variable"
+    },
+    {
+      "type": "multiple",
+      "question": "Training data is used to:",
+      "options": [
+        "Visualize data",
+        "Teach the model patterns",
+        "Check model accuracy",
+        "Clean missing values"
+      ],
+      "answer": "Teach the model patterns"
+    },
+    {
+      "type": "multiple",
+      "question": "Testing data is used to:",
+      "options": [
+        "Train models",
+        "Validate accuracy on unseen data",
+        "Correct outliers",
+        "Summarize statistics"
+      ],
+      "answer": "Validate accuracy on unseen data"
+    },
+    {
+      "type": "multiple",
+      "question": "Prescriptive analytics mainly answers:",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What is likely to happen?",
+        "What should we do?"
+      ],
+      "answer": "What should we do?"
+    },
+    {
+      "type": "multiple",
+      "question": "Which technique is common in prescriptive analytics?",
+      "options": [
+        "Optimization",
+        "Histogram creation",
+        "Regression",
+        "Correlation analysis"
+      ],
+      "answer": "Optimization"
+    },
+    {
+      "type": "multiple",
+      "question": "Which company uses prescriptive analytics in self-driving technology?",
+      "options": [
+        "Uber",
+        "Waymo",
+        "Apple",
+        "Tesla"
+      ],
+      "answer": "Waymo"
+    },
+    {
+      "type": "multiple",
+      "question": "Scenario analysis is used to:",
+      "options": [
+        "Compare different decision outcomes",
+        "Measure employee attendance",
+        "Track competitor prices",
+        "Summarize past sales"
+      ],
+      "answer": "Compare different decision outcomes"
+    },
+    {
+      "type": "multiple",
+      "question": "Diagnostic analytics primarily answers:",
+      "options": [
+        "What happened?",
+        "Why did it happen?",
+        "What will happen?",
+        "What should we do?"
+      ],
+      "answer": "Why did it happen?"
+    },
+    {
+      "type": "multiple",
+      "question": "Correlation analysis helps identify:",
+      "options": [
+        "Causal relationships",
+        "Statistical relationships",
+        "Data entry errors",
+        "Missing values"
+      ],
+      "answer": "Statistical relationships"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a confounding variable?",
+      "options": [
+        "A factor that distorts the true relationship between variables",
+        "A variable that has no effect",
+        "An independent variable",
+        "The target variable"
+      ],
+      "answer": "A factor that distorts the true relationship between variables"
+    },
+    {
+      "type": "multiple",
+      "question": "In diagnostic analytics, the outcome being studied is the:",
+      "options": [
+        "Independent variable",
+        "Dependent variable",
+        "Confounding variable",
+        "Control variable"
+      ],
+      "answer": "Dependent variable"
+    },
+    {
+      "type": "multiple",
+      "question": "A/B testing is used to validate:",
+      "options": [
+        "Correlation strength",
+        "Causation between factors",
+        "Visualization clarity",
+        "Data cleaning efficiency"
+      ],
+      "answer": "Causation between factors"
+    },
+    {
+      "type": "multiple",
+      "question": "Data visualization transforms:",
+      "options": [
+        "Numbers into visuals",
+        "Models into code",
+        "Tables into equations",
+        "Charts into text"
+      ],
+      "answer": "Numbers into visuals"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a common risk in data visualization?",
+      "options": [
+        "Over-simplification",
+        "Too much coding",
+        "Lack of color",
+        "High accuracy"
+      ],
+      "answer": "Over-simplification"
+    },
+    {
+      "type": "multiple",
+      "question": "Heat maps primarily use:",
+      "options": [
+        "Color gradients",
+        "Pie slices",
+        "Bar lengths",
+        "Scatter points"
+      ],
+      "answer": "Color gradients"
+    },
+    {
+      "type": "multiple",
+      "question": "Which chart is best for comparing categories?",
+      "options": [
+        "Bar chart",
+        "Line chart",
+        "Pie chart",
+        "Scatter plot"
+      ],
+      "answer": "Bar chart"
+    },
+    {
+      "type": "multiple",
+      "question": "A scatter plot shows:",
+      "options": [
+        "Relationships between two numerical variables",
+        "Proportions of a whole",
+        "Frequency of categories",
+        "Hierarchical structures"
+      ],
+      "answer": "Relationships between two numerical variables"
+    },
+    {
+      "type": "multiple",
+      "question": "Information overload in dashboards happens when:",
+      "options": [
+        "Too many visuals or details are shown",
+        "There are no visuals",
+        "Data is missing",
+        "Colors are muted"
+      ],
+      "answer": "Too many visuals or details are shown"
+    },
+    {
+      "type": "multiple",
+      "question": "Why is data visualization essential?",
+      "options": [
+        "It replaces analytics entirely",
+        "It communicates insights clearly",
+        "It eliminates the need for data",
+        "It hides complex patterns"
+      ],
+      "answer": "It communicates insights clearly"
+    },
+    {
+      "type": "multiple",
+      "question": "What type of chart best shows proportions?",
+      "options": [
+        "Pie chart",
+        "Bar chart",
+        "Line chart",
+        "Scatter plot"
+      ],
+      "answer": "Pie chart"
+    },
+    {
+      "type": "multiple",
+      "question": "Which visualization method helps identify data density quickly?",
+      "options": [
+        "Heat map",
+        "Histogram",
+        "Line chart",
+        "Tree map"
+      ],
+      "answer": "Heat map"
+    },
+    {
+      "type": "multiple",
+      "question": "A clean visualization emphasizes:",
+      "options": [
+        "Clarity and context",
+        "3D effects",
+        "Bright colors only",
+        "Decorative icons"
+      ],
+      "answer": "Clarity and context"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of these is a limitation of predictive analytics?",
+      "options": [
+        "Cannot visualize data",
+        "Affected by bad or biased data",
+        "No use for forecasting",
+        "Relies on descriptive methods"
+      ],
+      "answer": "Affected by bad or biased data"
+    },
+    {
+      "type": "multiple",
+      "question": "The process of testing multiple decision paths is called:",
+      "options": [
+        "Scenario analysis",
+        "Data cleaning",
+        "Descriptive analysis",
+        "Regression testing"
+      ],
+      "answer": "Scenario analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "Overfitting occurs when a model:",
+      "options": [
+        "Fits training data too well but fails on new data",
+        "Has too few variables",
+        "Lacks accuracy on training data",
+        "Is based on descriptive charts"
+      ],
+      "answer": "Fits training data too well but fails on new data"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type would suggest the best warehouse location?",
+      "options": [
+        "Prescriptive",
+        "Descriptive",
+        "Diagnostic",
+        "Predictive"
+      ],
+      "answer": "Prescriptive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type uses correlation to find relationships?",
+      "options": [
+        "Diagnostic",
+        "Descriptive",
+        "Predictive",
+        "Prescriptive"
+      ],
+      "answer": "Diagnostic"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following best defines 'optimization'?",
+      "options": [
+        "Selecting the best option among alternatives",
+        "Visualizing trends",
+        "Cleaning datasets",
+        "Summarizing data"
+      ],
+      "answer": "Selecting the best option among alternatives"
+    },
+    {
+      "type": "multiple",
+      "question": "A company using data to forecast demand is applying:",
+      "options": [
+        "Predictive analytics",
+        "Prescriptive analytics",
+        "Diagnostic analytics",
+        "Descriptive analytics"
+      ],
+      "answer": "Predictive analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "The use of color gradients to represent data intensity is a feature of:",
+      "options": [
+        "Heat maps",
+        "Line charts",
+        "Histograms",
+        "Pie charts"
+      ],
+      "answer": "Heat maps"
+    },
+    {
+      "type": "multiple",
+      "question": "A visualization that guides the audience to insights step by step is an example of:",
+      "options": [
+        "Storytelling through visualization",
+        "Information overload",
+        "Data redundancy",
+        "Statistical inference"
+      ],
+      "answer": "Storytelling through visualization"
+    },
+    {
+      "type": "multiple",
+      "question": "The process of understanding 'why' something happened involves:",
+      "options": [
+        "Diagnostic analytics",
+        "Descriptive analytics",
+        "Predictive analytics",
+        "Prescriptive analytics"
+      ],
+      "answer": "Diagnostic analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics method combines predictive models and business rules?",
+      "options": [
+        "Prescriptive analytics",
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Business intelligence"
+      ],
+      "answer": "Prescriptive analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "Mean, median, and mode are part of:",
+      "options": [
+        "Measures of central tendency",
+        "Measures of dispersion",
+        "Optimization metrics",
+        "Data cleaning techniques"
+      ],
+      "answer": "Measures of central tendency"
+    },
+    {
+      "type": "multiple",
+      "question": "Range, variance, and standard deviation measure:",
+      "options": [
+        "Data spread or dispersion",
+        "Central tendency",
+        "Causal relationships",
+        "Data volume"
+      ],
+      "answer": "Data spread or dispersion"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type uses root-cause analysis?",
+      "options": [
+        "Diagnostic",
+        "Descriptive",
+        "Predictive",
+        "Prescriptive"
+      ],
+      "answer": "Diagnostic"
+    },
+    {
+      "type": "multiple",
+      "question": "A visualization that compares revenue over time is best shown with a:",
+      "options": [
+        "Line chart",
+        "Pie chart",
+        "Scatter plot",
+        "Heat map"
+      ],
+      "answer": "Line chart"
+    },
+    {
+      "type": "multiple",
+      "question": "When two factors rise together but don’t cause each other, this is called:",
+      "options": [
+        "Correlation",
+        "Causation",
+        "Confounding",
+        "Dispersion"
+      ],
+      "answer": "Correlation"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type uses simulation and decision analysis?",
+      "options": [
+        "Prescriptive analytics",
+        "Predictive analytics",
+        "Descriptive analytics",
+        "Diagnostic analytics"
+      ],
+      "answer": "Prescriptive analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "Which tool can create dashboards for business analytics?",
+      "options": [
+        "Microsoft Excel",
+        "Notepad",
+        "WordPress",
+        "AutoCAD"
+      ],
+      "answer": "Microsoft Excel"
+    }
+  ]
+}
