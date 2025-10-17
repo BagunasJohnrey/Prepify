@@ -1,0 +1,555 @@
+{
+  "quizTitle": "Business Analytics Midterm Quiz",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "What is the main goal of business analytics?",
+      "options": [
+        "Replace all human judgment",
+        "Store as much data as possible",
+        "Turn data into actionable insights for decision making",
+        "Create as many reports as possible"
+      ],
+      "answer": "Turn data into actionable insights for decision making"
+    },
+    {
+      "type": "multiple",
+      "question": "Which type of analytics answers “What happened?”",
+      "options": [
+        "Diagnostic",
+        "Prescriptive",
+        "Descriptive",
+        "Predictive"
+      ],
+      "answer": "Descriptive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics seeks to explain why something happened?",
+      "options": [
+        "Prescriptive",
+        "Predictive",
+        "Diagnostic",
+        "Descriptive"
+      ],
+      "answer": "Diagnostic"
+    },
+    {
+      "type": "multiple",
+      "question": "Forecasting future trends is the domain of which analytics type?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "Prescriptive"
+      ],
+      "answer": "Predictive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics helps decide what to do given possible outcomes?",
+      "options": [
+        "Predictive",
+        "Diagnostic",
+        "Descriptive",
+        "Prescriptive"
+      ],
+      "answer": "Prescriptive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is not typically part of descriptive analytics?",
+      "options": [
+        "Summarizing historical data",
+        "Dashboards and reports",
+        "Recommending optimal actions",
+        "Trend analysis"
+      ],
+      "answer": "Recommending optimal actions"
+    },
+    {
+      "type": "multiple",
+      "question": "To find relationships or causes among variables (e.g. correlation, regression) is a task under:",
+      "options": [
+        "Descriptive analytics",
+        "Predictive analytics",
+        "Diagnostic analytics",
+        "Prescriptive analytics"
+      ],
+      "answer": "Diagnostic analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a common limitation in predictive analytics?",
+      "options": [
+        "Data privacy",
+        "Poor data quality",
+        "Overfitting",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "type": "multiple",
+      "question": "Which technique is commonly used in prescriptive analytics?",
+      "options": [
+        "Time-series decomposition",
+        "Drill-down",
+        "Optimization / simulation",
+        "Descriptive statistics"
+      ],
+      "answer": "Optimization / simulation"
+    },
+    {
+      "type": "multiple",
+      "question": "Prescriptive analytics often builds upon predictive output to:",
+      "options": [
+        "Explain past events",
+        "Summarize data",
+        "Recommend actions",
+        "Clean data"
+      ],
+      "answer": "Recommend actions"
+    },
+    {
+      "type": "multiple",
+      "question": "In an analytics maturity progression, the usual order is:",
+      "options": [
+        "Predictive → Descriptive → Diagnostic → Prescriptive",
+        "Descriptive → Diagnostic → Predictive → Prescriptive",
+        "Diagnostic → Prescriptive → Predictive → Descriptive",
+        "Prescriptive → Predictive → Diagnostic → Descriptive"
+      ],
+      "answer": "Descriptive → Diagnostic → Predictive → Prescriptive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which analytics type typically uses machine learning models?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "None of the above"
+      ],
+      "answer": "Predictive"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a key data quality issue in analytics?",
+      "options": [
+        "Missing values",
+        "Inconsistent formats",
+        "Outliers",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "type": "multiple",
+      "question": "The stage of cleaning, transforming, and preparing data is known as:",
+      "options": [
+        "Data collection",
+        "Data preparation / wrangling",
+        "Modeling",
+        "Deployment"
+      ],
+      "answer": "Data preparation / wrangling"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is not a typical data source used in business analytics?",
+      "options": [
+        "Transaction systems",
+        "Web logs / clickstreams",
+        "Social media data",
+        "Fiction books"
+      ],
+      "answer": "Fiction books"
+    },
+    {
+      "type": "multiple",
+      "question": "Which visualization type is best to show the distribution of a single numeric variable?",
+      "options": [
+        "Bar chart",
+        "Pie chart",
+        "Histogram",
+        "Line chart"
+      ],
+      "answer": "Histogram"
+    },
+    {
+      "type": "multiple",
+      "question": "To show the relationship between two continuous variables, you’d use:",
+      "options": [
+        "Pie chart",
+        "Box plot",
+        "Scatter plot",
+        "Histogram"
+      ],
+      "answer": "Scatter plot"
+    },
+    {
+      "type": "multiple",
+      "question": "“Drill down” in dashboards refers to:",
+      "options": [
+        "Aggregating data",
+        "Getting deeper detail (filtering)",
+        "Predicting future trends",
+        "Summarizing"
+      ],
+      "answer": "Getting deeper detail (filtering)"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a supervised learning method?",
+      "options": [
+        "Clustering",
+        "Association rule mining",
+        "Classification",
+        "Principal Component Analysis"
+      ],
+      "answer": "Classification"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is an unsupervised learning technique?",
+      "options": [
+        "Linear regression",
+        "Decision tree classification",
+        "K-means clustering",
+        "Logistic regression"
+      ],
+      "answer": "K-means clustering"
+    },
+    {
+      "type": "multiple",
+      "question": "Overfitting means:",
+      "options": [
+        "Model is too simple",
+        "Model fits training data too well but fails on new data",
+        "Model underfits",
+        "Model has zero bias"
+      ],
+      "answer": "Model fits training data too well but fails on new data"
+    },
+    {
+      "type": "multiple",
+      "question": "Cross-validation is used to:",
+      "options": [
+        "Expand dataset size",
+        "Assess model generalization",
+        "Remove outliers",
+        "Build dashboards"
+      ],
+      "answer": "Assess model generalization"
+    },
+    {
+      "type": "multiple",
+      "question": "Which metric is appropriate for a regression model?",
+      "options": [
+        "Accuracy",
+        "Precision",
+        "Mean Squared Error (MSE)",
+        "Confusion matrix"
+      ],
+      "answer": "Mean Squared Error (MSE)"
+    },
+    {
+      "type": "multiple",
+      "question": "Which metrics are used for classification models?",
+      "options": [
+        "R-squared",
+        "Mean Absolute Error",
+        "Precision, recall, accuracy",
+        "Sum of squared errors"
+      ],
+      "answer": "Precision, recall, accuracy"
+    },
+    {
+      "type": "multiple",
+      "question": "A major benefit of proper data visualization is:",
+      "options": [
+        "Misleading viewers",
+        "Simplifying complexity into understandable form",
+        "Eliminating the need for analytics",
+        "Guaranteeing perfect decisions"
+      ],
+      "answer": "Simplifying complexity into understandable form"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is an example of descriptive analytics?",
+      "options": [
+        "Predicting next quarter’s sales",
+        "Suggesting marketing strategy",
+        "Producing a sales report for last year",
+        "Diagnosing causes of a drop in sales"
+      ],
+      "answer": "Producing a sales report for last year"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is diagnostic analytics in practice?",
+      "options": [
+        "Forecasting future demand",
+        "Recommending optimal pricing",
+        "Finding correlation between ad spend and sales drop",
+        "Summarizing past performance"
+      ],
+      "answer": "Finding correlation between ad spend and sales drop"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is predictive analytics usage?",
+      "options": [
+        "Reporting prior performance",
+        "Explaining past failures",
+        "Predicting customer churn",
+        "Recommending resource allocation"
+      ],
+      "answer": "Predicting customer churn"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is a prescriptive analytics application?",
+      "options": [
+        "Displaying past trends",
+        "Diagnosing causes",
+        "Running simulations to pick optimal discount rates",
+        "None of above"
+      ],
+      "answer": "Running simulations to pick optimal discount rates"
+    },
+    {
+      "type": "multiple",
+      "question": "In HR analytics, prescriptive analytics might help with:",
+      "options": [
+        "Reporting past attrition rates",
+        "Explaining why attrition increased",
+        "Predicting which employees may leave",
+        "Recommending retention strategies"
+      ],
+      "answer": "Recommending retention strategies"
+    },
+    {
+      "type": "multiple",
+      "question": "In marketing, what analytics helps target ads more effectively?",
+      "options": [
+        "Descriptive",
+        "Diagnostic",
+        "Predictive",
+        "Prescriptive"
+      ],
+      "answer": "Predictive"
+    },
+    {
+      "type": "multiple",
+      "question": "A key input for predictive modeling is:",
+      "options": [
+        "Random noise",
+        "Clean historical data",
+        "Pure guesses",
+        "Nothing"
+      ],
+      "answer": "Clean historical data"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is not part of the standard analytics process (e.g. CRISP-DM)?",
+      "options": [
+        "Business understanding",
+        "Data modeling",
+        "Data harvesting",
+        "Deployment / evaluation"
+      ],
+      "answer": "Data harvesting"
+    },
+    {
+      "type": "multiple",
+      "question": "The “bias–variance tradeoff” refers to:",
+      "options": [
+        "Tradeoff in data cleaning",
+        "Balancing overfitting vs underfitting",
+        "Tradeoff between speed and accuracy",
+        "Tradeoff in visualization design"
+      ],
+      "answer": "Balancing overfitting vs underfitting"
+    },
+    {
+      "type": "multiple",
+      "question": "Scenario analysis or “what-if” modeling is usually in:",
+      "options": [
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Prescriptive / planning",
+        "Data collection"
+      ],
+      "answer": "Prescriptive / planning"
+    },
+    {
+      "type": "multiple",
+      "question": "A dashboard is best described as:",
+      "options": [
+        "A predictive model",
+        "A set of interactive visual metrics",
+        "A clustering algorithm",
+        "A data cleaning tool"
+      ],
+      "answer": "A set of interactive visual metrics"
+    },
+    {
+      "type": "multiple",
+      "question": "Which data problem can distort results if unaddressed?",
+      "options": [
+        "Duplicate records",
+        "Outliers",
+        "Missing values",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is true about correlation vs causation?",
+      "options": [
+        "Correlation always implies causation",
+        "Causation sometimes implies correlation",
+        "If two variables are correlated, one always causes the other",
+        "They are unrelated"
+      ],
+      "answer": "Causation sometimes implies correlation"
+    },
+    {
+      "type": "multiple",
+      "question": "Which data mining technique finds rules among variables?",
+      "options": [
+        "Regression",
+        "Clustering",
+        "Association rule mining",
+        "Dimensionality reduction"
+      ],
+      "answer": "Association rule mining"
+    },
+    {
+      "type": "multiple",
+      "question": "A method commonly used to reduce dimensionality is:",
+      "options": [
+        "ANOVA",
+        "PCA (Principal Component Analysis)",
+        "K-nearest neighbors",
+        "Decision trees"
+      ],
+      "answer": "PCA (Principal Component Analysis)"
+    },
+    {
+      "type": "multiple",
+      "question": "Which technique is used for anomaly detection?",
+      "options": [
+        "Classification",
+        "Association",
+        "Outlier detection algorithms",
+        "Prescriptive optimization"
+      ],
+      "answer": "Outlier detection algorithms"
+    },
+    {
+      "type": "multiple",
+      "question": "A predictive analytics example in manufacturing is:",
+      "options": [
+        "Summarizing output totals",
+        "Diagnosing past bottlenecks",
+        "Predicting machine failure",
+        "Prescribing staffing changes"
+      ],
+      "answer": "Predicting machine failure"
+    },
+    {
+      "type": "multiple",
+      "question": "The relation between prescriptive and predictive analytics is that:",
+      "options": [
+        "Prescriptive forecasts, predictive prescribes",
+        "Predictive gives probabilities; prescriptive recommends actions",
+        "They are the same",
+        "Predictive is more complex than prescriptive"
+      ],
+      "answer": "Predictive gives probabilities; prescriptive recommends actions"
+    },
+    {
+      "type": "multiple",
+      "question": "A major challenge in implementing prescriptive analytics is:",
+      "options": [
+        "Need for optimization models",
+        "Integration of multiple data sources",
+        "High technical and cost requirements",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "type": "multiple",
+      "question": "How does visualization support diagnostic analytics?",
+      "options": [
+        "It forecasts outcomes",
+        "It helps reveal patterns or anomalies visually",
+        "It prescribes actions",
+        "It cleans data"
+      ],
+      "answer": "It helps reveal patterns or anomalies visually"
+    },
+    {
+      "type": "multiple",
+      "question": "Which describes a “what-if” scenario?",
+      "options": [
+        "Data cleaning method",
+        "Simulating outcomes under different assumptions",
+        "Clustering method",
+        "A classification technique"
+      ],
+      "answer": "Simulating outcomes under different assumptions"
+    },
+    {
+      "type": "multiple",
+      "question": "Optimizing delivery routes for cost and time is a typical use of:",
+      "options": [
+        "Descriptive analytics",
+        "Diagnostic analytics",
+        "Predictive analytics",
+        "Prescriptive analytics"
+      ],
+      "answer": "Prescriptive analytics"
+    },
+    {
+      "type": "multiple",
+      "question": "Which professional is primarily responsible for modeling, combining statistics and CS?",
+      "options": [
+        "Strategist",
+        "Project manager",
+        "Data scientist",
+        "Business user"
+      ],
+      "answer": "Data scientist"
+    },
+    {
+      "type": "multiple",
+      "question": "Which is not one of the “4 Vs” of big data?",
+      "options": [
+        "Volume",
+        "Veracity",
+        "Velocity",
+        "Variety"
+      ],
+      "answer": "Veracity"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is true about the analytics pyramid (from hindsight to foresight)?",
+      "options": [
+        "Prescriptive is at the base, descriptive at the top",
+        "Predictive comes before descriptive",
+        "Analytics progresses: Descriptive → Diagnostic → Predictive → Prescriptive",
+        "Diagnostic is less advanced than descriptive"
+      ],
+      "answer": "Analytics progresses: Descriptive → Diagnostic → Predictive → Prescriptive"
+    }
+  ]
+}
