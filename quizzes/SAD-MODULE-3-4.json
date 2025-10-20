@@ -1,0 +1,425 @@
+{
+  "title": "Systems Analysis and Design Comprehensive Exam (Modules 1–4)",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "Large-scale solutions that integrate processes across the entire organization are called ___________.",
+      "options": ["Transaction Processing Systems", "Enterprise Computing Systems", "Business Support Systems", "User Productivity Systems"],
+      "answer": "Enterprise Computing Systems"
+    },
+    {
+      "type": "multiple",
+      "question": "These systems connect different departments — like sales, finance, HR, and production — into one unified system.",
+      "options": ["ERP Systems", "Enterprise Computing Systems", "MIS", "KMS"],
+      "answer": "Enterprise Computing Systems"
+    },
+    {
+      "type": "multiple",
+      "question": "A system where sales data automatically updates inventory and financial reports is an example of ___________.",
+      "options": ["MIS", "TPS", "ERP System", "CRM"],
+      "answer": "ERP System"
+    },
+    {
+      "type": "multiple",
+      "question": "The system that handles routine, day-to-day business transactions of an organization is ___________.",
+      "options": ["TPS", "ERP", "MIS", "CRM"],
+      "answer": "TPS"
+    },
+    {
+      "type": "multiple",
+      "question": "The main focus of Transaction Processing Systems is ___________.",
+      "options": ["Flexibility and innovation", "Accuracy, speed, and reliability", "Cost control", "Customer satisfaction"],
+      "answer": "Accuracy, speed, and reliability"
+    },
+    {
+      "type": "multiple",
+      "question": "In payroll systems that process all employee salaries at once, this method is called ___________.",
+      "options": ["Real-time processing", "Batch processing", "Parallel processing", "Instant processing"],
+      "answer": "Batch processing"
+    },
+    {
+      "type": "multiple",
+      "question": "An airline ticketing system that updates seat availability instantly uses ___________.",
+      "options": ["Real-time processing", "Batch processing", "Deferred processing", "Sequential processing"],
+      "answer": "Real-time processing"
+    },
+    {
+      "type": "multiple",
+      "question": "A point-of-sale (POS) system is an example of ___________.",
+      "options": ["TPS", "ERP", "KMS", "MIS"],
+      "answer": "TPS"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that support core business processes like marketing, production planning, and customer service are called ___________.",
+      "options": ["Business Support Systems", "Knowledge Management Systems", "Enterprise Systems", "User Productivity Systems"],
+      "answer": "Business Support Systems"
+    },
+    {
+      "type": "multiple",
+      "question": "A Customer Relationship Management (CRM) system is an example of ___________.",
+      "options": ["MIS", "Business Support System", "Enterprise System", "TPS"],
+      "answer": "Business Support System"
+    },
+    {
+      "type": "multiple",
+      "question": "A system that takes daily operations data and converts it into meaningful reports is called ___________.",
+      "options": ["CRM", "MIS", "ERP", "TPS"],
+      "answer": "MIS"
+    },
+    {
+      "type": "multiple",
+      "question": "A technology that uses radio waves to automatically identify and track objects is called ___________.",
+      "options": ["RFID", "CRM", "MIS", "ERP"],
+      "answer": "RFID"
+    },
+    {
+      "type": "multiple",
+      "question": "A tool that allows businesses to test different scenarios is called ___________.",
+      "options": ["What-if Analysis", "Simulation Tool", "Forecasting Tool", "Decision Matrix"],
+      "answer": "What-if Analysis"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems designed to store, organize, and share an organization’s collective knowledge are called ___________.",
+      "options": ["KMS", "MIS", "ERP", "TPS"],
+      "answer": "KMS"
+    },
+    {
+      "type": "multiple",
+      "question": "A Knowledge Base and Inference Rules are components of ___________.",
+      "options": ["KMS", "MIS", "ERP", "CRM"],
+      "answer": "KMS"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that make individual employees more productive are called ___________.",
+      "options": ["User Productivity Systems", "ERP Systems", "KMS", "TPS"],
+      "answer": "User Productivity Systems"
+    },
+    {
+      "type": "multiple",
+      "question": "Tools like Microsoft Office Suite and Google Workspace are examples of ___________.",
+      "options": ["User Productivity Systems", "KMS", "MIS", "ERP"],
+      "answer": "User Productivity Systems"
+    },
+    {
+      "type": "multiple",
+      "question": "The process of combining different types of systems to operate effectively is called ___________.",
+      "options": ["Integration", "Consolidation", "Coordination", "Networking"],
+      "answer": "Integration"
+    },
+    {
+      "type": "multiple",
+      "question": "Integration ensures that ___________ flows smoothly across the organization.",
+      "options": ["Information", "Hardware", "Employees", "Funds"],
+      "answer": "Information"
+    },
+    {
+      "type": "multiple",
+      "question": "A system that integrates accounting, HR, inventory, and sales is called ___________.",
+      "options": ["ERP System", "MIS", "TPS", "CRM"],
+      "answer": "ERP System"
+    },
+    {
+      "type": "multiple",
+      "question": "Benefits that are difficult to measure in dollars but important to the company are called ___________.",
+      "options": ["Tangible Benefits", "Intangible Benefits", "Measurable Benefits", "Realized Benefits"],
+      "answer": "Intangible Benefits"
+    },
+    {
+      "type": "multiple",
+      "question": "Projects that management may choose to implement are called ___________.",
+      "options": ["Discretionary Projects", "Nondiscretionary Projects", "Optional Projects", "Flexible Projects"],
+      "answer": "Discretionary Projects"
+    },
+    {
+      "type": "multiple",
+      "question": "Projects where no choice exists are called ___________.",
+      "options": ["Discretionary Projects", "Nondiscretionary Projects", "Mandatory Projects", "Limited Projects"],
+      "answer": "Nondiscretionary Projects"
+    },
+    {
+      "type": "multiple",
+      "question": "A ___________ studies the systems request and recommends specific action.",
+      "options": ["Systems Analyst", "Programmer", "Project Manager", "Coordinator"],
+      "answer": "Systems Analyst"
+    },
+    {
+      "type": "multiple",
+      "question": "The end product of the preliminary investigation is a ___________.",
+      "options": ["Report to management", "Flowchart", "Prototype", "Feasibility study"],
+      "answer": "Report to management"
+    },
+    {
+      "type": "multiple",
+      "question": "The first step in planning the preliminary investigation is ___________.",
+      "options": ["Understand the Problem or Opportunity", "Perform Fact-Finding", "Evaluate Feasibility", "Present Results"],
+      "answer": "Understand the Problem or Opportunity"
+    },
+    {
+      "type": "multiple",
+      "question": "Defining the specific boundaries or extent of a project is called ___________.",
+      "options": ["Project Scope", "Project Plan", "Project Path", "Project Chart"],
+      "answer": "Project Scope"
+    },
+    {
+      "type": "multiple",
+      "question": "The gradual expansion of a project without authorization is known as ___________.",
+      "options": ["Project Creep", "Scope Stretch", "Time Slip", "Cost Drift"],
+      "answer": "Project Creep"
+    },
+    {
+      "type": "multiple",
+      "question": "A requirement or condition that the system must satisfy is a ___________.",
+      "options": ["Constraint", "Variable", "Factor", "Parameter"],
+      "answer": "Constraint"
+    },
+    {
+      "type": "multiple",
+      "question": "Gathering data about usability, costs, benefits, and schedules is part of ___________.",
+      "options": ["Fact-Finding", "Planning", "Analysis", "Evaluation"],
+      "answer": "Fact-Finding"
+    },
+    {
+      "type": "multiple",
+      "question": "The primary method of obtaining information during the preliminary investigation is ___________.",
+      "options": ["Interview", "Survey", "Chart Review", "Documentation"],
+      "answer": "Interview"
+    },
+    {
+      "type": "multiple",
+      "question": "A chart that shows various causes of a problem arranged in descending order is called ___________.",
+      "options": ["Pareto Chart", "XY Chart", "Gantt Chart", "Bar Chart"],
+      "answer": "Pareto Chart"
+    },
+    {
+      "type": "multiple",
+      "question": "The chart that looks for correlation between two variables is called ___________.",
+      "options": ["XY Chart", "Pareto Chart", "Flowchart", "Network Diagram"],
+      "answer": "XY Chart"
+    },
+    {
+      "type": "multiple",
+      "question": "A project report section that summarizes the project’s scope and feasibility is called ___________.",
+      "options": ["Findings", "Introduction", "Systems Request Summary", "Appendix"],
+      "answer": "Findings"
+    },
+    {
+      "type": "multiple",
+      "question": "A section that lists participants and their roles is called ___________.",
+      "options": ["Project Roles", "Team List", "Organization Chart", "Personnel Record"],
+      "answer": "Project Roles"
+    },
+    {
+      "type": "multiple",
+      "question": "The five elements of communication strategy are ___________.",
+      "options": ["Why, Who, What, When, and How", "Plan, People, Purpose, Place, and Process", "Who, When, Where, What, and Why", "Why, When, Where, Who, and How"],
+      "answer": "Why, Who, What, When, and How"
+    },
+    {
+      "type": "multiple",
+      "question": "The beliefs, rules, traditions, and values that define a company are called its ___________.",
+      "options": ["Corporate Culture", "Organizational Policy", "Work Ethics", "Management Code"],
+      "answer": "Corporate Culture"
+    },
+    {
+      "type": "multiple",
+      "question": "The combination of Internet and etiquette is known as ___________.",
+      "options": ["Netiquette", "Webiquette", "E-manners", "Digital Decorum"],
+      "answer": "Netiquette"
+    },
+    {
+      "type": "multiple",
+      "question": "Software that enhances employee productivity and teamwork is called ___________.",
+      "options": ["Groupware", "ERP", "CRM", "MIS"],
+      "answer": "Groupware"
+    },
+    {
+      "type": "multiple",
+      "question": "The rule that limits slides to seven items and seven words per item is called the ___________.",
+      "options": ["7 by 7 Rule", "Minimal Rule", "Presentation Rule", "Short Slide Rule"],
+      "answer": "7 by 7 Rule"
+    },
+    {
+      "type": "multiple",
+      "question": "The first step in preparing an oral presentation is to ___________.",
+      "options": ["Define the audience", "Prepare visual aids", "Practice delivery", "Define objectives"],
+      "answer": "Define the audience"
+    },
+    {
+      "type": "multiple",
+      "question": "When using PowerPoint for multimedia slides, you are preparing ___________.",
+      "options": ["Presentation Aids", "Infographics", "Reports", "Posters"],
+      "answer": "Presentation Aids"
+    },
+    {
+      "type": "multiple",
+      "question": "“Sell yourself and your credibility” applies to which part of presentation delivery?",
+      "options": ["Speaking Techniques", "Content Preparation", "Delivery", "Analysis"],
+      "answer": "Delivery"
+    },
+    {
+      "type": "multiple",
+      "question": "The process that includes planning, scheduling, monitoring, and reporting is called ___________.",
+      "options": ["Project Management", "Systems Analysis", "Task Control", "Workflow Planning"],
+      "answer": "Project Management"
+    },
+    {
+      "type": "multiple",
+      "question": "A project must be completed on time, within budget, and deliver a ___________.",
+      "options": ["Quality product", "Large scope", "High profit", "Strong report"],
+      "answer": "Quality product"
+    },
+    {
+      "type": "multiple",
+      "question": "The person responsible for managing and supervising the project is the ___________.",
+      "options": ["Project Manager", "Systems Analyst", "Team Leader", "Coordinator"],
+      "answer": "Project Manager"
+    },
+    {
+      "type": "multiple",
+      "question": "The one who handles administrative responsibilities and negotiates with users is the ___________.",
+      "options": ["Project Coordinator", "Project Analyst", "Programmer", "Tester"],
+      "answer": "Project Coordinator"
+    },
+    {
+      "type": "multiple",
+      "question": "Identifying all project tasks and estimating completion time is part of ___________.",
+      "options": ["Project Planning", "Project Scheduling", "Project Monitoring", "Project Reporting"],
+      "answer": "Project Planning"
+    },
+    {
+      "type": "multiple",
+      "question": "The creation of a specific timetable showing tasks and dependencies is called ___________.",
+      "options": ["Project Scheduling", "Project Planning", "Task Coordination", "Work Breakdown"],
+      "answer": "Project Scheduling"
+    },
+    {
+      "type": "multiple",
+      "question": "Guiding, supervising, and coordinating workload refers to ___________.",
+      "options": ["Project Monitoring", "Project Planning", "Project Reporting", "Project Scheduling"],
+      "answer": "Project Monitoring"
+    },
+    {
+      "type": "multiple",
+      "question": "Regular progress reports to management and users are part of ___________.",
+      "options": ["Project Reporting", "Project Scheduling", "Monitoring", "Planning"],
+      "answer": "Project Reporting"
+    },
+    {
+      "type": "multiple",
+      "question": "Breaking a project into smaller tasks is called ___________.",
+      "options": ["Work Breakdown Structure", "Project Segmentation", "Task Scheduling", "Step Planning"],
+      "answer": "Work Breakdown Structure"
+    },
+    {
+      "type": "multiple",
+      "question": "A horizontal bar chart that represents a set of tasks is a ___________.",
+      "options": ["Gantt Chart", "PERT Chart", "XY Chart", "Pareto Chart"],
+      "answer": "Gantt Chart"
+    },
+    {
+      "type": "multiple",
+      "question": "A technique developed by the U.S. Navy to manage complex projects is ___________.",
+      "options": ["PERT", "CPM", "Gantt", "Pareto"],
+      "answer": "PERT"
+    },
+    {
+      "type": "multiple",
+      "question": "A recognizable reference point used to monitor progress is called a ___________.",
+      "options": ["Milestone", "Event", "Indicator", "Phase"],
+      "answer": "Milestone"
+    },
+    {
+      "type": "multiple",
+      "question": "The amount of work one person can complete in one day is called ___________.",
+      "options": ["Person-day", "Work-unit", "Day-task", "Effort-point"],
+      "answer": "Person-day"
+    },
+    {
+      "type": "multiple",
+      "question": "The condition, restriction, or requirement that a system must satisfy is a ___________.",
+      "options": ["Constraint", "Milestone", "Variable", "Resource"],
+      "answer": "Constraint"
+    },
+    {
+      "type": "multiple",
+      "question": "Tasks that must be completed one after another are called ___________.",
+      "options": ["Dependent Tasks", "Parallel Tasks", "Sequential Tasks", "Successor Tasks"],
+      "answer": "Dependent Tasks"
+    },
+    {
+      "type": "multiple",
+      "question": "Tasks that can start at the same time are called ___________.",
+      "options": ["Concurrent Tasks", "Sequential Tasks", "Dependent Tasks", "Parallel Phases"],
+      "answer": "Concurrent Tasks"
+    },
+    {
+      "type": "multiple",
+      "question": "The task that depends on two or more prior tasks is called a ___________.",
+      "options": ["Multiple Predecessor Task", "Dependent Task", "Parallel Task", "Final Task"],
+      "answer": "Multiple Predecessor Task"
+    },
+    {
+      "type": "multiple",
+      "question": "A series of tasks that affect the completion date of the overall project is the ___________.",
+      "options": ["Critical Path", "Main Flow", "Task Route", "Project Line"],
+      "answer": "Critical Path"
+    },
+    {
+      "type": "multiple",
+      "question": "The time a task can be late without delaying the project is called ___________.",
+      "options": ["Slack Time", "Delay Margin", "Float Time", "Time Gap"],
+      "answer": "Slack Time"
+    },
+    {
+      "type": "multiple",
+      "question": "A review of a team member’s work by other members is called a ___________.",
+      "options": ["Structured Walk-through", "Peer Review", "Team Check", "Audit"],
+      "answer": "Structured Walk-through"
+    },
+    {
+      "type": "multiple",
+      "question": "A structured walk-through during design phase is called a ___________.",
+      "options": ["Design Review", "Code Review", "Test Review", "User Review"],
+      "answer": "Design Review"
+    },
+    {
+      "type": "multiple",
+      "question": "The chart that displays task dependencies and timing visually is a ___________.",
+      "options": ["Network Diagram", "Gantt Chart", "Flowchart", "XY Chart"],
+      "answer": "Network Diagram"
+    },
+    {
+      "type": "multiple",
+      "question": "The act of anticipating problems and minimizing their impact refers to ___________.",
+      "options": ["Maintaining a Schedule", "Scheduling Tasks", "Managing Reports", "Organizing Work"],
+      "answer": "Maintaining a Schedule"
+    },
+    {
+      "type": "multiple",
+      "question": "The person who reports progress to management and users is the ___________.",
+      "options": ["Project Manager", "Analyst", "Developer", "Tester"],
+      "answer": "Project Manager"
+    },
+    {
+      "type": "multiple",
+      "question": "Microsoft Project is an example of ___________.",
+      "options": ["Project Management Software", "Scheduling Tool", "Word Processor", "Database Tool"],
+      "answer": "Project Management Software"
+    },
+    {
+      "type": "multiple",
+      "question": "A system must satisfy business requirements, stay within budget, and be completed ___________.",
+      "options": ["On time", "Early", "Quickly", "Efficiently"],
+      "answer": "On time"
+    },
+    {
+      "type": "multiple",
+      "question": "The major objective of every system is to provide a ___________.",
+      "options": ["Solution to a business problem or opportunity", "New software interface", "Marketing strategy", "Financial report"],
+      "answer": "Solution to a business problem or opportunity"
+    }
+  ]
+}
