@@ -1,0 +1,601 @@
+{
+  "title": "System Analysis and Design Comprehensive Exam (Randomized Version)",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "The process businesses use to analyze sales data, automate processes, and optimize workflows is called:",
+      "options": ["IT monitoring", "Data mining", "Increasing productivity", "Maintaining loyalty"],
+      "answer": "Increasing productivity"
+    },
+    {
+      "type": "multiple",
+      "question": "The use of customer feedback and quality control systems helps businesses to:",
+      "options": ["Deliver quality products and services", "Track transactions", "Reduce marketing costs", "Maintain data accuracy"],
+      "answer": "Deliver quality products and services"
+    },
+    {
+      "type": "multiple",
+      "question": "Personalized services and loyalty programs help in:",
+      "options": ["Enhancing security", "Building hardware systems", "Maintaining customer loyalty", "Increasing system performance"],
+      "answer": "Maintaining customer loyalty"
+    },
+    {
+      "type": "multiple",
+      "question": "Accurate and timely information helps managers:",
+      "options": ["Design new hardware", "Install operating systems", "Make sound decisions", "Manage databases"],
+      "answer": "Make sound decisions"
+    },
+    {
+      "type": "multiple",
+      "question": "Information Technology (IT) refers to:",
+      "options": ["The entire system that collects, processes, stores, and shares information", "Only the use of computers", "Internet-based networking only", "Data transmission alone"],
+      "answer": "The entire system that collects, processes, stores, and shares information"
+    },
+    {
+      "type": "multiple",
+      "question": "The role of future IT professionals is to:",
+      "options": ["Ensure technology is used effectively and securely", "Focus only on hardware installation", "Design physical infrastructures", "Write code for entertainment"],
+      "answer": "Ensure technology is used effectively and securely"
+    },
+    {
+      "type": "multiple",
+      "question": "Information Technology combines hardware, software, and:",
+      "options": ["Data", "Interfaces", "Reports", "Services"],
+      "answer": "Services"
+    },
+    {
+      "type": "multiple",
+      "question": "Physical devices like computers and servers are known as:",
+      "options": ["Systems", "Data", "Hardware", "Software"],
+      "answer": "Hardware"
+    },
+    {
+      "type": "multiple",
+      "question": "Programs and applications like Windows or Excel are examples of:",
+      "options": ["Networks", "Software, Application and Programs", "Databases", "Hardware"],
+      "answer": "Software, Application and Programs"
+    },
+    {
+      "type": "multiple",
+      "question": "Cloud storage and cybersecurity support belong to:",
+      "options": ["Services", "Hardware", "Data tools", "Software"],
+      "answer": "Services"
+    },
+    {
+      "type": "multiple",
+      "question": "The process of storing data and apps online is known as:",
+      "options": ["Virtual storage", "Cloud computing", "Networking", "Local processing"],
+      "answer": "Cloud computing"
+    },
+    {
+      "type": "multiple",
+      "question": "AI and Machine Learning are examples of:",
+      "options": ["Systems that can learn, predict, and make decisions", "Simple hardware", "Basic office tools", "Old legacy systems"],
+      "answer": "Systems that can learn, predict, and make decisions"
+    },
+    {
+      "type": "multiple",
+      "question": "The connection of devices like phones and appliances online is:",
+      "options": ["Internet of Things", "Digital networking", "Data warehousing", "Virtual computing"],
+      "answer": "Internet of Things"
+    },
+    {
+      "type": "multiple",
+      "question": "System development refers to:",
+      "options": ["Planning, creating, testing, and implementing information systems", "Managing online transactions", "Buying ready-made software", "Installing hardware only"],
+      "answer": "Planning, creating, testing, and implementing information systems"
+    },
+    {
+      "type": "multiple",
+      "question": "Business information systems are developed by:",
+      "options": ["People", "Robots", "Computers", "Servers"],
+      "answer": "People"
+    },
+    {
+      "type": "multiple",
+      "question": "A developer who understands both business and technology is:",
+      "options": ["Business-oriented and technically qualified", "A customer service agent", "A hardware specialist", "A technician"],
+      "answer": "Business-oriented and technically qualified"
+    },
+    {
+      "type": "multiple",
+      "question": "Good communication skills help system developers to:",
+      "options": ["Explain technical details to non-technical users", "Avoid meetings", "Design better logos", "Code faster"],
+      "answer": "Explain technical details to non-technical users"
+    },
+    {
+      "type": "multiple",
+      "question": "Analytical thinking helps developers:",
+      "options": ["Break down problems into smaller parts", "Write reports", "Decorate interfaces", "Design posters"],
+      "answer": "Break down problems into smaller parts"
+    },
+    {
+      "type": "multiple",
+      "question": "Critical thinking helps analysts to:",
+      "options": ["Evaluate solutions and anticipate problems", "Skip documentation", "Follow orders strictly", "Avoid teamwork"],
+      "answer": "Evaluate solutions and anticipate problems"
+    },
+    {
+      "type": "multiple",
+      "question": "System Analysis is a:",
+      "options": ["Step-by-step process to develop high-quality information systems", "Marketing approach", "Hardware installation method", "Software design shortcut"],
+      "answer": "Step-by-step process to develop high-quality information systems"
+    },
+    {
+      "type": "multiple",
+      "question": "A System Analyst acts as:",
+      "options": ["A bridge between the business side and the technical side", "A project accountant", "A data entry operator", "A web tester"],
+      "answer": "A bridge between the business side and the technical side"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems developed within the company are called:",
+      "options": ["In-house applications", "Web tools", "Software packages", "Outsourced systems"],
+      "answer": "In-house applications"
+    },
+    {
+      "type": "multiple",
+      "question": "Ready-made programs sold to many customers are:",
+      "options": ["Software packages", "Cloud tools", "Open-source apps", "Custom solutions"],
+      "answer": "Software packages"
+    },
+    {
+      "type": "multiple",
+      "question": "Applications delivered online via subscription are:",
+      "options": ["Internet-based application services", "Offline systems", "Legacy systems", "ERP modules"],
+      "answer": "Internet-based application services"
+    },
+    {
+      "type": "multiple",
+      "question": "Hiring another company to build or manage a system is:",
+      "options": ["Outsourcing", "In-house development", "Integration", "Freeware"],
+      "answer": "Outsourcing"
+    },
+    {
+      "type": "multiple",
+      "question": "Tailor-made systems designed for specific requirements are:",
+      "options": ["Custom solutions", "ERP systems", "Cloud services", "Open software"],
+      "answer": "Custom solutions"
+    },
+    {
+      "type": "multiple",
+      "question": "Large-scale systems managing all business operations are called:",
+      "options": ["Enterprise-wide software strategies", "Mobile apps", "Local databases", "Web servers"],
+      "answer": "Enterprise-wide software strategies"
+    },
+    {
+      "type": "multiple",
+      "question": "A set of related components that work together is a:",
+      "options": ["System", "Network", "Model", "Database"],
+      "answer": "System"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems essential to company operations are called:",
+      "options": ["Mission-critical systems", "Backup systems", "Secondary systems", "Optional systems"],
+      "answer": "Mission-critical systems"
+    },
+    {
+      "type": "multiple",
+      "question": "Basic facts or raw materials of a system are:",
+      "options": ["Data", "Files", "Information", "Inputs"],
+      "answer": "Data"
+    },
+    {
+      "type": "multiple",
+      "question": "Processed data that is meaningful to users is:",
+      "options": ["Information", "Storage", "Record", "Process"],
+      "answer": "Information"
+    },
+    {
+      "type": "multiple",
+      "question": "The physical devices of a system are:",
+      "options": ["Hardware", "Processes", "People", "Software"],
+      "answer": "Hardware"
+    },
+    {
+      "type": "multiple",
+      "question": "Programs that control hardware are called:",
+      "options": ["Software", "Codes", "Scripts", "Processes"],
+      "answer": "Software"
+    },
+    {
+      "type": "multiple",
+      "question": "The step-by-step activities for system use are:",
+      "options": ["Processes", "Manuals", "Instructions", "Policies"],
+      "answer": "Processes"
+    },
+    {
+      "type": "multiple",
+      "question": "The users and stakeholders represent which component?",
+      "options": ["People", "Software", "Hardware", "Data"],
+      "answer": "People"
+    },
+    {
+      "type": "multiple",
+      "question": "The method of visually representing business processes is:",
+      "options": ["Business Process Modeling (BPM)", "Feasibility study", "Data mapping", "SWOT analysis"],
+      "answer": "Business Process Modeling (BPM)"
+    },
+    {
+      "type": "multiple",
+      "question": "The summary or “ID card” of a business is called:",
+      "options": ["Business profile", "Business model", "Business process", "Company form"],
+      "answer": "Business profile"
+    },
+    {
+      "type": "multiple",
+      "question": "The overall plan of how a business earns revenue is:",
+      "options": ["Business model", "Business analysis", "Profit plan", "Business process"],
+      "answer": "Business model"
+    },
+    {
+      "type": "multiple",
+      "question": "Redesigning processes to improve efficiency is:",
+      "options": ["Business Process Reengineering (BPR)", "ERP", "SWOT analysis", "BPM"],
+      "answer": "Business Process Reengineering (BPR)"
+    },
+    {
+      "type": "multiple",
+      "question": "Companies that produce physical goods are:",
+      "options": ["Production-oriented", "Dot-com", "Service-oriented", "Internet-dependent"],
+      "answer": "Production-oriented"
+    },
+    {
+      "type": "multiple",
+      "question": "Companies providing non-physical offerings are:",
+      "options": ["Service-oriented", "Dot-com", "Manufacturing-based", "Brick-and-mortar"],
+      "answer": "Service-oriented"
+    },
+    {
+      "type": "multiple",
+      "question": "Companies that rely entirely on the internet are:",
+      "options": ["Internet-dependent", "Production-based", "Local", "Service-only"],
+      "answer": "Internet-dependent"
+    },
+    {
+      "type": "multiple",
+      "question": "Online-only businesses with “.com” domains are:",
+      "options": ["Dot-com companies", "ERP firms", "Brick-and-mortar", "Internet Service Providers"],
+      "answer": "Dot-com companies"
+    },
+    {
+      "type": "multiple",
+      "question": "Traditional businesses with physical stores are:",
+      "options": ["Brick-and-mortar", "Mobile firms", "Virtual companies", "Cloud-based"],
+      "answer": "Brick-and-mortar"
+    },
+    {
+      "type": "multiple",
+      "question": "Buying and selling goods over the Internet is called:",
+      "options": ["E-Commerce", "Online exchange", "Web marketing", "Cloud trade"],
+      "answer": "E-Commerce"
+    },
+    {
+      "type": "multiple",
+      "question": "B2C stands for:",
+      "options": ["Business-to-Consumer", "Business-to-Company", "Buyer-to-Client", "Brand-to-Customer"],
+      "answer": "Business-to-Consumer"
+    },
+    {
+      "type": "multiple",
+      "question": "B2B means:",
+      "options": ["Business-to-Business", "Brand-to-Buyer", "Buyer-to-Buyer", "Business-to-Client"],
+      "answer": "Business-to-Business"
+    },
+    {
+      "type": "multiple",
+      "question": "Electronic exchange of business documents is:",
+      "options": ["Electronic Data Interchange (EDI)", "XML transfer", "Digital mailing", "Data communication"],
+      "answer": "Electronic Data Interchange (EDI)"
+    },
+    {
+      "type": "multiple",
+      "question": "The format that makes data readable across systems is:",
+      "options": ["Extensible Markup Language (XML)", "SQL", "JSON", "HTML"],
+      "answer": "Extensible Markup Language (XML)"
+    },
+    {
+      "type": "multiple",
+      "question": "The coordination of product movement from raw material to consumer is:",
+      "options": ["Supply Chain Management (SCM)", "SRM", "EDI", "ERP"],
+      "answer": "Supply Chain Management (SCM)"
+    },
+    {
+      "type": "multiple",
+      "question": "Managing interactions with suppliers is known as:",
+      "options": ["Supplier Relationship Management (SRM)", "Purchasing System", "SCM", "Vendor Control"],
+      "answer": "Supplier Relationship Management (SRM)"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that help with office tasks and productivity are:",
+      "options": ["Office systems", "DSS", "EIS", "Operational systems"],
+      "answer": "Office systems"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that handle daily operations like payroll or inventory are:",
+      "options": ["Operational systems", "DSS", "Office systems", "ERP"],
+      "answer": "Operational systems"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that support decision-making through analysis are:",
+      "options": ["Decision Support Systems (DSS)", "Transaction systems", "Record systems", "Office systems"],
+      "answer": "Decision Support Systems (DSS)"
+    },
+    {
+      "type": "multiple",
+      "question": "Systems that provide real-time summaries for executives are:",
+      "options": ["Executive Information Systems (EIS)", "DSS", "Office systems", "ERP"],
+      "answer": "Executive Information Systems (EIS)"
+    },
+    {
+      "type": "multiple",
+      "question": "The process of identifying long-term goals and resources is:",
+      "options": ["Strategic planning", "Project initiation", "SWOT analysis", "Feasibility study"],
+      "answer": "Strategic planning"
+    },
+    {
+      "type": "multiple",
+      "question": "SWOT stands for:",
+      "options": ["Strengths, Weaknesses, Opportunities, Threats", "Skills, Work, Organization, Technology", "Systems, Workflows, Operations, Tasks", "Strength, Workforce, Output, Target"],
+      "answer": "Strengths, Weaknesses, Opportunities, Threats"
+    },
+    {
+      "type": "multiple",
+      "question": "The justification for a proposal or project is called a:",
+      "options": ["Business case", "Feasibility report", "Business model", "SWOT document"],
+      "answer": "Business case"
+    },
+    {
+      "type": "multiple",
+      "question": "A formal way of asking for IT support is:",
+      "options": ["Systems request", "Technical proposal", "Project plan", "Request ticket"],
+      "answer": "Systems request"
+    },
+    {
+      "type": "multiple",
+      "question": "A systems request may involve:",
+      "options": ["Enhancements or corrections to existing systems", "Employee scheduling", "Marketing design", "Designing furniture layouts"],
+      "answer": "Enhancements or corrections to existing systems"
+    },
+    {
+      "type": "multiple",
+      "question": "The reason for requesting IT projects may include:",
+      "options": ["Improved service", "Higher salary", "Office renovation", "New marketing slogans"],
+      "answer": "Improved service"
+    },
+    {
+      "type": "multiple",
+      "question": "Factors inside the company affecting projects are:",
+      "options": ["Internal factors", "External factors", "Cloud settings", "Government rules"],
+      "answer": "Internal factors"
+    },
+    {
+      "type": "multiple",
+      "question": "Technology, suppliers, and competitors are examples of:",
+      "options": ["External factors", "Internal factors", "Team issues", "Cost variables"],
+      "answer": "External factors"
+    },
+    {
+      "type": "multiple",
+      "question": "The form used to propose new systems is called:",
+      "options": ["Systems request form", "Evaluation card", "Technical note", "Application sheet"],
+      "answer": "Systems request form"
+    },
+    {
+      "type": "multiple",
+      "question": "The group reviewing system proposals is:",
+      "options": ["Systems review committee", "IT helpdesk", "Audit team", "Research group"],
+      "answer": "Systems review committee"
+    },
+    {
+      "type": "multiple",
+      "question": "The test that checks if a system is practical is:",
+      "options": ["Feasibility study", "SWOT analysis", "Data audit", "Project plan"],
+      "answer": "Feasibility study"
+    },
+    {
+      "type": "multiple",
+      "question": "Feasibility that ensures the system will be used effectively is:",
+      "options": ["Operational feasibility", "Economic feasibility", "Schedule feasibility", "Technical feasibility"],
+      "answer": "Operational feasibility"
+    },
+    {
+      "type": "multiple",
+      "question": "Feasibility that checks technical resources is:",
+      "options": ["Technical feasibility", "Operational feasibility", "Schedule feasibility", "Financial feasibility"],
+      "answer": "Technical feasibility"
+    },
+    {
+      "type": "multiple",
+      "question": "What does globalization in IT refer to?",
+      "options": [
+        "Using social media for communication",
+        "Companies doing business across different countries with different laws and cultures",
+        "Limiting operations within one region",
+        "Using outdated technology"
+      ],
+      "answer": "Companies doing business across different countries with different laws and cultures"
+    },
+    {
+      "type": "multiple",
+      "question": "What happens to technology over time according to the lesson?",
+      "options": [
+        "It becomes slower",
+        "It stays the same",
+        "It evolves very fast and old tech becomes obsolete",
+        "It rarely changes"
+      ],
+      "answer": "It evolves very fast and old tech becomes obsolete"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following best describes cloud computing?",
+      "options": [
+        "Running programs only on local devices",
+        "Storing data and applications online instead of on physical servers",
+        "Using floppy disks for storage",
+        "A type of hardware"
+      ],
+      "answer": "Storing data and applications online instead of on physical servers"
+    },
+    {
+      "type": "multiple",
+      "question": "Artificial Intelligence (AI) and Machine Learning (ML) are systems that can:",
+      "options": [
+        "Only follow fixed instructions",
+        "Learn, predict, and make decisions",
+        "Store and print data",
+        "Work without software"
+      ],
+      "answer": "Learn, predict, and make decisions"
+    },
+    {
+      "type": "multiple",
+      "question": "What does the Internet of Things (IoT) refer to?",
+      "options": [
+        "Connecting only computers to the internet",
+        "A group of websites on the internet",
+        "Devices like phones and appliances that are connected and communicate online",
+        "A programming language"
+      ],
+      "answer": "Devices like phones and appliances that are connected and communicate online"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is not an information system component?",
+      "options": [
+        "Hardware",
+        "Software",
+        "Electricity",
+        "People"
+      ],
+      "answer": "Electricity"
+    },
+    {
+      "type": "multiple",
+      "question": "Hardware is described as:",
+      "options": [
+        "The programs that run on a computer",
+        "The physical layer of an information system",
+        "A set of procedures",
+        "Data stored in a database"
+      ],
+      "answer": "The physical layer of an information system"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is an example of hardware?",
+      "options": [
+        "Printer",
+        "Database",
+        "Windows",
+        "Excel"
+      ],
+      "answer": "Printer"
+    },
+    {
+      "type": "multiple",
+      "question": "Software can be described as:",
+      "options": [
+        "The physical devices of a system",
+        "What tells the hardware what to do",
+        "The people who use the system",
+        "The data stored in tables"
+      ],
+      "answer": "What tells the hardware what to do"
+    },
+    {
+      "type": "multiple",
+      "question": "What does system software do?",
+      "options": [
+        "Helps users perform specific tasks",
+        "Manages hardware and basic computer functions",
+        "Connects mobile devices",
+        "Designs the workflow"
+      ],
+      "answer": "Manages hardware and basic computer functions"
+    },
+    {
+      "type": "multiple",
+      "question": "Which of the following is an example of application software?",
+      "options": [
+        "Windows",
+        "Linux",
+        "MS Word",
+        "Android OS"
+      ],
+      "answer": "MS Word"
+    },
+    {
+      "type": "multiple",
+      "question": "What is a legacy system?",
+      "options": [
+        "A brand-new technology",
+        "An older system still in use",
+        "A mobile application",
+        "A type of hardware"
+      ],
+      "answer": "An older system still in use"
+    },
+    {
+      "type": "multiple",
+      "question": "Data in an information system is described as:",
+      "options": [
+        "Raw material stored in databases",
+        "Finished reports",
+        "Hardware components",
+        "Instructions for software"
+      ],
+      "answer": "Raw material stored in databases"
+    },
+    {
+      "type": "multiple",
+      "question": "What do processes in an information system describe?",
+      "options": [
+        "The physical devices used",
+        "The tasks and workflows that achieve results",
+        "The people who use the system",
+        "The data storage"
+      ],
+      "answer": "The tasks and workflows that achieve results"
+    },
+    {
+      "type": "multiple",
+      "question": "Who are considered stakeholders in an information system?",
+      "options": [
+        "Only IT staff",
+        "Anyone who has an interest in the system",
+        "Only programmers",
+        "Only customers"
+      ],
+      "answer": "Anyone who has an interest in the system"
+    },
+    {
+      "type": "multiple",
+      "question": "What is the difference between users and stakeholders?",
+      "options": [
+        "Users create hardware, stakeholders use software",
+        "Stakeholders manage, while users interact with the system daily",
+        "They are the same",
+        "Users are external to the company"
+      ],
+      "answer": "Stakeholders manage, while users interact with the system daily"
+    },
+    {
+      "type": "multiple",
+      "question": "Feasibility that ensures benefits outweigh costs is:",
+      "options": ["Economic feasibility", "Schedule feasibility", "Technical feasibility", "Functional feasibility"],
+      "answer": "Economic feasibility"
+    },
+    {
+      "type": "multiple",
+      "question": "Feasibility that ensures a project can be completed on time is:",
+      "options": ["Schedule feasibility", "Economic feasibility", "Technical feasibility", "Operational feasibility"],
+      "answer": "Schedule feasibility"
+    }
+  ]
+}
