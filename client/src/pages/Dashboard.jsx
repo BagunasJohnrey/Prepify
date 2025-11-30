@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { user, logout, refreshUser } = useAuth(); 
+  const { user, logout, refreshUser, loading: authLoading } = useAuth(); 
 
   const [file, setFile] = useState(null);
   
@@ -22,6 +22,13 @@ export default function Dashboard() {
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Redirect if not logged in
+  useEffect(() => {
+    if (!authLoading && !user) {
+      navigate('/');
+    }
+  }, [authLoading, user, navigate]);
+
   // Fetch Quizzes using api instance
   const fetchQuizzes = useCallback(async () => {
     try {
@@ -32,7 +39,11 @@ export default function Dashboard() {
     }
   }, [filter]);
 
-  useEffect(() => { fetchQuizzes(); }, [fetchQuizzes]);
+  useEffect(() => { 
+    if (user) {
+      fetchQuizzes(); 
+    }
+  }, [fetchQuizzes, user]);
 
   const handleLogout = () => {
     if (confirm("Are you sure you want to log out?")) {
@@ -81,7 +92,8 @@ export default function Dashboard() {
     }
   };
 
-  if (!user) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
+  if (authLoading) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
+  if (!user) return null;
 
   return (
     <div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto">
@@ -168,9 +180,9 @@ export default function Dashboard() {
                   <label className="text-xs font-bold text-gray-500 uppercase mb-1 block">Course Type</label>
                   <select value={config.course} onChange={(e) => setConfig({...config, course: e.target.value})}
                     className="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-sm text-white focus:border-neon-purple outline-none">
-                    <option value="General Education">GED</option>
-                    <option value="Minor Subject">Minor Sub</option>
-                    <option value="Major Subject">Major Sub</option>
+                    <option value="General Education">General Education</option>
+                    <option value="Minor Subject">Minor Subject</option>
+                    <option value="Major Subject">Major Subject</option>
                   </select>
                 </div>
               </div>
