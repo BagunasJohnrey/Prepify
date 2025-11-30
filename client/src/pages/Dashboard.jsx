@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, LogOut, Filter } from 'lucide-react';
+import api from '../utils/api'; 
+import { useAuth } from '../context/AuthContext'; 
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const { user, logout, refreshUser } = useAuth(); 
+
   const [file, setFile] = useState(null);
   
-  // Generator Config
   const [config, setConfig] = useState({ 
     course: 'Major Subject', 
     difficulty: 'Medium',    
@@ -15,59 +18,15 @@ export default function Dashboard() {
     description: ''          
   });
 
-  // Library Filter State (New)
   const [filter, setFilter] = useState('All');
-
   const [quizzes, setQuizzes] = useState([]);
-  const [hearts, setHearts] = useState(3);
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/');
-      return;
-    }
-    
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    if (storedUser) {
-      setUser(storedUser);
-      setHearts(storedUser.hearts);
-    }
-
-    fetch('http://localhost:3000/api/auth/me', { 
-      headers: { Authorization: `Bearer ${token}` } 
-    })
-      .then(res => {
-        if (!res.ok) throw new Error("Unauthorized");
-        return res.json();
-      })
-      .then(data => {
-        setHearts(data.hearts);
-        setUser(data); 
-        localStorage.setItem('user', JSON.stringify(data));
-      })
-      .catch(() => {
-        localStorage.removeItem('token');
-        navigate('/');
-      });
-  }, [navigate]);
-
-  // Fetch Quizzes based on Filter
+  // Fetch Quizzes using api instance
   const fetchQuizzes = useCallback(async () => {
     try {
-      // If filter is 'All', we send 'All' or empty string (handled by server now)
-      const res = await fetch(`http://localhost:3000/api/quizzes?course=${filter}`);
-      
-      if (!res.ok) return; 
-      
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        setQuizzes(data);
-      } else {
-        setQuizzes([]); 
-      }
+      const { data } = await api.get(`/quizzes?course=${filter}`);
+      setQuizzes(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("Failed to fetch quizzes", err);
     }
@@ -77,9 +36,7 @@ export default function Dashboard() {
 
   const handleLogout = () => {
     if (confirm("Are you sure you want to log out?")) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      navigate('/');
+      logout();
     }
   };
 
@@ -88,7 +45,6 @@ export default function Dashboard() {
     if (!config.customTitle.trim()) return alert("Please enter a name for this exam.");
     
     setLoading(true);
-
     const formData = new FormData();
     formData.append('pdfFile', file);
     formData.append('course', config.course);
@@ -98,16 +54,11 @@ export default function Dashboard() {
     formData.append('customTitle', config.customTitle);
 
     try {
-      const res = await fetch('http://localhost:3000/api/generate', { 
-        method: 'POST', 
-        body: formData 
-      });
-      
-      if (!res.ok) throw new Error("Generation Failed");
-      
-      const data = await res.json();
+      const { data } = await api.post('/generate', formData);
       alert(`Success! "${data.title}" is ready.`);
-      fetchQuizzes(); // Refresh list
+      
+      fetchQuizzes(); 
+      refreshUser(); 
       setFile(null); 
     } catch (err) {
       console.error(err);
@@ -119,43 +70,38 @@ export default function Dashboard() {
 
   const handleDelete = async (e, quizId) => {
     e.stopPropagation(); 
-    if (!confirm("Are you sure you want to delete this quiz? This cannot be undone.")) return;
+    if (!confirm("Are you sure you want to delete this quiz?")) return;
 
-    const token = localStorage.getItem('token');
     try {
-        const res = await fetch(`http://localhost:3000/api/quiz/${quizId}`, {
-            method: 'DELETE',
-            headers: { Authorization: `Bearer ${token}` }
-        });
-
-        if (res.ok) {
-            alert("Quiz deleted.");
-            fetchQuizzes(); 
-        } else {
-            alert("Failed to delete. You might not be an admin.");
-        }
+        await api.delete(`/quiz/${quizId}`);
+        alert("Quiz deleted.");
+        fetchQuizzes(); 
     } catch (err) {
-        console.error("Delete error", err);
+        alert("Failed to delete. " + (err.response?.data?.error || ""));
     }
   };
 
+  if (!user) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
+
   return (
     <div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto">
+      {/* HEADER */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
         <div>
           <h1 className="text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-neon-green to-neon-blue drop-shadow-lg">
             PREPIFY
           </h1>
           <div className="text-gray-400 tracking-widest text-sm font-bold mt-1 flex items-center gap-2">
-            AI EXAM SIMULATOR {user && <span className="text-neon-purple">• WELCOME, {user.username.toUpperCase()} {user.role === 'admin' && '(ADMIN)'}</span>}
+            AI EXAM SIMULATOR <span className="text-neon-purple">• WELCOME, {user.username.toUpperCase()} {user.role === 'admin' && '(ADMIN)'}</span>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
             <div className="flex items-center gap-3 bg-gray-800/80 backdrop-blur-md px-6 py-3 rounded-full border border-gray-700 shadow-neon-blue">
-            <Heart className={`w-6 h-6 ${hearts > 0 ? 'text-red-500 fill-red-500' : 'text-gray-600'}`} />
+            {/* Sync hearts from context */}
+            <Heart className={`w-6 h-6 ${user.hearts > 0 ? 'text-red-500 fill-red-500' : 'text-gray-600'}`} />
             <div className="flex flex-col">
-                <span className="text-2xl font-bold leading-none">{hearts} / 3</span>
+                <span className="text-2xl font-bold leading-none">{user.hearts} / 3</span>
                 <span className="text-[10px] text-gray-400 uppercase tracking-wider">Lives</span>
             </div>
             </div>
@@ -286,7 +232,6 @@ export default function Dashboard() {
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-gray-900 text-gray-400 px-2 py-1 rounded border border-gray-700 whitespace-nowrap ml-2">{quiz.items_count || 10} Qs</span>
                   </div>
                   
-                  {/* --- NEW: Description Display --- */}
                   {quiz.description && (
                     <p className="text-gray-400 text-sm mt-1 line-clamp-1 italic">{quiz.description}</p>
                   )}

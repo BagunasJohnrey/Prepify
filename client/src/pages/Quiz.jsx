@@ -1,11 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Timer, Heart, AlertTriangle, AlertCircle, CheckCircle, XCircle, Loader } from 'lucide-react';
+import { Timer, Heart, AlertCircle, CheckCircle, XCircle, Loader } from 'lucide-react';
+import api from '../utils/api'; 
+import { useAuth } from '../context/AuthContext'; 
 
 export default function Quiz() {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+  const { user, refreshUser } = useAuth(); 
+
   const [quiz, setQuiz] = useState(null);
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
@@ -15,34 +18,25 @@ export default function Quiz() {
   const [isAnswered, setIsAnswered] = useState(false);
   const [history, setHistory] = useState([]);
   
-  const [hearts, setHearts] = useState(3);
-  const [user, setUser] = useState(null);
+
+  const [hearts, setHearts] = useState(user?.hearts ?? 3);
+  const [prevServerHearts, setPrevServerHearts] = useState(user?.hearts);
+
+  if (user?.hearts !== undefined && user.hearts !== prevServerHearts) {
+    setPrevServerHearts(user.hearts);
+    setHearts(user.hearts);
+  }
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/');
-      return;
-    }
-
-    fetch('http://localhost:3000/api/auth/me', { 
-      headers: { Authorization: `Bearer ${token}` } 
-    })
-      .then(res => res.json())
-      .then(data => {
-        setUser(data);
-        setHearts(data.hearts);
-      });
-
-    fetch(`http://localhost:3000/api/quiz/${id}`)
-      .then(res => res.json())
-      .then(data => {
+    api.get(`/quiz/${id}`)
+      .then(res => {
         const randomized = {
-          ...data,
-          questions: data.questions.sort(() => Math.random() - 0.5)
+          ...res.data,
+          questions: res.data.questions.sort(() => Math.random() - 0.5)
         };
         setQuiz(randomized);
-      });
+      })
+      .catch(() => navigate('/dashboard'));
   }, [id, navigate]);
 
   const handleFinish = useCallback(() => {
@@ -88,13 +82,9 @@ export default function Quiz() {
       setHearts(h => Math.max(0, h - 1)); 
       
       try {
-        await fetch('http://localhost:3000/api/user/lose-heart', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: user.id })
-        });
+        await api.post('/auth/lose-heart', { userId: user.id });
+        refreshUser();
       } catch (err) {
-        // --- FIX: Used 'err' here ---
         console.error("Failed to sync hearts", err);
       }
     }

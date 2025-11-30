@@ -1,6 +1,14 @@
+import { z } from "zod";
 import Quiz from "../models/Quiz.js";
 import { parsePDFBuffer } from "../utils/pdfParser.js";
 import { generateQuizQuestions } from "../utils/aiService.js";
+
+const QuizSchema = z.array(z.object({
+  question: z.string(),
+  options: z.array(z.string()).length(4),
+  answer: z.string(),
+  explanation: z.string()
+}));
 
 export const getQuizzes = async (req, res) => {
   try {
@@ -24,8 +32,6 @@ export const getQuizById = async (req, res) => {
 
 export const deleteQuiz = async (req, res) => {
     try {
-        // Double check admin role via DB in middleware or here if strictly needed
-        // Assuming verifyAdmin middleware handled the role check
         await Quiz.delete(req.params.id);
         res.json({ success: true });
     } catch (err) {
@@ -44,12 +50,13 @@ export const generateQuiz = async (req, res) => {
     console.log("1. Parsing PDF...");
     const text = await parsePDFBuffer(req.file.buffer);
     
-    console.log(`>> Extracted ${text.length} chars.`);
     if (text.length < 50) {
       throw new Error("Not enough text extracted. The PDF might be scanned images.");
     }
 
-    const truncatedText = text.substring(0, 25000); 
+    const truncatedText = text.length > 25000 
+        ? text.substring(0, 25000) 
+        : text;
 
     const prompt = `
       Create a strictly valid JSON exam based on the text below.
@@ -61,27 +68,35 @@ export const generateQuiz = async (req, res) => {
       - Count: ${questionLimit} questions.
       
       RULES:
-      1. For Multiple Choice questions, you MUST provide 4 options (A, B, C, D).
-      2. For True/False questions, only provide 2 options (True, False).
-      3. The "answer" field must be the EXACT string of the correct option.
-      4. Return ONLY the JSON array. Do not use markdown blocks.
+      1. Return ONLY a JSON array. No Markdown blocks (no \`\`\`), no introduction, no conclusion.
+      2. Multiple Choice: Must have exactly 4 options.
+      3. [IMPORTANT] Do not use "All of the above", "None of the above", or "Both A and B" as options, because the frontend randomizes the order of options.
+      4. The "answer" field must MATCH exactly one of the strings in "options".
+      5. Provide a short "explanation" for why the answer is correct.
 
-      JSON Structure:
+      JSON FORMAT:
       [
         {
-          "question": "Question text?",
-          "options": ["A. Option 1", "B. Option 2", "C. Option 3", "D. Option 4"], 
-          "answer": "A. Option 1", 
-          "explanation": "..."
+          "question": "Question text here?",
+          "options": ["Option A", "Option B", "Option C", "Option D"], 
+          "answer": "Option A", 
+          "explanation": "Because..."
         }
       ]
 
-      Text:
+      TEXT DATA:
       ${truncatedText}
     `;
 
     console.log("2. Sending to OpenRouter...");
     const questions = await generateQuizQuestions(prompt);
+
+    const validation = QuizSchema.safeParse(questions);
+    
+    if (!validation.success) {
+        console.error("AI Validation Failed:", JSON.stringify(validation.error.format(), null, 2));
+        throw new Error("AI generated invalid quiz format. Please try again.");
+    }
 
     console.log("3. Saving to Database...");
     const title = customTitle || `Exam - ${new Date().toLocaleDateString()}`;

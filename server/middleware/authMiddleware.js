@@ -2,7 +2,11 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
 dotenv.config();
-const JWT_SECRET = process.env.JWT_SECRET || "prepify_secure_secret";
+
+if (!process.env.JWT_SECRET) {
+    throw new Error("FATAL: JWT_SECRET is missing. Cannot start server securely.");
+}
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const verifyToken = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
@@ -10,7 +14,7 @@ export const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = decoded; // Attach user info to request
+    req.user = decoded; 
     next();
   } catch (err) {
     res.status(401).json({ error: "Invalid token" });
@@ -18,10 +22,6 @@ export const verifyToken = (req, res, next) => {
 };
 
 export const verifyAdmin = (req, res, next) => {
-    // Requires verifyToken to run first
-    // Note: In your original code you queried the DB to check role. 
-    // If the role is in the token, we can check req.user.role directly.
-    // If you prefer strict DB check, you can invoke User model here.
     if (req.user?.role !== 'admin') {
         return res.status(403).json({ error: "Access Denied: Admins Only" });
     }
