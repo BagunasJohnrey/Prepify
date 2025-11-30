@@ -1,6 +1,5 @@
-# Ignore root node_modules
 node_modules/
 
-# Ignore client node_modules (explicitly, though the above usually covers it)
 client/node_modules/
+
 .env
