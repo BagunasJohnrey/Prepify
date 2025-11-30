@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, LogOut } from 'lucide-react';
+import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, LogOut, Filter } from 'lucide-react';
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   
-  // FIX: Removed 'category'. Added 'course', 'difficulty', 'description'.
+  // Generator Config
   const [config, setConfig] = useState({ 
     course: 'Major Subject', 
     difficulty: 'Medium',    
@@ -14,6 +14,9 @@ export default function Dashboard() {
     customTitle: '',
     description: ''          
   });
+
+  // Library Filter State (New)
+  const [filter, setFilter] = useState('All');
 
   const [quizzes, setQuizzes] = useState([]);
   const [hearts, setHearts] = useState(3);
@@ -51,17 +54,24 @@ export default function Dashboard() {
       });
   }, [navigate]);
 
-  // FIX: Using 'course' instead of 'category'
+  // Fetch Quizzes based on Filter
   const fetchQuizzes = useCallback(async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/quizzes?course=${config.course}`);
-      if (!res.ok) return;
+      // If filter is 'All', we send 'All' or empty string (handled by server now)
+      const res = await fetch(`http://localhost:3000/api/quizzes?course=${filter}`);
+      
+      if (!res.ok) return; 
+      
       const data = await res.json();
-      if (Array.isArray(data)) setQuizzes(data);
+      if (Array.isArray(data)) {
+        setQuizzes(data);
+      } else {
+        setQuizzes([]); 
+      }
     } catch (err) {
       console.error("Failed to fetch quizzes", err);
     }
-  }, [config.course]);
+  }, [filter]);
 
   useEffect(() => { fetchQuizzes(); }, [fetchQuizzes]);
 
@@ -81,8 +91,6 @@ export default function Dashboard() {
 
     const formData = new FormData();
     formData.append('pdfFile', file);
-    
-    // FIX: Only appending new fields
     formData.append('course', config.course);
     formData.append('difficulty', config.difficulty);
     formData.append('description', config.description);
@@ -99,7 +107,7 @@ export default function Dashboard() {
       
       const data = await res.json();
       alert(`Success! "${data.title}" is ready.`);
-      fetchQuizzes();
+      fetchQuizzes(); // Refresh list
       setFile(null); 
     } catch (err) {
       console.error(err);
@@ -164,6 +172,7 @@ export default function Dashboard() {
 
       <div className="grid md:grid-cols-12 gap-8">
         
+        {/* --- LEFT PANEL: CONFIGURATION --- */}
         <div className="md:col-span-4 space-y-6">
           <div className="bg-dark-surface p-6 rounded-3xl border border-gray-800 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-neon-blue to-neon-purple"></div>
@@ -241,26 +250,58 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* --- RIGHT PANEL: EXAM LIST --- */}
         <div className="md:col-span-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-              <BookOpen className="text-neon-purple" /> My Library
-            </h2>
-            <span className="text-xs font-mono text-gray-500 bg-gray-900 px-3 py-1 rounded-full border border-gray-800">{quizzes.length} Files</span>
+            <div className="flex items-center gap-4">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                <BookOpen className="text-neon-purple" /> My Library
+              </h2>
+              <span className="text-xs font-mono text-gray-500 bg-gray-900 px-3 py-1 rounded-full border border-gray-800">{quizzes.length} Files</span>
+            </div>
+
+            {/* --- FILTER DROPDOWN --- */}
+            <div className="flex items-center gap-2">
+              <Filter size={16} className="text-gray-400" />
+              <select 
+                value={filter} 
+                onChange={(e) => setFilter(e.target.value)}
+                className="bg-gray-900 border border-gray-700 text-white text-xs rounded-lg p-2 focus:border-neon-blue outline-none cursor-pointer"
+              >
+                <option value="All">All Courses</option>
+                <option value="General Education">GED</option>
+                <option value="Minor Subject">Minor Sub</option>
+                <option value="Major Subject">Major Sub</option>
+              </select>
+            </div>
           </div>
 
           <div className="grid gap-4">
             {quizzes.map((quiz) => (
               <div key={quiz.id} onClick={() => navigate(`/quiz/${quiz.id}`)}
                 className="group bg-dark-surface p-5 rounded-2xl border border-gray-800 hover:border-neon-purple transition-all cursor-pointer flex justify-between items-center shadow-lg hover:shadow-[0_0_15px_rgba(188,19,254,0.1)]">
-                <div>
-                  <h3 className="font-bold text-lg text-white group-hover:text-neon-purple transition">{quiz.title}</h3>
-                  <div className="flex items-center gap-3 mt-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-gray-900 text-gray-400 px-2 py-1 rounded border border-gray-700">{quiz.items_count || 10} Qs</span>
-                    {/* Display New Fields */}
-                    <span className="text-xs text-gray-500">{quiz.course} • <span className="text-neon-blue">{quiz.difficulty}</span></span>
+                <div className="flex-1 mr-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-bold text-lg text-white group-hover:text-neon-purple transition">{quiz.title}</h3>
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-gray-900 text-gray-400 px-2 py-1 rounded border border-gray-700 whitespace-nowrap ml-2">{quiz.items_count || 10} Qs</span>
+                  </div>
+                  
+                  {/* --- NEW: Description Display --- */}
+                  {quiz.description && (
+                    <p className="text-gray-400 text-sm mt-1 line-clamp-1 italic">{quiz.description}</p>
+                  )}
+
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="text-xs text-gray-500 border border-gray-700 px-2 py-0.5 rounded-full bg-gray-900/50">{quiz.course}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full border border-gray-700 bg-gray-900/50 ${
+                      quiz.difficulty === 'Hard' ? 'text-red-400' : 
+                      quiz.difficulty === 'Medium' ? 'text-yellow-400' : 'text-green-400'
+                    }`}>
+                      {quiz.difficulty || 'Medium'}
+                    </span>
                   </div>
                 </div>
+
                 <div className="flex items-center gap-2">
                     {user?.role === 'admin' && (
                         <button onClick={(e) => handleDelete(e, quiz.id)} className="bg-red-900/30 p-3 rounded-full hover:bg-red-600 hover:text-white text-red-500 transition border border-red-900/50" title="Delete Quiz">

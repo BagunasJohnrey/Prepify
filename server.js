@@ -159,12 +159,11 @@ app.get("/api/quizzes", async (req, res) => {
   const { course } = req.query; 
 
   try {
-    // FIX: Removed 'category' and 'program'. Added 'course', 'difficulty', 'description'
     let query = "SELECT id, title, course, difficulty, description, items_count, created_at FROM quizzes";
     let params = [];
 
-    // Filter by course if provided
-    if (course && course !== "null" && course !== "") {
+    // FIX: Only filter if course is NOT "All"
+    if (course && course !== "null" && course !== "" && course !== "All") {
       query += " WHERE course = $1";
       params.push(course);
     }
@@ -214,7 +213,6 @@ app.delete("/api/quiz/:id", async (req, res) => {
 app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No PDF uploaded" });
   
-  // FIX: Destructure new fields only. No category/program.
   const { course, customTitle, numQuestions, difficulty, description } = req.body;
   const questionLimit = numQuestions || 10;
 
@@ -233,9 +231,9 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
       Create a strictly valid JSON exam based on the text below.
       
       CONTEXT:
-      - Course Type: ${course} (e.g., Major, Minor, GED)
-      - Difficulty: ${difficulty} (Adjust phrasing and complexity accordingly)
-      - Specific Focus/Description: ${description || "General coverage"}
+      - Course Type: ${course}
+      - Difficulty: ${difficulty}
+      - Description/Focus: ${description || "General coverage"}
       - Count: ${questionLimit} questions.
       
       RULES:
@@ -318,8 +316,6 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
     
     const title = customTitle || `Exam - ${new Date().toLocaleDateString()}`;
 
-    // FIX: INSERT STATEMENT MATCHES DB COLUMNS EXACTLY
-    // No 'category', No 'program'. Using 'course', 'difficulty', 'description'.
     const dbResult = await pool.query(
       "INSERT INTO quizzes (title, course, difficulty, description, questions, items_count) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
       [title, course, difficulty, description, JSON.stringify(questions), questions.length]
