@@ -18,13 +18,12 @@ const { Pool } = pg;
 const JWT_SECRET = process.env.JWT_SECRET || "prepify_secure_secret";
 
 // --- SMART FALLBACK MODELS ---
-// If the first one fails (429 Rate Limit), the code will automatically try the next one.
 const FREE_MODELS = [
-  "google/gemini-2.0-flash-exp:free",           // Fast, but often busy
-  "google/gemini-2.5-flash-lite-preview-09-2025",       // Good alternative
-  "meta-llama/llama-3.3-70b-instruct:free",     // Very stable backup
+  "google/gemini-2.0-flash-exp:free",           
+  "google/gemini-2.5-flash-lite-preview-09-2025",       
+  "meta-llama/llama-3.3-70b-instruct:free",     
   "deepseek/deepseek-r1-distill-llama-70b:free",
-  "openai/gpt-oss-20b:free" // Another strong backup
+  "openai/gpt-oss-20b:free" 
 ];
 
 const pool = new Pool({
@@ -75,7 +74,6 @@ app.post("/api/auth/register", async (req, res) => {
   const { username, password } = req.body;
   try {
     const hash = await bcrypt.hash(password, 10);
-    // Default role is 'user'
     const result = await pool.query(
       "INSERT INTO users (username, password_hash, role) VALUES ($1, $2, 'user') RETURNING id, username",
       [username, hash]
@@ -158,20 +156,24 @@ app.post("/api/user/lose-heart", async (req, res) => {
 // ==========================================
 
 app.get("/api/quizzes", async (req, res) => {
-  const { category, program } = req.query;
-  try {
-    let query = "SELECT id, title, category, program, items_count, created_at FROM quizzes WHERE category = $1";
-    let params = [category];
+  const { course } = req.query; 
 
-    if (program && program !== "null" && program !== "") {
-      query += " AND program = $2";
-      params.push(program);
+  try {
+    // FIX: Removed 'category' and 'program'. Added 'course', 'difficulty', 'description'
+    let query = "SELECT id, title, course, difficulty, description, items_count, created_at FROM quizzes";
+    let params = [];
+
+    // Filter by course if provided
+    if (course && course !== "null" && course !== "") {
+      query += " WHERE course = $1";
+      params.push(course);
     }
     
     query += " ORDER BY created_at DESC";
     const { rows } = await pool.query(query, params);
     res.json(rows);
   } catch (err) {
+    console.error("GET Quizzes Error:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -198,7 +200,6 @@ app.delete("/api/quiz/:id", async (req, res) => {
             return res.status(403).json({ error: "Access Denied: Admins Only" });
         }
 
-        // Cleanup results first
         await pool.query("DELETE FROM results WHERE quiz_id = $1", [req.params.id]);
         await pool.query("DELETE FROM quizzes WHERE id = $1", [req.params.id]);
 
@@ -209,11 +210,12 @@ app.delete("/api/quiz/:id", async (req, res) => {
     }
 });
 
-// --- ROBUST GENERATE ROUTE ---
+// --- GENERATE ROUTE ---
 app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No PDF uploaded" });
   
-  const { category, program, customTitle, numQuestions } = req.body;
+  // FIX: Destructure new fields only. No category/program.
+  const { course, customTitle, numQuestions, difficulty, description } = req.body;
   const questionLimit = numQuestions || 10;
 
   try {
@@ -225,12 +227,16 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
       throw new Error("Not enough text extracted. The PDF might be scanned images.");
     }
 
-    const truncatedText = text.substring(0, 20000); 
+    const truncatedText = text.substring(0, 25000); 
 
     const prompt = `
       Create a strictly valid JSON exam based on the text below.
-      Target: ${category} ${program}.
-      Count: ${questionLimit} questions.
+      
+      CONTEXT:
+      - Course Type: ${course} (e.g., Major, Minor, GED)
+      - Difficulty: ${difficulty} (Adjust phrasing and complexity accordingly)
+      - Specific Focus/Description: ${description || "General coverage"}
+      - Count: ${questionLimit} questions.
       
       RULES:
       1. For Multiple Choice questions, you MUST provide 4 options (A, B, C, D).
@@ -252,12 +258,11 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
       ${truncatedText}
     `;
 
-    console.log("2. Sending to OpenRouter (Attempting models)...");
+    console.log("2. Sending to OpenRouter...");
     
     let questions = null;
     let lastError = null;
 
-    // --- FALLBACK LOOP ---
     for (const model of FREE_MODELS) {
         try {
             console.log(`>> Trying model: ${model}...`);
@@ -278,7 +283,6 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
 
             if (!response.ok) {
                 const errText = await response.text();
-                // If rate limited (429) or overloaded (503), throw error to trigger next model
                 throw new Error(`Status ${response.status} - ${errText}`);
             }
 
@@ -289,9 +293,7 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
             }
 
             let rawText = data.choices[0].message.content;
-            // Robust cleanup for different models
             rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
-            // Sometimes models add text before the JSON array
             const jsonStartIndex = rawText.indexOf('[');
             const jsonEndIndex = rawText.lastIndexOf(']');
             if (jsonStartIndex !== -1 && jsonEndIndex !== -1) {
@@ -300,12 +302,11 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
 
             questions = JSON.parse(rawText);
             console.log(`>> Success with ${model}!`);
-            break; // Stop looping, we got data!
+            break; 
 
         } catch (err) {
             console.warn(`>> Model ${model} failed: ${err.message}`);
             lastError = err;
-            // Continue to next model...
         }
     }
 
@@ -316,9 +317,12 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
     console.log("3. Saving to Database...");
     
     const title = customTitle || `Exam - ${new Date().toLocaleDateString()}`;
+
+    // FIX: INSERT STATEMENT MATCHES DB COLUMNS EXACTLY
+    // No 'category', No 'program'. Using 'course', 'difficulty', 'description'.
     const dbResult = await pool.query(
-      "INSERT INTO quizzes (title, category, program, questions, items_count) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [title, category, program, JSON.stringify(questions), questions.length]
+      "INSERT INTO quizzes (title, course, difficulty, description, questions, items_count) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [title, course, difficulty, description, JSON.stringify(questions), questions.length]
     );
 
     console.log("4. Success!");
