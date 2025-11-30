@@ -1,9 +1,19 @@
 import { Brain, Zap, Target, ShieldCheck } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export default function About() {
   const navigate = useNavigate();
+  const { user } = useAuth();
+
+  const handleStartLearning = () => {
+    if (user) {
+      navigate('/dashboard');
+    } else {
+      navigate('/register');
+    }
+  };
 
   return (
     <div className="animate-fade-in">
@@ -19,7 +29,7 @@ export default function About() {
             Prepify transforms your static PDF study materials into dynamic, interactive quizzes using advanced Artificial Intelligence.
           </p>
           <div className="flex justify-center gap-4">
-             <Button className="max-w-[200px]" onClick={() => navigate('/register')}>Start Learning</Button>
+             <Button className="max-w-[200px]" onClick={handleStartLearning}>Start Learning</Button>
           </div>
         </div>
         

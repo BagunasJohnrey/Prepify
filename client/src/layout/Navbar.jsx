@@ -24,13 +24,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <Link to="/" className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+        <Link to={user ? "/dashboard" : "/"} className="text-2xl font-black tracking-tight text-white flex items-center">
           <span className="text-neon-blue">PREP</span>IFY
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <Link to="/" className={`${isActive('/')} transition`}>Home</Link>
+          {!user && <Link to="/" className={`${isActive('/')} transition`}>Home</Link>}
           <Link to="/about" className={`${isActive('/about')} transition`}>About</Link>
           {user && <Link to="/dashboard" className={`${isActive('/dashboard')} transition`}>Dashboard</Link>}
         </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-dark-surface border-b border-gray-800 p-6 flex flex-col gap-4 shadow-2xl animate-fade-in-down">
-          <Link to="/" className="text-white py-2" onClick={() => setIsOpen(false)}>Home</Link>
+          {!user && <Link to="/" className="text-white py-2" onClick={() => setIsOpen(false)}>Home</Link>}
           <Link to="/about" className="text-white py-2" onClick={() => setIsOpen(false)}>About</Link>
           {user && <Link to="/dashboard" className="text-white py-2" onClick={() => setIsOpen(false)}>Dashboard</Link>}
           

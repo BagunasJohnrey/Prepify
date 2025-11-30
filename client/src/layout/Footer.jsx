@@ -41,8 +41,8 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Connect</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Github size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Instagram size={20} /></a>
+              <a href="https://github.com/BagunasJohnrey" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Github size={20} /></a>
+              <a href="https://www.instagram.com/jarey.xz/?igsh=dGNjcWEyZDhpYjI0#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Instagram size={20} /></a>
             </div>
           </div>
         </div>
