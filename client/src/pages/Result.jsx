@@ -45,7 +45,7 @@ export default function Result() {
       </div>
 
       <div className="flex gap-4 justify-center">
-        <button onClick={() => navigate('/')} className="flex items-center gap-2 px-8 py-3 bg-gray-800 rounded-xl hover:bg-gray-700 transition font-bold">
+        <button onClick={() => navigate('/dashboard')} className="flex items-center gap-2 px-8 py-3 bg-gray-800 rounded-xl hover:bg-gray-700 transition font-bold">
           <Home size={20} /> Dashboard
         </button>
       </div>

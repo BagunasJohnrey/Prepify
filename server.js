@@ -17,6 +17,16 @@ const PORT = process.env.PORT || 3000;
 const { Pool } = pg;
 const JWT_SECRET = process.env.JWT_SECRET || "prepify_secure_secret";
 
+// --- SMART FALLBACK MODELS ---
+// If the first one fails (429 Rate Limit), the code will automatically try the next one.
+const FREE_MODELS = [
+  "google/gemini-2.0-flash-exp:free",           // Fast, but often busy
+  "google/gemini-2.5-flash-lite-preview-09-2025",       // Good alternative
+  "meta-llama/llama-3.3-70b-instruct:free",     // Very stable backup
+  "deepseek/deepseek-r1-distill-llama-70b:free",
+  "openai/gpt-oss-20b:free" // Another strong backup
+];
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
@@ -27,29 +37,13 @@ const upload = multer({ storage: multer.memoryStorage() });
 app.use(cors());
 app.use(express.json());
 
-// --- HELPER: Parse PDF Buffer ---
+// --- HELPER: Parse PDF ---
 const parsePDFBuffer = (buffer) => {
   return new Promise((resolve, reject) => {
     const pdfParser = new PDFParser(this, 1);
-    
-    // Handle errors (but don't crash)
-    pdfParser.on("pdfParser_dataError", (errData) => {
-        console.error("PDF Parser Error:", errData.parserError);
-        reject(errData.parserError);
-    });
-
-    pdfParser.on("pdfParser_dataReady", () => {
-      // Raw text content
-      const text = pdfParser.getRawTextContent();
-      resolve(text);
-    });
-
-    // Suppress console warnings from the library itself if possible
-    try {
-        pdfParser.parseBuffer(buffer);
-    } catch (e) {
-        reject(e);
-    }
+    pdfParser.on("pdfParser_dataError", (errData) => reject(errData.parserError));
+    pdfParser.on("pdfParser_dataReady", () => resolve(pdfParser.getRawTextContent()));
+    pdfParser.parseBuffer(buffer);
   });
 };
 
@@ -73,14 +67,17 @@ const calculateHearts = (user) => {
   return { hearts, last_heart_update };
 };
 
-// --- AUTH ROUTES ---
+// ==========================================
+//               AUTH ROUTES
+// ==========================================
 
 app.post("/api/auth/register", async (req, res) => {
   const { username, password } = req.body;
   try {
     const hash = await bcrypt.hash(password, 10);
+    // Default role is 'user'
     const result = await pool.query(
-      "INSERT INTO users (username, password_hash) VALUES ($1, $2) RETURNING id, username",
+      "INSERT INTO users (username, password_hash, role) VALUES ($1, $2, 'user') RETURNING id, username",
       [username, hash]
     );
     res.json(result.rows[0]);
@@ -105,8 +102,17 @@ app.post("/api/auth/login", async (req, res) => {
           [stats.hearts, stats.last_heart_update, user.id]);
     }
 
-    const token = jwt.sign({ id: user.id }, JWT_SECRET);
-    res.json({ token, user: { id: user.id, username: user.username, hearts: stats.hearts } });
+    const token = jwt.sign({ id: user.id, role: user.role }, JWT_SECRET);
+    
+    res.json({ 
+        token, 
+        user: { 
+            id: user.id, 
+            username: user.username, 
+            hearts: stats.hearts,
+            role: user.role
+        } 
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -147,7 +153,9 @@ app.post("/api/user/lose-heart", async (req, res) => {
     }
 });
 
-// --- QUIZ ROUTES ---
+// ==========================================
+//               QUIZ ROUTES
+// ==========================================
 
 app.get("/api/quizzes", async (req, res) => {
   const { category, program } = req.query;
@@ -178,7 +186,30 @@ app.get("/api/quiz/:id", async (req, res) => {
   }
 });
 
-// --- GENERATE ROUTE (STRICT PROMPT FIX) ---
+app.delete("/api/quiz/:id", async (req, res) => {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET);
+        
+        const userRes = await pool.query("SELECT role FROM users WHERE id = $1", [decoded.id]);
+        if (userRes.rows.length === 0 || userRes.rows[0].role !== 'admin') {
+            return res.status(403).json({ error: "Access Denied: Admins Only" });
+        }
+
+        // Cleanup results first
+        await pool.query("DELETE FROM results WHERE quiz_id = $1", [req.params.id]);
+        await pool.query("DELETE FROM quizzes WHERE id = $1", [req.params.id]);
+
+        res.json({ success: true });
+    } catch (err) {
+        console.error("Delete Error:", err);
+        res.status(500).json({ error: "Failed to delete quiz" });
+    }
+});
+
+// --- ROBUST GENERATE ROUTE ---
 app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No PDF uploaded" });
   
@@ -189,44 +220,30 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
     console.log("1. Parsing PDF...");
     const text = await parsePDFBuffer(req.file.buffer);
     
-    // --- DEBUG LOG: Check if text was actually extracted ---
-    console.log(`>> Extracted ${text.length} characters from PDF.`);
-    if (text.length < 100) {
-        console.warn(">> WARNING: PDF text is very short. Is it an image?");
-    }
-    // -------------------------------------------------------
-
-    if (!text || text.length < 50) {
+    console.log(`>> Extracted ${text.length} chars.`);
+    if (text.length < 50) {
       throw new Error("Not enough text extracted. The PDF might be scanned images.");
     }
 
-    const truncatedText = text.substring(0, 18000); 
-
-    console.log("2. Sending to OpenRouter...");
+    const truncatedText = text.substring(0, 20000); 
 
     const prompt = `
       Create a strictly valid JSON exam based on the text below.
       Target: ${category} ${program}.
       Count: ${questionLimit} questions.
       
-      CRITICAL RULES:
+      RULES:
       1. For Multiple Choice questions, you MUST provide 4 options (A, B, C, D).
       2. For True/False questions, only provide 2 options (True, False).
       3. The "answer" field must be the EXACT string of the correct option.
-      4. Return ONLY the JSON array.
+      4. Return ONLY the JSON array. Do not use markdown blocks.
 
-      JSON Structure Example:
+      JSON Structure:
       [
         {
-          "question": "What is ...?",
+          "question": "Question text?",
           "options": ["A. Option 1", "B. Option 2", "C. Option 3", "D. Option 4"], 
           "answer": "A. Option 1", 
-          "explanation": "..."
-        },
-        {
-          "question": "Is ... true?",
-          "options": ["True", "False"],
-          "answer": "True",
           "explanation": "..."
         }
       ]
@@ -235,40 +252,70 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
       ${truncatedText}
     `;
 
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "http://localhost:3000",
-        "X-Title": "Prepify App",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.0-flash-exp:free", 
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
+    console.log("2. Sending to OpenRouter (Attempting models)...");
+    
+    let questions = null;
+    let lastError = null;
 
-    if (!response.ok) {
-        const errText = await response.text();
-        throw new Error(`OpenRouter API Error: ${response.status} - ${errText}`);
+    // --- FALLBACK LOOP ---
+    for (const model of FREE_MODELS) {
+        try {
+            console.log(`>> Trying model: ${model}...`);
+            
+            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "http://localhost:3000",
+                    "X-Title": "Prepify App"
+                },
+                body: JSON.stringify({
+                    model: model,
+                    messages: [{ role: "user", content: prompt }]
+                })
+            });
+
+            if (!response.ok) {
+                const errText = await response.text();
+                // If rate limited (429) or overloaded (503), throw error to trigger next model
+                throw new Error(`Status ${response.status} - ${errText}`);
+            }
+
+            const data = await response.json();
+            
+            if (!data.choices || !data.choices[0]) {
+               throw new Error("Invalid structure from API");
+            }
+
+            let rawText = data.choices[0].message.content;
+            // Robust cleanup for different models
+            rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
+            // Sometimes models add text before the JSON array
+            const jsonStartIndex = rawText.indexOf('[');
+            const jsonEndIndex = rawText.lastIndexOf(']');
+            if (jsonStartIndex !== -1 && jsonEndIndex !== -1) {
+                rawText = rawText.substring(jsonStartIndex, jsonEndIndex + 1);
+            }
+
+            questions = JSON.parse(rawText);
+            console.log(`>> Success with ${model}!`);
+            break; // Stop looping, we got data!
+
+        } catch (err) {
+            console.warn(`>> Model ${model} failed: ${err.message}`);
+            lastError = err;
+            // Continue to next model...
+        }
     }
 
-    const data = await response.json();
-    
-    if (!data.choices || !data.choices[0]) {
-       throw new Error("Invalid response from AI provider");
+    if (!questions) {
+        throw new Error("All AI models failed. Please try again later. Last error: " + lastError.message);
     }
-
-    let rawText = data.choices[0].message.content;
-    rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
-    
-    const questions = JSON.parse(rawText);
 
     console.log("3. Saving to Database...");
     
-    const title = customTitle || `Exam: ${program || category} - ${new Date().toLocaleDateString()}`;
-    
+    const title = customTitle || `Exam - ${new Date().toLocaleDateString()}`;
     const dbResult = await pool.query(
       "INSERT INTO quizzes (title, category, program, questions, items_count) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [title, category, program, JSON.stringify(questions), questions.length]
