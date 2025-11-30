@@ -1,19 +1,50 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Timer, AlertCircle } from 'lucide-react';
+import { Timer, Heart, AlertTriangle, AlertCircle, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 export default function Quiz() {
   const { id } = useParams();
   const navigate = useNavigate();
+  
   const [quiz, setQuiz] = useState(null);
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
+  const [timeLeft, setTimeLeft] = useState(600); 
+  
   const [selected, setSelected] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [history, setHistory] = useState([]);
+  
+  const [hearts, setHearts] = useState(3);
+  const [user, setUser] = useState(null);
 
-  // --- FIX: Wrapped in useCallback to prevent infinite render loops ---
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/');
+      return;
+    }
+
+    fetch('http://localhost:3000/api/auth/me', { 
+      headers: { Authorization: `Bearer ${token}` } 
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUser(data);
+        setHearts(data.hearts);
+      });
+
+    fetch(`http://localhost:3000/api/quiz/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        const randomized = {
+          ...data,
+          questions: data.questions.sort(() => Math.random() - 0.5)
+        };
+        setQuiz(randomized);
+      });
+  }, [id, navigate]);
+
   const handleFinish = useCallback(() => {
     if (!quiz) return;
     navigate('/result', { 
@@ -26,43 +57,54 @@ export default function Quiz() {
     });
   }, [quiz, score, history, navigate]);
 
-  // Fetch Quiz Data
   useEffect(() => {
-    fetch(`http://localhost:3000/api/quiz/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        // Randomize questions
-        const shuffled = { ...data, questions: data.questions.sort(() => Math.random() - 0.5) };
-        setQuiz(shuffled);
-      })
-      .catch(err => console.error("Failed to load quiz", err));
-  }, [id]);
-
-  // Timer Logic
-  useEffect(() => {
-    if (!quiz) return; 
-
+    if (!quiz) return;
     if (timeLeft > 0 && !isAnswered) {
       const timer = setInterval(() => setTimeLeft(t => t - 1), 1000);
       return () => clearInterval(timer);
     } else if (timeLeft === 0) {
-      handleFinish(); 
+      handleFinish();
     }
-  }, [timeLeft, isAnswered, quiz, handleFinish]); 
+  }, [timeLeft, isAnswered, quiz, handleFinish]);
 
-  const handleAnswer = (option) => {
+  const handleAnswer = async (option) => {
+    if (isAnswered) return;
+
+    if (hearts <= 0) {
+      alert("💔 You are out of lives! Please wait for them to regenerate.");
+      navigate('/dashboard');
+      return;
+    }
+
     setSelected(option);
     setIsAnswered(true);
-    const correct = quiz.questions[currentQ].answer;
     
-    if (option === correct) setScore(s => s + 1);
+    const currentQuestion = quiz.questions[currentQ];
+    const isCorrect = option === currentQuestion.answer;
+
+    if (isCorrect) {
+      setScore(s => s + 1);
+    } else {
+      setHearts(h => Math.max(0, h - 1)); 
+      
+      try {
+        await fetch('http://localhost:3000/api/user/lose-heart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: user.id })
+        });
+      } catch (err) {
+        // --- FIX: Used 'err' here ---
+        console.error("Failed to sync hearts", err);
+      }
+    }
 
     setHistory(prev => [...prev, {
-      question: quiz.questions[currentQ].question,
+      question: currentQuestion.question,
       selected: option,
-      correct,
-      explanation: quiz.questions[currentQ].explanation,
-      isCorrect: option === correct
+      correct: currentQuestion.answer,
+      explanation: currentQuestion.explanation,
+      isCorrect
     }]);
   };
 
@@ -76,67 +118,115 @@ export default function Quiz() {
     }
   };
 
-  if (!quiz) return <div className="text-center p-10 text-neon-blue animate-pulse">Loading Simulation...</div>;
+  if (!quiz) return (
+    <div className="min-h-screen flex items-center justify-center text-neon-blue">
+      <Loader className="animate-spin w-10 h-10" />
+    </div>
+  );
+
+  if (hearts === 0) return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-dark-bg p-6 text-center">
+      <div className="bg-dark-surface p-10 rounded-3xl border border-gray-800 shadow-2xl max-w-md w-full">
+        <Heart size={80} className="text-gray-700 mx-auto mb-6" />
+        <h1 className="text-4xl font-black text-red-500 mb-2">OUT OF LIVES</h1>
+        <p className="text-gray-400 mb-8">You answered incorrectly too many times. Your hearts will regenerate in 2 minutes.</p>
+        <button 
+          onClick={() => navigate('/dashboard')}
+          className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl border border-gray-700 transition"
+        >
+          Return to Dashboard
+        </button>
+      </div>
+    </div>
+  );
 
   const q = quiz.questions[currentQ];
 
   return (
     <div className="min-h-screen p-6 md:p-12 max-w-4xl mx-auto flex flex-col justify-center">
-      {/* HUD */}
-      <div className="flex justify-between items-center mb-8 text-xl font-mono">
-        <div className="text-gray-400">Question {currentQ + 1}/{quiz.questions.length}</div>
-        <div className={`flex items-center gap-2 ${timeLeft < 60 ? 'text-red-500' : 'text-neon-green'}`}>
-          <Timer /> {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+      <div className="flex justify-between items-center mb-8">
+        <div className="flex items-center gap-4">
+          <div className="text-xl font-mono text-gray-400">
+            Q<span className="text-white font-bold">{currentQ + 1}</span>/{quiz.questions.length}
+          </div>
+          <div className="flex items-center gap-1 bg-gray-800/50 px-3 py-1 rounded-full border border-gray-700">
+            {[...Array(3)].map((_, i) => (
+              <Heart 
+                key={i} 
+                size={18} 
+                className={i < hearts ? "fill-red-500 text-red-500" : "text-gray-700"} 
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className={`flex items-center gap-2 font-mono text-lg ${timeLeft < 60 ? 'text-red-500 animate-pulse' : 'text-neon-green'}`}>
+          <Timer size={20} />
+          {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
         </div>
       </div>
 
-      {/* Question Card */}
       <div className="bg-dark-surface p-8 rounded-3xl border border-gray-800 shadow-2xl relative overflow-hidden">
-        {/* Progress Bar */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gray-800">
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-gray-900">
           <div 
-            className="h-full bg-neon-purple transition-all duration-500" 
+            className="h-full bg-linear-to-r from-neon-blue to-neon-purple transition-all duration-500 ease-out" 
             style={{ width: `${((currentQ + 1) / quiz.questions.length) * 100}%` }}
           />
         </div>
 
-        <h2 className="text-2xl font-bold mb-8 text-white leading-relaxed">{q.question}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-10 text-white leading-relaxed mt-4">
+          {q.question}
+        </h2>
 
         <div className="grid gap-4">
-          {q.options.map((opt, idx) => (
-            <button
-              key={idx}
-              onClick={() => !isAnswered && handleAnswer(opt)}
-              disabled={isAnswered}
-              className={`p-4 rounded-xl text-left transition-all border-2 ${
-                isAnswered
-                  ? opt === q.answer
-                    ? 'border-neon-green bg-green-900/20 text-neon-green'
-                    : opt === selected
-                    ? 'border-red-500 bg-red-900/20 text-red-500'
-                    : 'border-transparent opacity-50'
-                  : 'border-gray-700 hover:border-neon-blue hover:bg-gray-800'
-              }`}
-            >
-              {opt}
-            </button>
-          ))}
+          {q.options.map((opt, idx) => {
+            let baseStyle = "p-5 rounded-2xl text-left border-2 transition-all duration-200 font-medium text-lg flex justify-between items-center";
+            let stateStyle = "border-gray-700 hover:border-neon-blue hover:bg-gray-800 text-gray-300";
+            
+            if (isAnswered) {
+              if (opt === q.answer) {
+                stateStyle = "border-neon-green bg-green-900/20 text-neon-green"; 
+              } else if (opt === selected) {
+                stateStyle = "border-red-500 bg-red-900/20 text-red-500"; 
+              } else {
+                stateStyle = "border-gray-800 opacity-50"; 
+              }
+            }
+
+            return (
+              <button
+                key={idx}
+                onClick={() => handleAnswer(opt)}
+                disabled={isAnswered}
+                className={`${baseStyle} ${stateStyle}`}
+              >
+                {opt}
+                {isAnswered && opt === q.answer && <CheckCircle size={20} />}
+                {isAnswered && opt === selected && opt !== q.answer && <XCircle size={20} />}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Explanation / Next Button */}
         {isAnswered && (
-          <div className="mt-8 animate-fade-in">
-            <div className="bg-gray-900 p-4 rounded-xl border border-gray-700 mb-4">
-              <div className="flex items-center gap-2 font-bold mb-1 text-gray-300">
-                <AlertCircle size={16} /> Explanation
+          <div className="mt-8 animate-fade-in-up">
+            <div className={`p-6 rounded-2xl border mb-6 ${
+              selected === q.answer 
+                ? 'bg-green-900/10 border-green-900' 
+                : 'bg-red-900/10 border-red-900'
+            }`}>
+              <div className="flex items-center gap-2 font-bold mb-2 text-gray-300">
+                <AlertCircle size={18} className="text-neon-blue" /> 
+                Explanation
               </div>
-              <p className="text-gray-400 text-sm">{q.explanation}</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{q.explanation}</p>
             </div>
+            
             <button 
               onClick={handleNext}
-              className="w-full bg-linear-to-r from-neon-blue to-blue-600 text-black font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition"
+              className="w-full bg-linear-to-r from-neon-blue to-blue-600 text-black font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition transform hover:scale-[1.01] active:scale-[0.99]"
             >
-              {currentQ + 1 === quiz.questions.length ? 'Finish Exam' : 'Next Question'}
+              {currentQ + 1 === quiz.questions.length ? 'See Results' : 'Next Question'}
             </button>
           </div>
         )}

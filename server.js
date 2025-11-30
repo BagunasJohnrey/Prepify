@@ -4,19 +4,19 @@ import pg from "pg";
 import multer from "multer";
 import dotenv from "dotenv";
 import { createRequire } from "module";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 dotenv.config();
 
-// --- PDF PARSER SETUP ---
 const require = createRequire(import.meta.url);
 const PDFParser = require("pdf2json");
-// ------------------------
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const { Pool } = pg;
+const JWT_SECRET = process.env.JWT_SECRET || "prepify_secure_secret";
 
-// Database Connection
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
@@ -31,20 +31,128 @@ app.use(express.json());
 const parsePDFBuffer = (buffer) => {
   return new Promise((resolve, reject) => {
     const pdfParser = new PDFParser(this, 1);
-    pdfParser.on("pdfParser_dataError", (errData) => reject(errData.parserError));
-    pdfParser.on("pdfParser_dataReady", () => {
-      resolve(pdfParser.getRawTextContent());
+    
+    // Handle errors (but don't crash)
+    pdfParser.on("pdfParser_dataError", (errData) => {
+        console.error("PDF Parser Error:", errData.parserError);
+        reject(errData.parserError);
     });
-    pdfParser.parseBuffer(buffer);
+
+    pdfParser.on("pdfParser_dataReady", () => {
+      // Raw text content
+      const text = pdfParser.getRawTextContent();
+      resolve(text);
+    });
+
+    // Suppress console warnings from the library itself if possible
+    try {
+        pdfParser.parseBuffer(buffer);
+    } catch (e) {
+        reject(e);
+    }
   });
 };
 
-// --- ROUTES ---
+// --- HELPER: Calculate Hearts ---
+const calculateHearts = (user) => {
+  const MAX_HEARTS = 3;
+  const REGEN_TIME_MS = 2 * 60 * 1000; // 2 minutes
+
+  let { hearts, last_heart_update } = user;
+  if (hearts >= MAX_HEARTS) return { hearts, last_heart_update: new Date() };
+
+  const now = new Date();
+  const lastUpdate = new Date(last_heart_update);
+  const diff = now - lastUpdate;
+
+  if (diff >= REGEN_TIME_MS) {
+    const regained = Math.floor(diff / REGEN_TIME_MS);
+    hearts = Math.min(MAX_HEARTS, hearts + regained);
+    last_heart_update = now; 
+  }
+  return { hearts, last_heart_update };
+};
+
+// --- AUTH ROUTES ---
+
+app.post("/api/auth/register", async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const hash = await bcrypt.hash(password, 10);
+    const result = await pool.query(
+      "INSERT INTO users (username, password_hash) VALUES ($1, $2) RETURNING id, username",
+      [username, hash]
+    );
+    res.json(result.rows[0]);
+  } catch (err) {
+    res.status(400).json({ error: "Username likely already exists." });
+  }
+});
+
+app.post("/api/auth/login", async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const result = await pool.query("SELECT * FROM users WHERE username = $1", [username]);
+    if (result.rows.length === 0) return res.status(400).json({ error: "User not found" });
+
+    const user = result.rows[0];
+    const valid = await bcrypt.compare(password, user.password_hash);
+    if (!valid) return res.status(400).json({ error: "Invalid password" });
+
+    const stats = calculateHearts(user);
+    if (stats.hearts !== user.hearts) {
+        await pool.query("UPDATE users SET hearts = $1, last_heart_update = $2 WHERE id = $3", 
+          [stats.hearts, stats.last_heart_update, user.id]);
+    }
+
+    const token = jwt.sign({ id: user.id }, JWT_SECRET);
+    res.json({ token, user: { id: user.id, username: user.username, hearts: stats.hearts } });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/auth/me", async (req, res) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const result = await pool.query("SELECT * FROM users WHERE id = $1", [decoded.id]);
+    const user = result.rows[0];
+
+    const stats = calculateHearts(user);
+    
+    if (stats.hearts !== user.hearts) {
+       await pool.query("UPDATE users SET hearts = $1, last_heart_update = $2 WHERE id = $3", 
+         [stats.hearts, stats.last_heart_update, user.id]);
+    }
+
+    res.json({ ...user, hearts: stats.hearts });
+  } catch (err) {
+    res.status(401).json({ error: "Invalid token" });
+  }
+});
+
+app.post("/api/user/lose-heart", async (req, res) => {
+    const { userId } = req.body;
+    try {
+        await pool.query(
+          "UPDATE users SET hearts = GREATEST(0, hearts - 1), last_heart_update = NOW() WHERE id = $1", 
+          [userId]
+        );
+        res.json({ success: true });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// --- QUIZ ROUTES ---
 
 app.get("/api/quizzes", async (req, res) => {
   const { category, program } = req.query;
   try {
-    let query = "SELECT id, title, category, program, created_at FROM quizzes WHERE category = $1";
+    let query = "SELECT id, title, category, program, items_count, created_at FROM quizzes WHERE category = $1";
     let params = [category];
 
     if (program && program !== "null" && program !== "") {
@@ -70,65 +178,74 @@ app.get("/api/quiz/:id", async (req, res) => {
   }
 });
 
-// --- NEW: GENERATE ROUTE (Using OpenRouter) ---
+// --- GENERATE ROUTE (STRICT PROMPT FIX) ---
 app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No PDF uploaded" });
-  const { category, program } = req.body;
+  
+  const { category, program, customTitle, numQuestions } = req.body;
+  const questionLimit = numQuestions || 10;
 
   try {
     console.log("1. Parsing PDF...");
     const text = await parsePDFBuffer(req.file.buffer);
     
+    // --- DEBUG LOG: Check if text was actually extracted ---
+    console.log(`>> Extracted ${text.length} characters from PDF.`);
+    if (text.length < 100) {
+        console.warn(">> WARNING: PDF text is very short. Is it an image?");
+    }
+    // -------------------------------------------------------
+
     if (!text || text.length < 50) {
-      throw new Error("Not enough text extracted from PDF.");
+      throw new Error("Not enough text extracted. The PDF might be scanned images.");
     }
 
-    const truncatedText = text.substring(0, 15000); // Larger limit for OpenRouter models
+    const truncatedText = text.substring(0, 18000); 
 
     console.log("2. Sending to OpenRouter...");
 
     const prompt = `
-      You are a teacher. Create a JSON exam based on the text provided.
-      Target Audience: ${category} ${program ? '- ' + program : ''}.
+      Create a strictly valid JSON exam based on the text below.
+      Target: ${category} ${program}.
+      Count: ${questionLimit} questions.
       
-      Requirements:
-      - 10 Questions total.
-      - Mix of Multiple Choice and True/False.
-      - Output strictly valid JSON. DO NOT use markdown code blocks (no \`\`\`json).
-      
-      JSON Structure:
+      CRITICAL RULES:
+      1. For Multiple Choice questions, you MUST provide 4 options (A, B, C, D).
+      2. For True/False questions, only provide 2 options (True, False).
+      3. The "answer" field must be the EXACT string of the correct option.
+      4. Return ONLY the JSON array.
+
+      JSON Structure Example:
       [
         {
-          "question": "Question text?",
-          "options": ["Option A", "Option B", "Option C", "Option D"], 
-          "answer": "Option A", 
-          "explanation": "Why this answer is correct."
+          "question": "What is ...?",
+          "options": ["A. Option 1", "B. Option 2", "C. Option 3", "D. Option 4"], 
+          "answer": "A. Option 1", 
+          "explanation": "..."
+        },
+        {
+          "question": "Is ... true?",
+          "options": ["True", "False"],
+          "answer": "True",
+          "explanation": "..."
         }
       ]
-      (For True/False, options should be ["True", "False"]).
-      
-      Text to analyze:
+
+      Text:
       ${truncatedText}
     `;
 
-    // Fetch call to OpenRouter
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "http://localhost:3000", // Required by OpenRouter
+        "HTTP-Referer": "http://localhost:3000",
         "X-Title": "Prepify App",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        // You can change this to "google/gemini-2.5-flash-lite-preview-09-2025" if it becomes available
-        model: "google/gemini-2.5-flash-lite-preview-09-2025", 
-        messages: [
-          {
-            role: "user",
-            content: prompt // Sending plain text prompt
-          }
-        ]
+        model: "google/gemini-2.0-flash-exp:free", 
+        messages: [{ role: "user", content: prompt }]
       })
     });
 
@@ -139,19 +256,22 @@ app.post("/api/generate", upload.single("pdfFile"), async (req, res) => {
 
     const data = await response.json();
     
-    // Extract Content
+    if (!data.choices || !data.choices[0]) {
+       throw new Error("Invalid response from AI provider");
+    }
+
     let rawText = data.choices[0].message.content;
-    
-    // Clean up if the model adds markdown formatting
     rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
     
     const questions = JSON.parse(rawText);
 
     console.log("3. Saving to Database...");
-    const title = `Exam: ${program || category} - ${new Date().toLocaleDateString()}`;
+    
+    const title = customTitle || `Exam: ${program || category} - ${new Date().toLocaleDateString()}`;
+    
     const dbResult = await pool.query(
-      "INSERT INTO quizzes (title, category, program, questions) VALUES ($1, $2, $3, $4) RETURNING *",
-      [title, category, program, JSON.stringify(questions)]
+      "INSERT INTO quizzes (title, category, program, questions, items_count) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [title, category, program, JSON.stringify(questions), questions.length]
     );
 
     console.log("4. Success!");
