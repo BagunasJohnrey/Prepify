@@ -49,9 +49,8 @@ export default {
       const user = rows[0];
 
       if (user.xp < cost) throw new Error("Not enough XP");
-      if (user.hearts >= 3) throw new Error("Hearts already full");
-
-      await client.query("UPDATE users SETqp = xp - $1, hearts = hearts + 1 WHERE id = $2", [cost, id]);
+      
+      await client.query("UPDATE users SET xp = xp - $1, hearts = hearts + 1 WHERE id = $2", [cost, id]);
       
       await client.query('COMMIT');
       return true;

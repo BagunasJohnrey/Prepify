@@ -18,6 +18,8 @@ export default function Quiz() {
   const [isAnswered, setIsAnswered] = useState(false);
   const [history, setHistory] = useState([]);
   
+  // NEW: State for XP animation
+  const [showXpGain, setShowXpGain] = useState(false);
 
   const [hearts, setHearts] = useState(user?.hearts ?? 3);
   const [prevServerHearts, setPrevServerHearts] = useState(user?.hearts);
@@ -78,6 +80,11 @@ export default function Quiz() {
 
     if (isCorrect) {
       setScore(s => s + 1);
+      
+      // NEW: Trigger XP animation
+      setShowXpGain(true);
+      setTimeout(() => setShowXpGain(false), 2000);
+
       // Award XP
       try {
         await api.post('/auth/add-xp', { amount: 10 });
@@ -110,6 +117,7 @@ export default function Quiz() {
       setCurrentQ(c => c + 1);
       setSelected(null);
       setIsAnswered(false);
+      setShowXpGain(false); // Reset animation state
     } else {
       handleFinish();
     }
@@ -127,6 +135,7 @@ export default function Quiz() {
         <Heart size={80} className="text-gray-700 mx-auto mb-6" />
         <h1 className="text-4xl font-black text-red-500 mb-2">OUT OF LIVES</h1>
         <p className="text-gray-400 mb-8">You answered incorrectly too many times. Your hearts will regenerate in 2 minutes.</p>
+        <p className="text-gray-400 mb-8">DM me on Instagram if you want unli hearts ❤</p>
         <button 
           onClick={() => navigate('/dashboard')}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl border border-gray-700 transition"
@@ -140,14 +149,25 @@ export default function Quiz() {
   const q = quiz.questions[currentQ];
 
   return (
-    <div className="min-h-screen p-6 md:p-12 max-w-4xl mx-auto flex flex-col justify-center">
+    <div className="min-h-screen p-6 md:p-12 max-w-4xl mx-auto flex flex-col justify-center relative">
+      
+      {/* NEW: XP Gain Animation */}
+      {showXpGain && (
+        <div className="fixed top-24 right-6 md:right-24 z-50 pointer-events-none animate-bounce">
+            <div className="bg-neon-green/20 border border-neon-green text-neon-green font-black px-4 py-2 rounded-full text-xl shadow-[0_0_20px_rgba(57,255,20,0.4)]">
+                +10 XP
+            </div>
+        </div>
+      )}
+
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-4">
           <div className="text-xl font-mono text-gray-400">
             Q<span className="text-white font-bold">{currentQ + 1}</span>/{quiz.questions.length}
           </div>
           <div className="flex items-center gap-1 bg-gray-800/50 px-3 py-1 rounded-full border border-gray-700">
-            {[...Array(3)].map((_, i) => (
+            {/* CHANGED: Logic to show actual number of hearts if > 3 */}
+            {[...Array(Math.max(3, hearts))].map((_, i) => (
               <Heart 
                 key={i} 
                 size={18} 

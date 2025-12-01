@@ -1,14 +1,48 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Home } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 export default function Result() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  if (!state) return <div className="text-white text-center p-10">No Result Data</div>;
+  const percentage = state ? Math.round((state.score / state.total) * 100) : 0;
+  const passed = state ? percentage >= 60 : false;
 
-  const percentage = Math.round((state.score / state.total) * 100);
-  const passed = percentage >= 60;
+  useEffect(() => {
+    if (state && passed) {
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+        confetti({
+          ...defaults, 
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        });
+        confetti({
+          ...defaults, 
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        });
+      }, 250);
+
+      return () => clearInterval(interval);
+    }
+  }, [passed, state]);
+
+  if (!state) return <div className="text-white text-center p-10">No Result Data</div>;
 
   return (
     <div className="min-h-screen p-6 md:p-12 max-w-5xl mx-auto">

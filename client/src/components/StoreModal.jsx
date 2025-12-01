@@ -30,11 +30,12 @@ export default function StoreModal({ isOpen, onClose, user, onBuyHeart }) {
                             <div className="text-xs text-gray-400">Restore 1 life instantly</div>
                         </div>
                     </div>
+                    {/* CHANGED: Logic to allow buying even if hearts >= 3 */}
                     <button 
                         onClick={onBuyHeart}
-                        disabled={user?.xp < 50 || user?.hearts >= 3}
+                        disabled={user?.xp < 50}
                         className={`px-4 py-2 rounded-lg font-bold text-sm transition ${
-                            (user?.xp || 0) >= 50 && (user?.hearts || 0) < 3
+                            (user?.xp || 0) >= 50
                             ? 'bg-neon-blue text-black hover:bg-[#00d4ff] hover:shadow-[0_0_10px_rgba(0,212,255,0.4)]' 
                             : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                         }`}
