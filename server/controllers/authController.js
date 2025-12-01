@@ -41,6 +41,8 @@ export const login = async (req, res) => {
             id: user.id, 
             username: user.username, 
             hearts: stats.hearts,
+            xp: user.xp || 0,
+            last_heart_update: stats.last_heart_update,
             role: user.role
         } 
     });
@@ -58,7 +60,11 @@ export const getMe = async (req, res) => {
        await User.updateHearts(user.id, stats.hearts, stats.last_heart_update);
     }
 
-    res.json({ ...user, hearts: stats.hearts });
+    res.json({ 
+        ...user, 
+        hearts: stats.hearts, 
+        last_heart_update: stats.last_heart_update 
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -71,5 +77,25 @@ export const loseHeart = async (req, res) => {
         res.json({ success: true });
     } catch (err) {
         res.status(500).json({ error: err.message });
+    }
+};
+
+export const addXp = async (req, res) => {
+    const { amount } = req.body;
+    try {
+        await User.addXp(req.user.id, amount);
+        res.json({ success: true });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+export const buyHeart = async (req, res) => {
+    const HEART_COST = 50; // Cost in XP
+    try {
+        await User.buyHeart(req.user.id, HEART_COST);
+        res.json({ success: true });
+    } catch (err) {
+        res.status(400).json({ error: err.message });
     }
 };

@@ -78,6 +78,13 @@ export default function Quiz() {
 
     if (isCorrect) {
       setScore(s => s + 1);
+      // Award XP
+      try {
+        await api.post('/auth/add-xp', { amount: 10 });
+        refreshUser(); 
+      } catch (err) {
+        console.error("Failed to add XP", err);
+      }
     } else {
       setHearts(h => Math.max(0, h - 1)); 
       

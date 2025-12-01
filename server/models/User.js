@@ -3,7 +3,7 @@ import pool from "../config/db.js";
 export default {
   async create(username, passwordHash) {
     const result = await pool.query(
-      "INSERT INTO users (username, password_hash, role) VALUES ($1, $2, 'user') RETURNING id, username",
+      "INSERT INTO users (username, password_hash, role, xp) VALUES ($1, $2, 'user', 0) RETURNING id, username",
       [username, passwordHash]
     );
     return result.rows[0];
@@ -31,5 +31,35 @@ export default {
       "UPDATE users SET hearts = GREATEST(0, hearts - 1), last_heart_update = NOW() WHERE id = $1",
       [id]
     );
+  },
+
+  async addXp(id, amount) {
+    await pool.query(
+      "UPDATE users SET xp = xp + $1 WHERE id = $2",
+      [amount, id]
+    );
+  },
+
+  async buyHeart(id, cost) {
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      
+      const { rows } = await client.query("SELECT xp, hearts FROM users WHERE id = $1", [id]);
+      const user = rows[0];
+
+      if (user.xp < cost) throw new Error("Not enough XP");
+      if (user.hearts >= 3) throw new Error("Hearts already full");
+
+      await client.query("UPDATE users SETqp = xp - $1, hearts = hearts + 1 WHERE id = $2", [cost, id]);
+      
+      await client.query('COMMIT');
+      return true;
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
   }
 };

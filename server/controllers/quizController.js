@@ -73,6 +73,7 @@ export const generateQuiz = async (req, res) => {
       3. [IMPORTANT] Do not use "All of the above", "None of the above", or "Both A and B" as options, because the frontend randomizes the order of options.
       4. The "answer" field must MATCH exactly one of the strings in "options".
       5. Provide a short "explanation" for why the answer is correct.
+      6. [CRITICAL] Ensure all 4 options are of similar length and complexity. Do not make the correct answer significantly longer or more detailed than the distractors.
 
       JSON FORMAT:
       [

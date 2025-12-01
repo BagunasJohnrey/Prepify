@@ -1,15 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, Filter, FileText } from 'lucide-react';
+import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, Filter, FileText, Plus } from 'lucide-react';
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
+import StoreModal from '../components/StoreModal';
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const { user, refreshUser, loading: authLoading } = useAuth(); 
 
   const [file, setFile] = useState(null);
-  
   const [config, setConfig] = useState({ 
     course: 'Major Subject', 
     difficulty: 'Medium',    
@@ -21,6 +21,10 @@ export default function Dashboard() {
   const [filter, setFilter] = useState('All');
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(false);
+  
+  // Store & Timer State
+  const [showStore, setShowStore] = useState(false);
+  const [timeUntilRegen, setTimeUntilRegen] = useState(null);
 
   // 1. Redirect if not logged in
   useEffect(() => {
@@ -42,6 +46,49 @@ export default function Dashboard() {
   useEffect(() => { 
     if (user) fetchQuizzes(); 
   }, [fetchQuizzes, user]);
+
+  // 3. Heart Timer Logic
+  useEffect(() => {
+    if (!user || user.hearts >= 3) {
+        setTimeUntilRegen(null);
+        return;
+    }
+
+    const interval = setInterval(() => {
+        const lastUpdate = new Date(user.last_heart_update).getTime();
+        const now = new Date().getTime();
+        const REGEN_TIME = 2 * 60 * 1000; // 2 minutes
+        
+        const diff = now - lastUpdate;
+        const remaining = REGEN_TIME - (diff % REGEN_TIME);
+        
+        setTimeUntilRegen(remaining);
+
+        // Sync with server slightly after a heart should have regen'd
+        if (remaining <= 1000) refreshUser();
+
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [user, refreshUser]);
+
+  const formatTime = (ms) => {
+    if (!ms) return "";
+    const totalSeconds = Math.floor(ms / 1000);
+    const m = Math.floor(totalSeconds / 60);
+    const s = totalSeconds % 60;
+    return `${m}:${s.toString().padStart(2, '0')}`;
+  };
+
+  const handleBuyHeart = async () => {
+    try {
+        await api.post('/auth/buy-heart');
+        await refreshUser();
+        alert("Heart purchased! ❤️");
+    } catch (err) {
+        alert(err.response?.data?.error || "Failed to buy heart");
+    }
+  };
 
   const handleGenerate = async () => {
     if (!file) return alert("Please upload a PDF file first.");
@@ -86,8 +133,15 @@ export default function Dashboard() {
   if (!user) return null; 
 
   return (
-    <div className="p-6 md:p-12 max-w-7xl mx-auto space-y-8 animate-fade-in">
+    <div className="p-6 md:p-12 max-w-7xl mx-auto space-y-8 animate-fade-in relative">
       
+      <StoreModal 
+        isOpen={showStore} 
+        onClose={() => setShowStore(false)}
+        user={user}
+        onBuyHeart={handleBuyHeart}
+      />
+
       {/* --- DASHBOARD HEADER / STATS --- */}
       <div className="bg-dark-surface p-8 rounded-3xl border border-gray-800 shadow-xl relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="absolute top-0 left-0 w-1.5 h-full bg-linear-to-b from-neon-blue to-neon-purple"></div>
@@ -97,17 +151,30 @@ export default function Dashboard() {
             Welcome back, <span className="text-neon-blue">{user.username}</span>
           </h1>
           <p className="text-gray-400 text-sm">
-            You have <span className="text-white font-bold">{quizzes.length}</span> exams in your library. Ready to study?
+             Level <span className="text-white font-bold">{Math.floor((user.xp || 0) / 100) + 1}</span> • <span className="text-neon-green font-bold">{user.xp || 0} XP</span>
           </p>
         </div>
 
-        <div className="flex items-center gap-4 bg-gray-900/50 px-6 py-4 rounded-2xl border border-gray-700 backdrop-blur-md">
-            <div className="bg-gray-800 p-3 rounded-full">
-              <Heart className={`w-6 h-6 ${user.hearts > 0 ? 'text-red-500 fill-red-500' : 'text-gray-600'}`} />
-            </div>
-            <div>
-              <div className="text-2xl font-black text-white leading-none">{user.hearts} / 3</div>
-              <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mt-1">Lives Remaining</div>
+        <div className="flex gap-4">
+            {/* Heart Status */}
+            <div className="flex items-center gap-4 bg-gray-900/50 px-6 py-4 rounded-2xl border border-gray-700 backdrop-blur-md">
+                <div className="bg-gray-800 p-3 rounded-full relative">
+                  <Heart className={`w-6 h-6 ${user.hearts > 0 ? 'text-red-500 fill-red-500' : 'text-gray-600'}`} />
+                  <button onClick={() => setShowStore(true)} className="absolute -top-1 -right-1 bg-neon-blue text-black rounded-full p-0.5 hover:scale-110 transition cursor-pointer shadow-lg" title="Open Store">
+                    <Plus size={10} strokeWidth={4} />
+                  </button>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-white leading-none">{user.hearts} / 3</div>
+                  {user.hearts < 3 && timeUntilRegen && (
+                      <div className="text-[10px] text-neon-blue font-mono font-bold mt-1 animate-pulse">
+                        +1 in {formatTime(timeUntilRegen)}
+                      </div>
+                  )}
+                  {user.hearts >= 3 && (
+                      <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mt-1">Full Health</div>
+                  )}
+                </div>
             </div>
         </div>
       </div>
