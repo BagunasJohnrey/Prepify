@@ -135,9 +135,22 @@ export default function Quiz() {
         <Heart size={80} className="text-gray-700 mx-auto mb-6" />
         <h1 className="text-4xl font-black text-red-500 mb-2">OUT OF LIVES</h1>
         <p className="text-gray-400 mb-8">You answered incorrectly too many times. Your hearts will regenerate in 2 minutes.</p>
-        <p className="text-gray-400 mb-8">DM me on Instagram if you want unli hearts ❤</p>
-        <a href="https://www.instagram.com/jarey.xz/?igsh=dGNjcWEyZDhpYjI0#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Instagram size={20} />jarey.xz</a>
         
+        {/* IMPROVED INSTAGRAM LAYOUT */}
+        <div className="mb-8 p-6 bg-gray-900/50 rounded-2xl border border-gray-800 flex flex-col items-center">
+            <p className="text-gray-300 font-medium mb-3">Want unlimited lives? ❤️</p>
+            <a 
+                href="https://www.instagram.com/jarey.xz/?igsh=dGNjcWEyZDhpYjI0#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-purple-600 to-pink-600 text-white px-6 py-2.5 rounded-full font-bold hover:opacity-90 transition transform hover:scale-105 shadow-lg w-full max-w-[200px]"
+            >
+                <Instagram size={20} />
+                jarey.xz
+            </a>
+            <p className="text-[10px] text-gray-500 mt-2 uppercase tracking-widest">DM for access</p>
+        </div>
+
         <button 
           onClick={() => navigate('/dashboard')}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl border border-gray-700 transition"
