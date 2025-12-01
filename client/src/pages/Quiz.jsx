@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Timer, Heart, AlertCircle, CheckCircle, XCircle, Loader } from 'lucide-react';
+import { Timer, Heart, AlertCircle, CheckCircle, XCircle, Loader, Instagram } from 'lucide-react';
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
 
@@ -136,6 +136,8 @@ export default function Quiz() {
         <h1 className="text-4xl font-black text-red-500 mb-2">OUT OF LIVES</h1>
         <p className="text-gray-400 mb-8">You answered incorrectly too many times. Your hearts will regenerate in 2 minutes.</p>
         <p className="text-gray-400 mb-8">DM me on Instagram if you want unli hearts ❤</p>
+        <a href="https://www.instagram.com/jarey.xz/?igsh=dGNjcWEyZDhpYjI0#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition transform hover:scale-110"><Instagram size={20} />jarey.xz</a>
+        
         <button 
           onClick={() => navigate('/dashboard')}
           className="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl border border-gray-700 transition"
