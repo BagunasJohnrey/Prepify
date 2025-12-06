@@ -4,8 +4,14 @@ export default function StoreModal({ isOpen, onClose, user, onBuyHeart }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in">
-        <div className="bg-dark-surface p-8 rounded-3xl border border-gray-800 shadow-2xl max-w-sm w-full relative animate-scale-in">
+    <div 
+        className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in"
+        onClick={onClose}
+    >
+        <div 
+            className="bg-dark-surface p-8 rounded-3xl border border-gray-800 shadow-2xl max-w-sm w-full relative animate-scale-in"
+            onClick={(e) => e.stopPropagation()} 
+        >
             <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-white transition">
                 <X size={24} />
             </button>
@@ -30,7 +36,7 @@ export default function StoreModal({ isOpen, onClose, user, onBuyHeart }) {
                             <div className="text-xs text-gray-400">Restore 1 life instantly</div>
                         </div>
                     </div>
-                    {/* CHANGED: Logic to allow buying even if hearts >= 3 */}
+                    
                     <button 
                         onClick={onBuyHeart}
                         disabled={user?.xp < 50}
