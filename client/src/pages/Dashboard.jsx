@@ -1,13 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, Filter, FileText, Plus } from 'lucide-react';
+import toast from 'react-hot-toast';
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
 import StoreModal from '../components/StoreModal';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { user, refreshUser, loading: authLoading } = useAuth(); 
+  const { user, refreshUser, setUser, loading: authLoading } = useAuth(); 
 
   const [file, setFile] = useState(null);
   const [config, setConfig] = useState({ 
@@ -57,7 +58,6 @@ export default function Dashboard() {
         
         setTimeUntilRegen(remaining);
 
-        // Sync with server slightly after a heart should have regen'd
         if (remaining <= 1000) refreshUser();
 
     }, 1000);
@@ -74,18 +74,38 @@ export default function Dashboard() {
   };
 
   const handleBuyHeart = async () => {
+    const COST = 50;
+    
+    if (!user || user.xp < COST) {
+        toast.error("Not enough XP!");
+        return;
+    }
+
+    const previousUser = { ...user };
+
+    const optimisticUser = {
+        ...user,
+        hearts: user.hearts + 1,
+        xp: user.xp - COST
+    };
+    setUser(optimisticUser);
+
+    toast.success("Heart purchased! ❤️ -50 XP");
+
     try {
         await api.post('/auth/buy-heart');
-        await refreshUser();
-        alert("Heart purchased! ❤️");
+       
+        refreshUser(); 
+        
     } catch (err) {
-        alert(err.response?.data?.error || "Failed to buy heart");
+        setUser(previousUser);
+        toast.error(err.response?.data?.error || "Failed to buy heart");
     }
   };
 
   const handleGenerate = async () => {
-    if (!file) return alert("Please upload a PDF file first.");
-    if (!config.customTitle.trim()) return alert("Please enter a name for this exam.");
+    if (!file) return toast.error("Please upload a PDF file first.");
+    if (!config.customTitle.trim()) return toast.error("Please enter a name for this exam.");
     
     setLoading(true);
     const formData = new FormData();
@@ -98,13 +118,13 @@ export default function Dashboard() {
 
     try {
       const { data } = await api.post('/generate', formData);
-      alert(`Success! "${data.title}" is ready.`);
+      toast.success(`Success! "${data.title}" is ready.`);
       fetchQuizzes(); 
       refreshUser(); 
       setFile(null); 
     } catch (err) {
       console.error(err);
-      alert("Error generating quiz. Please try again.");
+      toast.error("Error generating quiz. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -116,9 +136,10 @@ export default function Dashboard() {
 
     try {
         await api.delete(`/quiz/${quizId}`);
+        toast.success("Quiz deleted");
         fetchQuizzes(); 
     } catch (err) {
-        alert("Failed to delete. " + (err.response?.data?.error || ""));
+        toast.error("Failed to delete. " + (err.response?.data?.error || ""));
     }
   };
 
@@ -126,7 +147,6 @@ export default function Dashboard() {
   if (!user) return null; 
 
   return (
-    
     <>
       <StoreModal 
         isOpen={showStore} 
@@ -146,7 +166,7 @@ export default function Dashboard() {
               Welcome back, <span className="text-neon-blue">{user.username}</span>
             </h1>
             <p className="text-gray-400 text-sm">
-              Level <span className="text-white font-bold">{Math.floor((user.xp || 0) / 100) + 1}</span> • <span className="text-neon-green font-bold">{user.xp || 0} XP</span>
+               Level <span className="text-white font-bold">{Math.floor((user.xp || 0) / 100) + 1}</span> • <span className="text-neon-green font-bold">{user.xp || 0} XP</span>
             </p>
           </div>
 

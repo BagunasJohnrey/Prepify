@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import Layout from './layout/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -8,7 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import About from './pages/About';
-import Documentation from './pages/Documentation'; 
+import Documentation from './pages/Documentation';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -16,6 +17,31 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Layout>
+          <Toaster 
+            position="top-center"
+            toastOptions={{
+              style: {
+                background: '#1a1a2e',
+                color: '#fff',
+                border: '1px solid #374151',
+                padding: '16px',
+                borderRadius: '12px',
+              },
+              success: {
+                iconTheme: {
+                  primary: '#39ff14',
+                  secondary: 'black',
+                },
+              },
+              error: {
+                iconTheme: {
+                  primary: '#ef4444',
+                  secondary: 'white',
+                },
+              },
+            }}
+          />
+          
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Login />} />
