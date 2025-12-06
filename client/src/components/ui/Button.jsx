@@ -8,6 +8,8 @@ export default function Button({ children, isLoading, variant = 'primary', class
     success: "bg-neon-green text-black hover:bg-[#32e010] hover:shadow-[0_0_20px_rgba(57,255,20,0.4)]",
     danger: "bg-red-500 text-white hover:bg-red-600",
     outline: "border border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white bg-transparent",
+    // NEW VARIANT for Game Options
+    game: "border-2 border-gray-700 text-gray-300 hover:border-neon-purple hover:bg-gray-800 bg-gray-900 font-medium text-base p-4",
   };
 
   return (

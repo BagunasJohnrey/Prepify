@@ -10,6 +10,7 @@ import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import About from './pages/About';
 import Documentation from './pages/Documentation';
+import Multiplayer from './pages/Multiplayer';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/quiz/:id" element={<Quiz />} />
               <Route path="/result" element={<Result />} />
+              <Route path="/multiplayer" element={<Multiplayer />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
