@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, Filter, FileText, Plus } from 'lucide-react';
+import { Upload, BookOpen, Heart, Settings, PlayCircle, Loader, Trash2, Filter, FileText, Plus, ChevronDown } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
@@ -58,6 +58,7 @@ export default function Dashboard() {
         
         setTimeUntilRegen(remaining);
 
+        // Sync with server slightly after a heart should have regen'd
         if (remaining <= 1000) refreshUser();
 
     }, 1000);
@@ -287,18 +288,24 @@ export default function Dashboard() {
                 </h2>
               </div>
 
-              <div className="flex items-center gap-2 bg-gray-900 p-1 rounded-lg border border-gray-800">
-                <div className="px-2 text-gray-500"><Filter size={14} /></div>
+              {/* FILTER DROPDOWN */}
+              <div className="relative group">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-hover:text-neon-blue transition-colors pointer-events-none">
+                  <Filter size={18} />
+                </div>
                 <select 
                   value={filter} 
                   onChange={(e) => setFilter(e.target.value)}
-                  className="bg-transparent text-gray-300 text-xs font-medium outline-none cursor-pointer py-1 pr-2"
+                  className="bg-gray-900 text-white text-sm font-bold pl-10 pr-10 py-3 rounded-xl border border-gray-700 hover:border-neon-blue focus:border-neon-blue outline-none cursor-pointer transition-all appearance-none shadow-lg"
                 >
-                  <option value="All">All Subjects</option>
-                  <option value="General Education">GED</option>
-                  <option value="Minor Subject">Minor</option>
-                  <option value="Major Subject">Major</option>
+                  <option value="All" className="bg-gray-900">All Subjects</option>
+                  <option value="General Education" className="bg-gray-900">GED</option>
+                  <option value="Minor Subject" className="bg-gray-900">Minor</option>
+                  <option value="Major Subject" className="bg-gray-900">Major</option>
                 </select>
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none group-hover:text-white transition-colors">
+                  <ChevronDown size={16} />
+                </div>
               </div>
             </div>
 
