@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Timer, Heart, AlertCircle, CheckCircle, XCircle, Loader, Instagram } from 'lucide-react';
+import toast from 'react-hot-toast'; // Import toast
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
 
@@ -67,7 +68,8 @@ export default function Quiz() {
     if (isAnswered) return;
 
     if (hearts <= 0) {
-      alert("💔 You are out of lives! Please wait for them to regenerate.");
+      // UPDATED: Replace alert with toast notification for smoother UX
+      toast.error("💔 You ran out of lives! Returning to dashboard.");
       navigate('/dashboard');
       return;
     }
@@ -180,15 +182,23 @@ export default function Quiz() {
           <div className="text-xl font-mono text-gray-400">
             Q<span className="text-white font-bold">{currentQ + 1}</span>/{quiz.questions.length}
           </div>
+          
           <div className="flex items-center gap-1 bg-gray-800/50 px-3 py-1 rounded-full border border-gray-700">
-            {/* CHANGED: Logic to show actual number of hearts if > 3 */}
-            {[...Array(Math.max(3, hearts))].map((_, i) => (
-              <Heart 
-                key={i} 
-                size={18} 
-                className={i < hearts ? "fill-red-500 text-red-500" : "text-gray-700"} 
-              />
-            ))}
+            {/* UPDATED: If hearts > 10, show text count. Otherwise show icons. */}
+            {hearts > 10 ? (
+                <div className="flex items-center gap-2 text-white font-bold px-1">
+                    <Heart size={18} className="fill-red-500 text-red-500" />
+                    <span>{hearts}</span>
+                </div>
+            ) : (
+                [...Array(Math.max(3, hearts))].map((_, i) => (
+                  <Heart 
+                    key={i} 
+                    size={18} 
+                    className={i < hearts ? "fill-red-500 text-red-500" : "text-gray-700"} 
+                  />
+                ))
+            )}
           </div>
         </div>
 

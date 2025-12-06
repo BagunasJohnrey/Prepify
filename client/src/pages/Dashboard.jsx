@@ -143,6 +143,15 @@ export default function Dashboard() {
         toast.error("Failed to delete. " + (err.response?.data?.error || ""));
     }
   };
+  
+  // NEW LOGIC: Prevent starting quiz if hearts are zero
+  const handleQuizClick = (quizId) => {
+    if (user.hearts <= 0) {
+        toast.error("💔 You need at least one heart to start an exam.");
+        return;
+    }
+    navigate(`/quiz/${quizId}`);
+  };
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
   if (!user) return null; 
@@ -320,7 +329,8 @@ export default function Dashboard() {
                 </div>
               ) : (
                 quizzes.map((quiz) => (
-                  <div key={quiz.id} onClick={() => navigate(`/quiz/${quiz.id}`)}
+                  <div key={quiz.id} 
+                    onClick={() => handleQuizClick(quiz.id)} // FIX: Use handleQuizClick here
                     className="group bg-dark-surface p-5 rounded-2xl border border-gray-800 hover:border-neon-purple transition-all cursor-pointer flex justify-between items-center shadow-md hover:shadow-lg relative overflow-hidden">
                     
                     {/* Hover Glow Effect */}
