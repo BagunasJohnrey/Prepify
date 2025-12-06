@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import toast from 'react-hot-toast'; 
 import api from '../utils/api'; 
 import { useAuth } from '../context/AuthContext'; 
 import Input from '../components/ui/Input';
@@ -17,9 +18,10 @@ export default function Login() {
     try {
       const { data } = await api.post('/auth/login', formData);
       login(data.token, data.user);
+      toast.success("Login successful!", { duration: 1500 });
       navigate('/dashboard');
     } catch (err) {
-      alert(err.response?.data?.error || "Login failed");
+      toast.error(err.response?.data?.error || "Login failed. Please check your credentials.", { duration: 3000 });
     } finally {
       setLoading(false);
     }
@@ -40,7 +42,7 @@ export default function Login() {
           />
           <Input 
             label="Password"
-            type="password"
+            type="password" 
             placeholder="••••••••"
             value={formData.password}
             onChange={e => setFormData({...formData, password: e.target.value})}

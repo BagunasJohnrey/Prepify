@@ -147,7 +147,7 @@ export default function Dashboard() {
   // NEW LOGIC: Prevent starting quiz if hearts are zero
   const handleQuizClick = (quizId) => {
     if (user.hearts <= 0) {
-        toast.error("💔 You need at least one heart to start an exam.");
+        toast.error("💔 You need at least one heart to start an exam.", { duration: 3000 });
         return;
     }
     navigate(`/quiz/${quizId}`);

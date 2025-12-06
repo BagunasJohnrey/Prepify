@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import api from '../utils/api'; 
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
@@ -14,10 +15,12 @@ export default function Register() {
     setLoading(true);
     try {
       await api.post('/auth/register', formData);
-      alert("Account created! Please login.");
+      
+      toast.success("Account created! Please log in.", { duration: 3000 });
+      
       navigate('/');
     } catch (err) {
-      alert(err.response?.data?.error || "Registration failed");
+      toast.error(err.response?.data?.error || "Registration failed. Username may already exist.", { duration: 3000 });
     } finally {
       setLoading(false);
     }
