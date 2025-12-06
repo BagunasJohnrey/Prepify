@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Github, Instagram, Heart } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function Footer() {
+  const { user } = useAuth();
+
   return (
     <footer className="bg-dark-surface border-t border-gray-800 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -21,9 +24,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Platform</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link to="/" className="hover:text-neon-blue transition">Home</Link></li>
               <li><Link to="/about" className="hover:text-neon-blue transition">About</Link></li>
-              <li><Link to="/dashboard" className="hover:text-neon-blue transition">Dashboard</Link></li>
+              {user && (
+                <li><Link to="/dashboard" className="hover:text-neon-blue transition">Dashboard</Link></li>
+              )}
+              {!user && (
+                 <li><Link to="/" className="hover:text-neon-blue transition">Login</Link></li>
+              )}
             </ul>
           </div>
 
@@ -31,9 +38,8 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Resources</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-neon-green transition">Documentation</a></li>
-              <li><a href="#" className="hover:text-neon-green transition">API Status</a></li>
-              <li><a href="#" className="hover:text-neon-green transition">Privacy Policy</a></li>
+              <li><Link to="/documentation#overview" className="hover:text-neon-green transition">Documentation</Link></li>
+              <li><Link to="/documentation#status" className="hover:text-neon-green transition">API Status</Link></li>
             </ul>
           </div>
 

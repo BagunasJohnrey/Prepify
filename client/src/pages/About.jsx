@@ -82,6 +82,42 @@ export default function About() {
             </div>
         </div>
       </section>
+
+      
+      <section className="py-16 px-6 text-center">
+        <div className="max-w-3xl mx-auto p-8 rounded-3xl bg-dark-surface border border-gray-800 transition-all duration-300 hover:border-neon-green hover:shadow-[0_0_30px_rgba(57,255,20,0.1)] relative overflow-hidden group">
+            
+            <div className="absolute top-0 right-0 w-32 h-32 bg-neon-blue/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-neon-green/5 transition-colors duration-500"></div>
+
+            <p className="text-neon-green text-[10px] uppercase tracking-[0.2em] font-bold mb-4">
+              Academic Milestone
+            </p>
+            
+            <h3 className="text-2xl md:text-3xl font-black text-white mb-3">
+              <span className="text-neon-blue">IT 314</span> | Web Systems and Technologies
+            </h3>
+            
+            <p className="text-gray-400 text-sm mb-8 max-w-xl mx-auto leading-relaxed">
+              This system was architected and developed as a final requirement to demonstrate proficiency in 
+              <span className="text-white font-bold"> Web Development</span>. 
+              It showcases the practical application of modern web technologies, relational database management, and third-party AI integration.
+            </p>
+
+            <div className="inline-flex items-center justify-center gap-3 px-5 py-2.5 bg-gray-900/80 rounded-xl border border-gray-700 mb-8 backdrop-blur-sm">
+               <span className="text-gray-500 text-xs font-bold uppercase tracking-wide">Instructor</span>
+               <div className="w-px h-4 bg-gray-700"></div>
+               <span className="text-neon-purple font-bold text-sm">Sir Talaoc, Ivan Gabriel B.</span>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-2">
+                {['React 19', 'Node.js', 'Express', 'PostgreSQL', 'Tailwind v4', 'OpenAI API'].map((tech) => (
+                    <span key={tech} className="text-[10px] font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-lg border border-gray-700 hover:border-gray-500 transition-colors cursor-default">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        </div>
+      </section>
     </div>
   );
 }

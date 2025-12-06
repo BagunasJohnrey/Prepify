@@ -21,18 +21,24 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
         
         {/* Logo */}
         <Link to={user ? "/dashboard" : "/"} className="text-2xl font-black tracking-tight text-white flex items-center">
           <span className="text-neon-blue">PREP</span>IFY
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 font-medium text-sm">
-          {!user && <Link to="/" className={`${isActive('/')} transition`}>Home</Link>}
-          <Link to="/about" className={`${isActive('/about')} transition`}>About</Link>
-          {user && <Link to="/dashboard" className={`${isActive('/dashboard')} transition`}>Dashboard</Link>}
+        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8 font-medium text-sm">
+          {!user && (
+            <Link to="/about" className={`${isActive('/about')} transition`}>About</Link>
+          )}
+          
+          <Link to="/documentation" className={`${isActive('/documentation')} transition`}>Documentation</Link>
+          
+          {user && (
+            <Link to="/dashboard" className={`${isActive('/dashboard')} transition`}>Dashboard</Link>
+          )}
         </div>
 
         {/* Desktop Actions */}
@@ -69,8 +75,10 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-dark-surface border-b border-gray-800 p-6 flex flex-col gap-4 shadow-2xl animate-fade-in-down">
-          {!user && <Link to="/" className="text-white py-2" onClick={() => setIsOpen(false)}>Home</Link>}
-          <Link to="/about" className="text-white py-2" onClick={() => setIsOpen(false)}>About</Link>
+          {!user && <Link to="/about" className="text-white py-2" onClick={() => setIsOpen(false)}>About</Link>}
+          
+          <Link to="/documentation" className="text-white py-2" onClick={() => setIsOpen(false)}>Documentation</Link>
+          
           {user && <Link to="/dashboard" className="text-white py-2" onClick={() => setIsOpen(false)}>Dashboard</Link>}
           
           <div className="border-t border-gray-700 pt-4 mt-2">

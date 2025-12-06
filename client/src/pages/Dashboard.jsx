@@ -26,14 +26,7 @@ export default function Dashboard() {
   const [showStore, setShowStore] = useState(false);
   const [timeUntilRegen, setTimeUntilRegen] = useState(null);
 
-  // 1. Redirect if not logged in
-  useEffect(() => {
-    if (!authLoading && !user) {
-      navigate('/');
-    }
-  }, [authLoading, user, navigate]);
-
-  // 2. Fetch Quizzes
+  // Fetch Quizzes
   const fetchQuizzes = useCallback(async () => {
     try {
       const { data } = await api.get(`/quizzes?course=${filter}`);
@@ -47,7 +40,7 @@ export default function Dashboard() {
     if (user) fetchQuizzes(); 
   }, [fetchQuizzes, user]);
 
-  // 3. Heart Timer Logic
+  // Heart Timer Logic
   useEffect(() => {
     if (!user || user.hearts >= 3) {
         setTimeUntilRegen(null);
@@ -129,6 +122,7 @@ export default function Dashboard() {
     }
   };
 
+  // Only check loading state for UI purposes, auth redirection is handled by router
   if (authLoading) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
   if (!user) return null; 
 
