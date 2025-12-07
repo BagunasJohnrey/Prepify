@@ -1,3 +1,4 @@
+// bagunasjohnrey/prepify/Prepify-main/vercel.json
 {
   "version": 2,
   "builds": [
@@ -13,12 +14,16 @@
   ],
   "routes": [
     {
+      // Catch all requests starting with /api/ and pass them to the serverless function.
+      // This is necessary for POST /api/auth/login 404 error too.
       "src": "/api/(.*)",
-      "dest": "/server/server.js$1"
+      "dest": "/server/server.js"
     },
     {
+      // CRITICAL SOCKET.IO FIX: Catch all requests starting with /socket.io/ and pass them to the serverless function.
+      // We rely on Vercel's default handling to append the path and query string to the destination file.
       "src": "/socket.io/(.*)",
-      "dest": "/server/server.js$1"
+      "dest": "/server/server.js"
     },
     {
       "src": "/assets/(.*)",
