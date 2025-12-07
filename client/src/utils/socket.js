@@ -5,13 +5,11 @@ const API_BASE_URL = import.meta.env.VITE_API_URL
     : window.location.origin;
 
 const socket = io(API_BASE_URL, {
-    // Explicitly set the path to ensure it hits the Vercel route defined in vercel.json
     path: '/socket.io/', 
     
-    // CRITICAL for Vercel stability: Force connection via WebSocket first 
-    // and prevent previous failed connection attempts from interfering.
-    transports: ['websocket', 'polling'],
-    forceNew: true // Ensures a clean connection attempt every time
+    transports: ['polling', 'websocket'], 
+    
+    forceNew: true 
 });
 
 socket.on('connect', () => {
