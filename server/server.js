@@ -19,15 +19,28 @@ const PORT = process.env.PORT || 3000;
 const QUESTION_TIME_MS = 10000; 
 const ANSWER_REVEAL_DELAY_MS = 3000; 
 
-const ALLOWED_ORIGINS = [
-    'http://localhost:5173', 
-    "https://prepify-exam-simulator.vercel.app/" 
-];
+// --- FIX: Dynamic CORS Function for Vercel and Localhost ---
+const isOriginAllowed = (origin, callback) => {
+    // 1. Allow requests with no origin (like mobile apps, same-origin, or curl)
+    if (!origin) return callback(null, true);
+
+    const allowedLocal = 'http://localhost:5173';
+    // The specific production/main branch domain (without the trailing slash)
+    const allowedProd = 'https://prepify-exam-simulator.vercel.app'; 
+
+    // 2. Allow localhost, the exact production domain, or any subdomain of .vercel.app
+    if (origin.startsWith(allowedLocal) || origin === allowedProd || origin.endsWith('.vercel.app')) {
+        return callback(null, true);
+    }
+    
+    // 3. Deny other origins
+    callback(new Error('Not allowed by CORS'), false);
+};
 
 // Initialize Socket.IO
 const io = new SocketIOServer(httpServer, {
     cors: {
-        origin: ALLOWED_ORIGINS,
+        origin: isOriginAllowed, // <-- Applied dynamic CORS
         methods: ["GET", "POST"]
     },
     // CRITICAL VERCEL STABILITY FIXES:
@@ -37,7 +50,7 @@ const io = new SocketIOServer(httpServer, {
 
 // --- Express Middleware Setup ---
 app.use(cors({
-  origin: ALLOWED_ORIGINS,
+  origin: isOriginAllowed, // <-- Applied dynamic CORS
   credentials: true
 }));
 
