@@ -21,7 +21,8 @@
     },
     {
       "src": "/socket.io/(.*)",
-      "dest": "/server/server.js"
+      "dest": "/server/server.js",
+      "continue": true
     },
     {
       "src": "/assets/(.*)",
