@@ -6,19 +6,25 @@
 ![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791)
 ![Tailwind](https://img.shields.io/badge/Style-TailwindCSS%20v4-38B2AC)
+![Socket.IO](https://img.shields.io/badge/Realtime-Socket.IO-white)
 
 **Prepify** is an intelligent study platform that bridges the gap between passive reading and active testing. By uploading PDF course materials, Prepify uses advanced AI to instantly generate structured quizzes, complete with explanations, difficulty settings, and a gamified "lives" system.
 
 ## ✨ Key Features
 
 * **📄 AI Quiz Generation**: Upload any PDF (up to 5MB), and our AI (powered by OpenRouter/Gemini/Llama) parses the text to create a structured JSON exam.
-* **ww Gamified Learning**:
+* **⚔️ Multiplayer Arena**:
+    * **Real-Time Battles**: Host or join game rooms using 4-digit codes.
+    * **Live Leaderboard**: Compete with friends in real-time.
+    * **Speed Bonus**: Earn extra points for answering quickly.
+* **🎮 Gamified Learning**:
     * **Heart System**: Users start with 3 hearts. Incorrect answers cost a heart.
+    * **XP & Store**: Earn XP for correct answers and use it to buy back hearts in the store.
     * **Regeneration**: Hearts regenerate automatically over time (2 minutes per heart).
-* **Pdf Adaptive Configuration**: Choose your subject type (Major, Minor, GED), difficulty level, and number of questions.
-* **Interactive Dashboard**: View recent exams, track progress, and manage your quiz library.
-* **UI Modern Aesthetics**: A fully responsive Cyberpunk/Neon-Dark interface built with Tailwind CSS v4.
-* **Secure Authentication**: JWT-based authentication with Bcrypt password hashing.
+* **⚙️ Adaptive Configuration**: Choose your subject type (Major, Minor, GED), difficulty level, and number of questions.
+* **📊 Interactive Dashboard**: View recent exams, track progress, and manage your quiz library.
+* **🎨 Modern Aesthetics**: A fully responsive Cyberpunk/Neon-Dark interface built with Tailwind CSS v4.
+* **🔐 Secure Authentication**: JWT-based authentication with Bcrypt password hashing.
 
 ## 🛠️ Tech Stack
 
@@ -26,6 +32,7 @@
 * **Framework**: React 19 (Vite)
 * **Styling**: Tailwind CSS v4
 * **Routing**: React Router DOM v7
+* **Real-time**: Socket.IO Client
 * **HTTP Client**: Axios
 * **Icons**: Lucide React
 
@@ -33,6 +40,7 @@
 * **Runtime**: Node.js
 * **Framework**: Express.js
 * **Database**: PostgreSQL (`pg`)
+* **Real-time**: Socket.IO
 * **AI Integration**: OpenRouter API (Accessing models like Gemini Flash, Llama 3, Deepseek)
 * **File Handling**: Multer (Memory Storage) & PDF2JSON
 * **Validation**: Zod
@@ -60,6 +68,7 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     role VARCHAR(50) DEFAULT 'user',
     hearts INTEGER DEFAULT 3,
+    xp INTEGER DEFAULT 0,
     last_heart_update TIMESTAMP DEFAULT NOW()
 );
 
@@ -91,7 +100,7 @@ Navigate to the root directory, install dependencies, and configure the environm
 npm install
 ```
 
-Create a `.env` fileQm in the root directory:
+Create a `.env` file in the root directory:
 
 ```env
 PORT=3000
@@ -119,6 +128,7 @@ Create a `.env` file in the `client` directory:
 
 ```env
 VITE_API_URL=http://localhost:3000/api
+VITE_SOCKET_URL=http://localhost:3000
 ```
 
 Start the client:
@@ -135,15 +145,15 @@ Visit `http://localhost:5173` to view the app.
 prepify/
 ├── client/                 # React Frontend
 │   ├── src/
-│   │   ├── components/ui/  # Reusable UI components (Buttons, Inputs)
+│   │   ├── components/     # Reusable UI (Buttons, Inputs, Modals)
 │   │   ├── context/        # Auth Context
 │   │   ├── layout/         # Navbar, Footer
-│   │   ├── pages/          # Dashboard, Quiz, Login, etc.
-│   │   └── utils/          # API configuration
+│   │   ├── pages/          # Dashboard, Quiz, Multiplayer, etc.
+│   │   └── utils/          # API & Socket configuration
 │   └── vite.config.js
 ├── server/                 # Express Backend
 │   ├── config/             # Database connection
-│   ├── controllers/        # Logic for Auth and Quizzes
+│   ├── controllers/        # Logic for Auth, Quizzes, Game State
 │   ├── middleware/         # Auth verification & File Uploads
 │   ├── models/             # DB Queries (User, Quiz)
 │   ├── routes/             # API Routes
@@ -173,4 +183,3 @@ This project is open-source and available under the [MIT License](https://www.go
 -----
 
 *Made with 💙 by [John Rey Bagunas](https://github.com/BagunasJohnrey)*
-
