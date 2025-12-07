@@ -1,5 +1,6 @@
 import { io } from 'socket.io-client';
 
+// Determine the base URL dynamically:
 const API_BASE_URL = import.meta.env.VITE_API_URL 
     ? import.meta.env.VITE_API_URL.replace('/api', '') 
     : window.location.origin;
@@ -7,10 +8,16 @@ const API_BASE_URL = import.meta.env.VITE_API_URL
 const socket = io(API_BASE_URL, {
     path: '/socket.io/', 
     
-    transports: ['polling', 'websocket'], 
-    forceNew: true,
+    // CRITICAL FIX: Only use HTTP Polling for maximum stability on Vercel/Serverless.
+    // This bypasses the problematic WebSocket (wss) attempt.
+    transports: ['polling'], 
     
-    withCredentials: false 
+    forceNew: true,
+    withCredentials: false,
+    
+    // Optional resilience settings
+    timeout: 10000, 
+    reconnectionAttempts: 5 
 });
 
 socket.on('connect', () => {
