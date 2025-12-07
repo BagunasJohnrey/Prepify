@@ -1,30 +1,52 @@
 import express from "express";
+import { createServer } from 'http';
+import { Server as SocketIOServer } from 'socket.io';
 import cors from "cors";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit"; 
 import authRoutes from "./routes/authRoutes.js";
 import quizRoutes from "./routes/quizRoutes.js";
+import Quiz from "./models/Quiz.js"; 
 
 dotenv.config();
 
 const app = express();
+const httpServer = createServer(app);
+
 const PORT = process.env.PORT || 3000;
 
+// --- Constants ---
+const QUESTION_TIME_MS = 10000; 
+const ANSWER_REVEAL_DELAY_MS = 3000; 
+
+const ALLOWED_ORIGINS = [
+    'http://localhost:5173', 
+    "https://prepify-exam-simulator.vercel.app/" 
+];
+
+// Initialize Socket.IO
+const io = new SocketIOServer(httpServer, {
+    cors: {
+        origin: ALLOWED_ORIGINS,
+        methods: ["GET", "POST"]
+    }
+});
+
+// --- Express Middleware Setup ---
 app.use(cors({
-  origin: ["http://localhost:5173", "https://prepify-exam-simulator.vercel.app/"], 
+  origin: ALLOWED_ORIGINS,
   credentials: true
 }));
 
-
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000, 
   max: 100,
   message: "Too many requests from this IP, please try again later."
 });
 app.use("/api", limiter);
 
 const generateLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
+  windowMs: 60 * 60 * 1000, 
   max: 10,
   message: "Generation limit reached. Please try again later."
 });
@@ -32,10 +54,293 @@ app.use("/api/generate", generateLimiter);
 
 app.use(express.json());
 
-// Routes
+// Routes (Standard Express routes)
 app.use("/api/auth", authRoutes); 
 app.use("/api", quizRoutes);      
 
-app.listen(PORT, () => {
+// === SERVER-SIDE ROOM STATE MANAGEMENT & GAME LOGIC ===
+const rooms = new Map();
+
+// Helper functions (omitted for brevity, assume they are correct based on prior step)
+
+const checkAllAnswered = (roomState) => {
+    const totalPlayers = roomState.players.length;
+    const answersReceived = roomState.players.filter(p => p.answers[roomState.currentQ]).length;
+    return roomState.players.length > 0 && answersReceived === totalPlayers;
+};
+
+const findRoomBySocketId = (socketId) => {
+    for (const [code, room] of rooms.entries()) {
+        if (room.players.some(p => p.socketId === socketId)) {
+            return { code, room };
+        }
+    }
+    return null;
+};
+
+const calculatePoints = (roomState) => {
+    const qIndex = roomState.currentQ;
+    const question = roomState.quizData[qIndex];
+
+    const playersAnswered = roomState.players.map(p => ({
+        ...p,
+        answer: p.answers[qIndex]
+    })).filter(p => p.answer);
+
+    const BASE_SCORE = 100;
+    const MAX_SPEED_BONUS = 50; 
+    const MAX_TIME = QUESTION_TIME_MS;
+
+    const updatedPlayers = roomState.players.map(player => {
+        const answer = player.answers[qIndex];
+        let scoreGain = 0;
+        player.lastScore = 0;
+
+        if (answer && answer.selected === question.answer) {
+            scoreGain = BASE_SCORE;
+            
+            const timeRatio = Math.min(answer.time_ms, MAX_TIME) / MAX_TIME;
+            const bonus = Math.round(MAX_SPEED_BONUS * (1 - timeRatio));
+            
+            scoreGain += bonus;
+        }
+        
+        return {
+            ...player,
+            score: player.score + scoreGain,
+            lastScore: scoreGain 
+        };
+    });
+
+    roomState.players = updatedPlayers;
+};
+
+const advanceGame = (roomCode, roomState) => {
+    if (!rooms.has(roomCode)) return;
+
+    calculatePoints(roomState);
+    
+    const isLastQuestion = roomState.currentQ === roomState.quizData.length - 1;
+    
+    const ranking = roomState.players.sort((a, b) => b.score - a.score);
+
+    io.to(roomCode).emit('showAnswer', {
+        correctAnswer: roomState.quizData[roomState.currentQ].answer,
+        correctExplanation: roomState.quizData[roomState.currentQ].explanation,
+        players: ranking,
+        qIndex: roomState.currentQ,
+        isLastQuestion
+    });
+    
+    if (isLastQuestion) {
+        io.to(roomCode).emit('showResults', {
+            finalRanking: ranking,
+            isFinal: true
+        });
+        rooms.delete(roomCode); 
+    } else {
+        roomState.currentQ++;
+        
+        if (roomState.qTimeout) clearTimeout(roomState.qTimeout);
+
+        setTimeout(() => {
+            const currentRoomState = rooms.get(roomCode);
+            if (!currentRoomState) return;
+
+            const qStartTime = Date.now();
+            const qDeadline = qStartTime + QUESTION_TIME_MS;
+
+            currentRoomState.qTimeout = setTimeout(() => {
+                advanceGame(roomCode, currentRoomState);
+            }, QUESTION_TIME_MS);
+            
+            io.to(roomCode).emit('nextQuestion', {
+                qIndex: currentRoomState.currentQ,
+                question: currentRoomState.quizData[currentRoomState.currentQ],
+                players: currentRoomState.players,
+                qStartTime: qStartTime,
+                qDeadline: qDeadline
+            });
+        }, ANSWER_REVEAL_DELAY_MS);
+    }
+};
+
+
+// === SOCKET.IO LOGIC ===
+io.on('connection', (socket) => {
+    console.log('A user connected via socket:', socket.id);
+
+    // 1. Create Room 
+    socket.on('createRoom', (data) => {
+        const { username, quizId } = data;
+        const roomCode = Math.random().toString(36).substring(2, 6).toUpperCase();
+        
+        socket.join(roomCode);
+        
+        const roomState = {
+            roomCode,
+            host: username,
+            quizId: quizId,
+            players: [{ username, id: socket.id, score: 0, answers: [], lastScore: 0, socketId: socket.id }],
+            currentQ: 0,
+            quizData: null,
+            qTimeout: null 
+        };
+        rooms.set(roomCode, roomState);
+
+        socket.emit('lobbyUpdate', roomState); 
+    });
+
+    // 2. Join Room
+    socket.on('joinRoom', (data) => {
+        const { roomCode, username } = data;
+        const roomState = rooms.get(roomCode);
+        
+        if (!roomState) {
+            socket.emit('roomError', 'Room not found.');
+            return;
+        }
+
+        if (roomState.players.some(p => p.username === username)) {
+            socket.emit('roomError', 'Already in this room.');
+            return;
+        }
+
+        socket.join(roomCode);
+        roomState.players.push({ username, id: socket.id, score: 0, answers: [], lastScore: 0, socketId: socket.id });
+
+        io.to(roomCode).emit('lobbyUpdate', roomState); 
+    });
+
+    // 3. Start Game
+    socket.on('startGame', async (data) => {
+        const { roomCode, quizId } = data;
+        const roomState = rooms.get(roomCode);
+        
+        if (!roomState || roomState.host !== roomState.players.find(p => p.socketId === socket.id)?.username) {
+             socket.emit('roomError', 'Access Denied: Only host can start game.');
+             return;
+        }
+        
+        try {
+            const quiz = await Quiz.findById(quizId); 
+            
+            if (!quiz || !quiz.questions) {
+                io.to(roomCode).emit('roomError', 'Quiz questions not found.');
+                return;
+            }
+            
+            // FIX APPLIED HERE: Check if questions is already an object/array (which happens if your database driver/ORm automatically parses it)
+            // If it's a string, then we parse it. Otherwise, we assume it's the correct object/array structure.
+            if (typeof quiz.questions === 'string') {
+                // If it's a string, attempt to parse. This is where the old error happened.
+                if (quiz.questions.startsWith('[')) {
+                   roomState.quizData = JSON.parse(quiz.questions); 
+                } else {
+                   // Fallback for improperly stored data (e.g., "[object Object]")
+                   console.error(`Invalid JSON data in DB for Quiz ID ${quizId}:`, quiz.questions);
+                   io.to(roomCode).emit('roomError', 'Quiz data is corrupted (invalid JSON).');
+                   return;
+                }
+            } else if (Array.isArray(quiz.questions)) {
+                // If the ORM already gave us an array, use it directly.
+                 roomState.quizData = quiz.questions; 
+            } else {
+                 // Final fallback, might be poorly stored.
+                 console.error(`Quiz data for ID ${quizId} is not a string or array.`);
+                 io.to(roomCode).emit('roomError', 'Quiz data structure is invalid.');
+                 return;
+            }
+            
+            roomState.currentQ = 0;
+            
+            const startTimestamp = Date.now() + 5000; 
+            
+            io.to(roomCode).emit('startCountdown', { 
+                quizTitle: quiz.title,
+                startTimestamp,
+                quizData: roomState.quizData
+            });
+
+            // Set up a timer to send the first question after countdown
+            setTimeout(() => {
+                const currentRoomState = rooms.get(roomCode);
+                if (!currentRoomState) return;
+
+                const qStartTime = Date.now();
+                const qDeadline = qStartTime + QUESTION_TIME_MS;
+                
+                currentRoomState.qTimeout = setTimeout(() => {
+                    advanceGame(roomCode, currentRoomState);
+                }, QUESTION_TIME_MS);
+
+                io.to(roomCode).emit('nextQuestion', {
+                    qIndex: currentRoomState.currentQ,
+                    question: currentRoomState.quizData[currentRoomState.currentQ],
+                    players: currentRoomState.players,
+                    qStartTime: qStartTime,
+                    qDeadline: qDeadline
+                });
+            }, 5000); 
+            
+        } catch (error) {
+            console.error('Fatal Error fetching quiz data or processing JSON:', error);
+            io.to(roomCode).emit('roomError', 'Internal server error starting game.');
+        }
+    });
+
+    // 4. Submit Answer
+    socket.on('submitAnswer', (data) => {
+        const { selected, time_ms, roomCode } = data;
+        const roomState = rooms.get(roomCode);
+        
+        if (!roomState) return;
+
+        const playerIndex = roomState.players.findIndex(p => p.socketId === socket.id);
+        if (playerIndex === -1) return;
+
+        const qIndex = roomState.currentQ;
+
+        if (roomState.players[playerIndex].answers[qIndex] || roomState.qTimeout === null) return;
+
+        const finalTime = Math.min(time_ms, QUESTION_TIME_MS);
+
+        roomState.players[playerIndex].answers[qIndex] = { selected, time_ms: finalTime };
+        
+        socket.to(roomCode).emit('playerAnswered', { 
+            username: roomState.players[playerIndex].username, 
+            qIndex: qIndex
+        });
+
+        if (checkAllAnswered(roomState)) {
+            advanceGame(roomCode, roomState);
+        }
+    });
+
+    // 5. Disconnect
+    socket.on('disconnect', () => {
+        const roomInfo = findRoomBySocketId(socket.id);
+
+        if (roomInfo) {
+            const { code: roomCode, room: roomState } = roomInfo;
+            const index = roomState.players.findIndex(p => p.socketId === socket.id);
+            const disconnectedUsername = roomState.players[index].username;
+            roomState.players.splice(index, 1);
+            
+            if (roomState.players.length === 0) {
+                rooms.delete(roomCode);
+                if (roomState.qTimeout) clearTimeout(roomState.qTimeout);
+            } else {
+                if (disconnectedUsername === roomState.host) {
+                    roomState.host = roomState.players[0].username;
+                }
+                io.to(roomCode).emit('lobbyUpdate', roomState); 
+                io.to(roomCode).emit('playerLeft', { username: disconnectedUsername });
+            }
+        }
+    });
+});
+
+httpServer.listen(PORT, () => {
   console.log(`🚀 Prepify Server running on port ${PORT}`);
 });

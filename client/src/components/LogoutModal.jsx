@@ -19,11 +19,8 @@ export default function LogoutModal({ isOpen, onClose, onConfirm }) {
             <div className="text-center">
                 <AlertTriangle className="text-red-500 mx-auto mb-4" size={40} />
                 <h2 className="text-2xl font-black text-white mb-2">Confirm Logout</h2>
-                <p className="text-gray-400 text-sm">
-                    Are you sure you want to log out of Prepify?
-                </p>
                 <p className="text-gray-400 mb-6 text-sm">
-                    Sure na po ba?
+                    Are you sure you want to log out of Prepify?
                 </p>
             </div>
 
