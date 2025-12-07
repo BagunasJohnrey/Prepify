@@ -30,8 +30,9 @@ const io = new SocketIOServer(httpServer, {
         origin: ALLOWED_ORIGINS,
         methods: ["GET", "POST"]
     },
-    // CRITICAL FIX: Increase ping timeout to 20 seconds for Vercel stability
-    pingTimeout: 20000 
+    // CRITICAL VERCEL STABILITY FIXES:
+    pingTimeout: 20000, 
+    pingInterval: 5000 
 });
 
 // --- Express Middleware Setup ---
@@ -63,13 +64,14 @@ app.use("/api", quizRoutes);
 // === SERVER-SIDE ROOM STATE MANAGEMENT & GAME LOGIC ===
 const rooms = new Map();
 
-// Helper functions
+// Helper to determine if all players have answered the current question
 const checkAllAnswered = (roomState) => {
     const totalPlayers = roomState.players.length;
     const answersReceived = roomState.players.filter(p => p.answers[roomState.currentQ]).length;
     return roomState.players.length > 0 && answersReceived === totalPlayers;
 };
 
+// Helper to find room by socket ID
 const findRoomBySocketId = (socketId) => {
     for (const [code, room] of rooms.entries()) {
         if (room.players.some(p => p.socketId === socketId)) {
@@ -79,6 +81,7 @@ const findRoomBySocketId = (socketId) => {
     return null;
 };
 
+// Helper to calculate points based on speed and correctness
 const calculatePoints = (roomState) => {
     const qIndex = roomState.currentQ;
     const question = roomState.quizData[qIndex];
@@ -166,7 +169,6 @@ const advanceGame = (roomCode, roomState) => {
         }, ANSWER_REVEAL_DELAY_MS);
     }
 };
-
 
 // === SOCKET.IO LOGIC ===
 io.on('connection', (socket) => {
@@ -303,6 +305,8 @@ io.on('connection', (socket) => {
         });
 
         if (checkAllAnswered(roomState)) {
+            // Clear the auto-advance timer immediately
+            if (roomState.qTimeout) clearTimeout(roomState.qTimeout);
             advanceGame(roomCode, roomState);
         }
     });
