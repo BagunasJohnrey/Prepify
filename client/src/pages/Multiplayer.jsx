@@ -8,8 +8,8 @@ import socket from '../utils/socket';
 import api from '../utils/api'; 
 
 const COUNTDOWN_SECONDS = 5; 
-const QUESTION_TIME_MS = 10000; // 10 seconds (Matches server)
-const ANSWER_REVEAL_DELAY_MS = 3000; // 3 seconds (Matches server)
+const QUESTION_TIME_MS = 10000; 
+const ANSWER_REVEAL_DELAY_MS = 3000; 
 
 
 export default function Multiplayer() {
@@ -18,7 +18,8 @@ export default function Multiplayer() {
     const [roomCode, setRoomCode] = useState('');
     const [lobbyData, setLobbyData] = useState(null); 
     const [countdown, setCountdown] = useState(COUNTDOWN_SECONDS);
-    
+    const [isConnected, setIsConnected] = useState(false); // NEW STATE: Connection status
+
     // Game State
     const [gameQuestions, setGameQuestions] = useState(null);
     const [currentQIndex, setCurrentQIndex] = useState(0);
@@ -69,7 +70,6 @@ export default function Multiplayer() {
 
             if (timeRemaining <= 0) {
                 clearInterval(qTimerIntervalRef.current);
-                // Server advances game if time runs out.
             }
         }, 100); 
     };
@@ -82,6 +82,27 @@ export default function Multiplayer() {
     // --- Socket Listeners Setup ---
     useEffect(() => {
         let countdownInterval;
+
+        // --- Connection/Disconnection Listeners ---
+        const onConnect = () => {
+            setIsConnected(true);
+            // If the user was trying to join a room before reconnecting, re-emit the join event
+            if (view === 'loading' && roomCode) {
+                 socket.emit('joinRoom', { roomCode, username: user.username });
+            }
+        };
+
+        const onDisconnect = () => {
+            setIsConnected(false);
+            if (lobbyData) {
+                toast.error("Disconnected from lobby. Reconnecting...", { duration: 3000 });
+            }
+        };
+        
+        socket.on('connect', onConnect);
+        socket.on('disconnect', onDisconnect);
+        // --- End Connection Listeners ---
+
 
         const getQuizTitle = (quizId) => {
             const quiz = availableQuizzes.find(q => String(q.id) === String(quizId));
@@ -200,12 +221,15 @@ export default function Multiplayer() {
             if (countdownInterval) clearInterval(countdownInterval);
             stopQuestionTimer();
         };
-    }, [availableQuizzes, currentQIndex, user.username]); 
+    }, [availableQuizzes, currentQIndex, user.username, view]); 
+    // --- End Socket Listeners Setup ---
 
 
     // --- Actions (Emitting to Server) ---
     const handleCreateRoom = (e) => {
         e.preventDefault();
+        if (!isConnected) return toast.error("Connection not ready. Try again in a moment.");
+
         if (!user || !selectedQuizId) {
             toast.error("Please select a quiz.", { duration: 3000 });
             return;
@@ -216,14 +240,21 @@ export default function Multiplayer() {
 
     const handleJoinRoom = (e) => {
         e.preventDefault();
+        if (!isConnected) return toast.error("Connection not ready. Try again in a moment.");
+
         const code = roomCode.toUpperCase();
         if (!user || code.length !== 4) {
             toast.error("Invalid Room Code format.");
             return;
         }
+        
         setView('loading');
+        // Store room code so onConnect can automatically rejoin if needed
+        setRoomCode(code);
         socket.emit('joinRoom', { roomCode: code, username: user.username });
     };
+    
+    // ... (rest of actions and render views remain the same)
 
     const handleStartGame = () => {
         if (!lobbyData || lobbyData.host !== user.username) return;
@@ -235,7 +266,6 @@ export default function Multiplayer() {
         setIsAnswered(true);
         setPlayerAnswerLocal(selectedOption); 
         
-        // Calculate time taken relative to the server's deadline
         const timeTaken = QUESTION_TIME_MS - Math.max(0, qDeadlineRef.current - Date.now());
         
         socket.emit('submitAnswer', {
@@ -249,7 +279,9 @@ export default function Multiplayer() {
     
     const leaveRoom = () => {
         if (lobbyData) {
-            // Manually emit a disconnect event if needed, but socket.disconnect() is usually sufficient
+            // Emitting to server so it can clean up and notify others
+            socket.emit('leaveRoom', { roomCode: lobbyData.roomCode }); 
+            // Simple reconnect to reset socket state
             socket.disconnect(); 
             socket.connect(); 
         }
@@ -265,14 +297,19 @@ export default function Multiplayer() {
             <h2 className="text-3xl font-black text-white mb-6">Multiplayer Arena</h2>
             <p className="text-gray-400 mb-8">Compete against your friends in real-time quiz battles. Speed equals score!</p>
 
-            <Button onClick={() => setView('create')} variant="primary" className="w-full justify-center h-16 text-lg" disabled={quizzesLoading || availableQuizzes.length === 0}>
+            <Button onClick={() => setView('create')} variant="primary" className="w-full justify-center h-16 text-lg" disabled={quizzesLoading || availableQuizzes.length === 0 || !isConnected}>
                 <PlusCircle /> Create New Room
             </Button>
-            <Button onClick={() => setView('join')} variant="outline" className="w-full justify-center h-16 text-lg">
+            <Button onClick={() => setView('join')} variant="outline" className="w-full justify-center h-16 text-lg" disabled={!isConnected}>
                 <LogIn /> Join Room
             </Button>
             
-            {quizzesLoading && (
+            {!isConnected && (
+                 <div className="text-center text-red-500 flex items-center justify-center gap-2">
+                    <Loader size={16} className="animate-spin" /> Establishing Connection...
+                 </div>
+            )}
+            {quizzesLoading && isConnected && (
                  <div className="text-center text-neon-blue flex items-center justify-center gap-2">
                     <Loader size={16} className="animate-spin" /> Loading Quizzes...
                  </div>
