@@ -1,17 +1,17 @@
 import { io } from 'socket.io-client';
 
-// Determine the base URL dynamically:
-// 1. If VITE_API_URL is set (local development), use it (e.g., http://localhost:3000).
-// 2. Otherwise (in Vercel/production), use the current window's origin (https://your-domain.vercel.app).
 const API_BASE_URL = import.meta.env.VITE_API_URL 
     ? import.meta.env.VITE_API_URL.replace('/api', '') 
-    : window.location.origin; // Use the current deployment domain
+    : window.location.origin;
 
 const socket = io(API_BASE_URL, {
-    // Explicitly set the path to ensure the client connects correctly
+    // Explicitly set the path to ensure it hits the Vercel route defined in vercel.json
     path: '/socket.io/', 
-    // Ensure transports includes websockets for Vercel stability
-    transports: ['websocket', 'polling']
+    
+    // CRITICAL for Vercel stability: Force connection via WebSocket first 
+    // and prevent previous failed connection attempts from interfering.
+    transports: ['websocket', 'polling'],
+    forceNew: true // Ensures a clean connection attempt every time
 });
 
 socket.on('connect', () => {
