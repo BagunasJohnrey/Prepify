@@ -1,18 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "server/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxDuration": 300 
-      }
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
+    // ... (builds section remains the same)
   ],
   "routes": [
     {
@@ -20,7 +9,12 @@
       "dest": "/server/server.js"
     },
     {
-      "src": "/socket.io/(.*)",
+      "src": "/socket.io",          // NEW: To catch the base path for initial handshakes
+      "dest": "/server/server.js",
+      "continue": true
+    },
+    {
+      "src": "/socket.io/(.*)",    // Existing: To catch all requests with parameters/trailing slash
       "dest": "/server/server.js",
       "continue": true
     },
