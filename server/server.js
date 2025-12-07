@@ -29,7 +29,9 @@ const io = new SocketIOServer(httpServer, {
     cors: {
         origin: ALLOWED_ORIGINS,
         methods: ["GET", "POST"]
-    }
+    },
+    // CRITICAL FIX: Increase ping timeout to 20 seconds for Vercel stability
+    pingTimeout: 20000 
 });
 
 // --- Express Middleware Setup ---
@@ -61,8 +63,7 @@ app.use("/api", quizRoutes);
 // === SERVER-SIDE ROOM STATE MANAGEMENT & GAME LOGIC ===
 const rooms = new Map();
 
-// Helper functions (omitted for brevity, assume they are correct based on prior step)
-
+// Helper functions
 const checkAllAnswered = (roomState) => {
     const totalPlayers = roomState.players.length;
     const answersReceived = roomState.players.filter(p => p.answers[roomState.currentQ]).length;
@@ -115,6 +116,7 @@ const calculatePoints = (roomState) => {
     roomState.players = updatedPlayers;
 };
 
+// === Core Game Progression Function ===
 const advanceGame = (roomCode, roomState) => {
     if (!rooms.has(roomCode)) return;
 
@@ -230,24 +232,12 @@ io.on('connection', (socket) => {
                 return;
             }
             
-            // FIX APPLIED HERE: Check if questions is already an object/array (which happens if your database driver/ORm automatically parses it)
-            // If it's a string, then we parse it. Otherwise, we assume it's the correct object/array structure.
-            if (typeof quiz.questions === 'string') {
-                // If it's a string, attempt to parse. This is where the old error happened.
-                if (quiz.questions.startsWith('[')) {
-                   roomState.quizData = JSON.parse(quiz.questions); 
-                } else {
-                   // Fallback for improperly stored data (e.g., "[object Object]")
-                   console.error(`Invalid JSON data in DB for Quiz ID ${quizId}:`, quiz.questions);
-                   io.to(roomCode).emit('roomError', 'Quiz data is corrupted (invalid JSON).');
-                   return;
-                }
+            if (typeof quiz.questions === 'string' && quiz.questions.startsWith('[')) {
+               roomState.quizData = JSON.parse(quiz.questions); 
             } else if (Array.isArray(quiz.questions)) {
-                // If the ORM already gave us an array, use it directly.
                  roomState.quizData = quiz.questions; 
             } else {
-                 // Final fallback, might be poorly stored.
-                 console.error(`Quiz data for ID ${quizId} is not a string or array.`);
+                 console.error(`Quiz data for ID ${quizId} is not a valid structure.`);
                  io.to(roomCode).emit('roomError', 'Quiz data structure is invalid.');
                  return;
             }
