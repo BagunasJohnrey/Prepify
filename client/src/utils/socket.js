@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 // Determine the base URL dynamically:
-// 1. If VITE_API_URL is set (usually only in development/local build), use it.
+// 1. If VITE_API_URL is set (local development), use it (e.g., http://localhost:3000).
 // 2. Otherwise (in Vercel/production), use the current window's origin (https://your-domain.vercel.app).
 const API_BASE_URL = import.meta.env.VITE_API_URL 
     ? import.meta.env.VITE_API_URL.replace('/api', '') 
