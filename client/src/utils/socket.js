@@ -8,8 +8,9 @@ const socket = io(API_BASE_URL, {
     path: '/socket.io/', 
     
     transports: ['polling', 'websocket'], 
+    forceNew: true,
     
-    forceNew: true 
+    withCredentials: false 
 });
 
 socket.on('connect', () => {
